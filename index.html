@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>English Master</title>
+
+<meta name="description"
+content="یادگیری زبان انگلیسی از A1 تا C1 در 1000 مرحله">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+    background:#09090f;
+    color:#fff;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    border:0;
+    cursor:pointer;
+}
+
+.container{
+    width:min(1100px,94%);
+    margin:auto;
+}
+
+header{
+    padding:20px 0;
+    border-bottom:1px solid #252535;
+    background:#0e0e17;
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.header-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#7c5cff;
+}
+
+.user-area{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.btn{
+    background:#7c5cff;
+    color:white;
+    padding:11px 17px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+.btn.secondary{
+    background:#20202d;
+}
+
+.btn.danger{
+    background:#d83d5c;
+}
+
+.hero{
+    text-align:center;
+    padding:35px 10px;
+}
+
+.hero h1{
+    font-size:32px;
+    margin:10px 0;
+}
+
+.hero p{
+    color:#aaa;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+    gap:12px;
+    margin:20px 0;
+}
+
+.stat{
+    background:#13131e;
+    border:1px solid #252535;
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+}
+
+.stat-number{
+    display:block;
+    font-size:24px;
+    font-weight:bold;
+    color:#7c5cff;
+    margin-bottom:6px;
+}
+
+.section-title{
+    margin:30px 0 15px;
+}
+
+.stages{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fill,minmax(130px,1fr));
+    gap:10px;
+    padding-bottom:40px;
+}
+
+.stage{
+    background:#14141f;
+    border:1px solid #272738;
+    border-radius:15px;
+    padding:15px 8px;
+    min-height:110px;
+    text-align:center;
+    transition:.2s;
+}
+
+.stage:hover{
+    transform:translateY(-2px);
+    border-color:#7c5cff;
+}
+
+.stage.locked{
+    opacity:.5;
+}
+
+.stage-number{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.stage-level{
+    color:#aaa;
+    font-size:13px;
+    margin:7px 0;
+}
+
+.free{
+    color:#28d17c;
+}
+
+.paid{
+    color:#ffb13b;
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+    z-index:100;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-card{
+    width:min(550px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#13131e;
+    border:1px solid #2b2b3c;
+    border-radius:22px;
+    padding:25px;
+}
+
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.close{
+    background:#242432;
+    color:white;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    background:#0c0c14;
+    border:1px solid #303044;
+    color:white;
+    border-radius:12px;
+    outline:none;
+    margin:7px 0;
+}
+
+input:focus{
+    border-color:#7c5cff;
+}
+
+.otp{
+    direction:ltr;
+    text-align:center;
+    letter-spacing:7px;
+    font-size:25px;
+}
+
+.plan-grid{
+    display:grid;
+    gap:12px;
+}
+
+.plan{
+    background:#191925;
+    border:1px solid #303044;
+    border-radius:16px;
+    padding:17px;
+}
+
+.plan h3{
+    margin-top:0;
+}
+
+.price{
+    font-size:24px;
+    color:#7c5cff;
+    font-weight:bold;
+}
+
+.payment-card{
+    background:#101019;
+    border:1px solid #303044;
+    border-radius:15px;
+    padding:15px;
+    margin:15px 0;
+}
+
+.card-number{
+    direction:ltr;
+    text-align:center;
+    font-size:22px;
+    letter-spacing:2px;
+    color:#7c5cff;
+}
+
+.lesson{
+    background:#13131e;
+    border:1px solid #29293b;
+    border-radius:22px;
+    padding:25px;
+    margin:20px 0 40px;
+}
+
+.english{
+    direction:ltr;
+    text-align:left;
+    font-size:24px;
+    line-height:1.7;
+    background:#0d0d15;
+    border-radius:15px;
+    padding:20px;
+}
+
+.translation{
+    color:#b8b8c8;
+    font-size:17px;
+    margin:15px 0;
+}
+
+.options{
+    display:grid;
+    gap:10px;
+}
+
+.option{
+    padding:14px;
+    border-radius:13px;
+    background:#20202d;
+    color:white;
+    border:1px solid #303044;
+    text-align:right;
+}
+
+.option:hover{
+    border-color:#7c5cff;
+}
+
+.correct{
+    background:#154e36!important;
+    border-color:#28d17c!important;
+}
+
+.wrong{
+    background:#54202c!important;
+    border-color:#d83d5c!important;
+}
+
+.notice{
+    padding:14px;
+    border-radius:13px;
+    background:#191925;
+    color:#bbb;
+    margin:12px 0;
+}
+
+.success{
+    color:#28d17c;
+}
+
+.error{
+    color:#ff5c75;
+}
+
+.hidden{
+    display:none!important;
+}
+
+@media(max-width:650px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .stages{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .stage{
+        min-height:95px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-inner">
+
+<div class="logo">
+English <span>Master</span>
+</div>
+
+<div class="user-area">
+
+<span id="userEmail"></span>
+
+<button
+id="loginButton"
+class="btn"
+onclick="openLogin()">
+ورود
+</button>
+
+<button
+id="logoutButton"
+class="btn danger hidden"
+onclick="logout()">
+خروج
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+<section class="hero">
+
+<h1>
+یادگیری انگلیسی از A1 تا C1
+</h1>
+
+<p>
+۱۰۰۰ مرحله آموزشی از مبتدی تا پیشرفته
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<span
+class="stat-number"
+id="completedCount">
+0
+</span>
+مرحله تکمیل‌شده
+</div>
+
+<div class="stat">
+<span
+class="stat-number">
+100
+</span>
+مرحله رایگان
+</div>
+
+<div class="stat">
+<span
+class="stat-number">
+900
+</span>
+مرحله پولی
+</div>
+
+</div>
+
+</section>
+
+
+<div id="subscriptionStatus"></div>
+
+
+<h2 class="section-title">
+مراحل آموزشی
+</h2>
+
+<div
+id="stages"
+class="stages">
+</div>
+
+</main>
+
+
+<!-- LOGIN MODAL -->
+
+<div
+id="loginModal"
+class="modal">
+
+<div class="modal-card">
+
+<div class="modal-head">
+
+<h2>
+ورود / ثبت‌نام
+</h2>
+
+<button
+class="close"
+onclick="closeModal('loginModal')">
+×
+</button>
+
+</div>
+
+
+<div id="emailStep">
+
+<p>
+برای ورود، Gmail خود را وارد کنید.
+</p>
+
+<input
+id="loginEmail"
+type="email"
+placeholder="example@gmail.com"
+autocomplete="email">
+
+<button
+class="btn"
+style="width:100%;margin-top:10px"
+onclick="sendOTP()">
+
+ارسال کد ۸ رقمی
+
+</button>
+
+</div>
+
+
+<div
+id="otpStep"
+class="hidden">
+
+<p>
+کد ۸ رقمی ارسال‌شده به ایمیل را وارد کنید.
+</p>
+
+<input
+id="otpCode"
+class="otp"
+type="text"
+inputmode="numeric"
+maxlength="8"
+autocomplete="one-time-code"
+placeholder="12345678">
+
+<button
+class="btn"
+style="width:100%;margin-top:10px"
+onclick="verifyOTP()">
+
+تأیید و ورود
+
+</button>
+
+<button
+class="btn secondary"
+style="width:100%;margin-top:8px"
+onclick="backToEmail()">
+
+تغییر ایمیل
+
+</button>
+
+</div>
+
+
+<p
+id="loginMessage"
+class="notice">
+</p>
+
+</div>
+
+</div>
+
+
+<!-- SUBSCRIPTION MODAL -->
+
+<div
+id="subscriptionModal"
+class="modal">
+
+<div class="modal-card">
+
+<div class="modal-head">
+
+<h2>
+خرید اشتراک
+</h2>
+
+<button
+class="close"
+onclick="closeModal('subscriptionModal')">
+×
+</button>
+
+</div>
+
+<div class="notice">
+
+مراحل ۱ تا ۱۰۰ رایگان هستند.
+<br>
+برای مراحل ۱۰۱ تا ۱۰۰۰ باید اشتراک فعال داشته باشید.
+
+</div>
+
+
+<div class="plan-grid">
+
+<div class="plan">
+
+<h3>
+اشتراک یک ماهه
+</h3>
+
+<div class="price">
+۲۵۰٬۰۰۰ تومان
+</div>
+
+<p>
+۳۰ روز
+</p>
+
+<button
+class="btn"
+onclick="selectPlan('month')">
+انتخاب
+</button>
+
+</div>
+
+
+<div class="plan">
+
+<h3>
+اشتراک سه ماهه
+</h3>
+
+<div class="price">
+۴۰۰٬۰۰۰ تومان
+</div>
+
+<p>
+۹۰ روز
+</p>
+
+<button
+class="btn"
+onclick="selectPlan('threeMonth')">
+انتخاب
+</button>
+
+</div>
+
+
+<div class="plan">
+
+<h3>
+اشتراک یک ساله
+</h3>
+
+<div class="price">
+۶۰۰٬۰۰۰ تومان
+</div>
+
+<p>
+۳۶۵ روز
+</p>
+
+<button
+class="btn"
+onclick="selectPlan('year')">
+انتخاب
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PAYMENT MODAL -->
+
+<div
+id="paymentModal"
+class="modal">
+
+<div class="modal-card">
+
+<div class="modal-head">
+
+<h2>
+ثبت پرداخت
+</h2>
+
+<button
+class="close"
+onclick="closeModal('paymentModal')">
+×
+</button>
+
+</div>
+
+<div id="selectedPlanText"></div>
+
+
+<div class="payment-card">
+
+<div>
+شماره کارت:
+</div>
+
+<div class="card-number">
+6119 8619 2115 8506
+</div>
+
+<p>
+پس از کارت‌به‌کارت، شماره پیگیری یا توضیح پرداخت را وارد کنید.
+</p>
+
+</div>
+
+
+<input
+id="paymentReference"
+placeholder="شماره پیگیری / توضیح پرداخت">
+
+
+<button
+class="btn"
+style="width:100%;margin-top:10px"
+onclick="submitPayment()">
+
+ثبت درخواست پرداخت
+
+</button>
+
+
+<div
+id="paymentMessage"
+class="notice">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LESSON MODAL -->
+
+<div
+id="lessonModal"
+class="modal">
+
+<div class="modal-card">
+
+<div class="modal-head">
+
+<h2 id="lessonTitle">
+درس
+</h2>
+
+<button
+class="close"
+onclick="closeModal('lessonModal')">
+×
+</button>
+
+</div>
+
+<div id="lessonContent"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+    "https://nlaqjfimsgcmdsolvmxn.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "YOUR_SUPABASE_ANON_KEY";
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+
+/* =====================================================
+   DATA
+===================================================== */
+
+const FREE_STAGE_LIMIT = 100;
+
+const PLANS = {
+
+    month:{
+        title:"یک ماهه",
+        price:250000,
+        days:30
+    },
+
+    threeMonth:{
+        title:"سه ماهه",
+        price:400000,
+        days:90
+    },
+
+    year:{
+        title:"یک ساله",
+        price:600000,
+        days:365
+    }
+
+};
+
+
+let currentUser = null;
+let selectedPlan = null;
+let currentStage = null;
+
+
+/* =====================================================
+   LEVEL
+===================================================== */
+
+function getLevel(id){
+
+    if(id <= 100)
+        return "A1";
+
+    if(id <= 250)
+        return "A1+";
+
+    if(id <= 400)
+        return "A2";
+
+    if(id <= 550)
+        return "A2+";
+
+    if(id <= 700)
+        return "B1";
+
+    if(id <= 800)
+        return "B1+";
+
+    if(id <= 900)
+        return "B2";
+
+    if(id <= 950)
+        return "B2+";
+
+    return "C1";
+}
+
+
+/* =====================================================
+   STAGE GENERATOR
+===================================================== */
+
+function createLesson(id){
+
+    const level = getLevel(id);
+
+    const words = [
+
+        ["Hello","سلام"],
+        ["Good morning","صبح بخیر"],
+        ["Thank you","متشکرم"],
+        ["Please","لطفاً"],
+        ["Friend","دوست"],
+        ["School","مدرسه"],
+        ["Book","کتاب"],
+        ["Water","آب"],
+        ["Food","غذا"],
+        ["House","خانه"],
+        ["Family","خانواده"],
+        ["Happy","خوشحال"],
+        ["Important","مهم"],
+        ["Beautiful","زیبا"],
+        ["Learn","یاد گرفتن"]
+
+    ];
+
+    const word =
+        words[(id - 1) % words.length];
+
+    const sentences = {
+
+        "A1":
+            `I learn English every day.`,
+
+        "A1+":
+            `I usually practice English with my friends.`,
+
+        "A2":
+            `Yesterday, I went to school and studied English.`,
+
+        "A2+":
+            `I have been learning English because I want to communicate better.`,
+
+        "B1":
+            `I think learning English can help me communicate with people around the world.`,
+
+        "B1+":
+            `Although learning a language takes time, regular practice can make a big difference.`,
+
+        "B2":
+            `People who practice consistently tend to develop stronger communication skills over time.`,
+
+        "B2+":
+            `Understanding context is essential when interpreting complex English conversations.`,
+
+        "C1":
+            `Developing advanced language proficiency requires consistent exposure to sophisticated vocabulary and authentic communication.`
+
+    };
+
+    return {
+
+        id:id,
+
+        level:level,
+
+        word:word[0],
+
+        translation:word[1],
+
+        sentence:
+            sentences[level]
+
+    };
+
+}
+
+
+/* =====================================================
+   STAGES UI
+===================================================== */
+
+function renderStages(){
+
+    const container =
+        document.getElementById("stages");
+
+    container.innerHTML = "";
+
+    for(let i=1;i<=1000;i++){
+
+        const div =
+            document.createElement("div");
+
+        div.className =
+            "stage";
+
+        if(i > FREE_STAGE_LIMIT){
+
+            div.classList.add("locked");
+
+        }
+
+        const level =
+            getLevel(i);
+
+        const isFree =
+            i <= FREE_STAGE_LIMIT;
+
+        div.innerHTML = `
+
+            <div class="stage-number">
+                ${i}
+            </div>
+
+            <div class="stage-level">
+                ${level}
+            </div>
+
+            <div class="${isFree ? "free" : "paid"}">
+                ${isFree ? "رایگان" : "🔒 پولی"}
+            </div>
+
+        `;
+
+        div.onclick =
+            () => openStage(i);
+
+        container.appendChild(div);
+
+    }
+
+}
+
+
+/* =====================================================
+   AUTH
+===================================================== */
+
+async function sendOTP(){
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+    if(!email.endsWith("@gmail.com")){
+
+        message.textContent =
+            "فقط آدرس Gmail مجاز است.";
+
+        message.className =
+            "notice error";
+
+        return;
+
+    }
+
+
+    message.textContent =
+        "در حال ارسال کد...";
+
+    message.className =
+        "notice";
+
+
+    const {
+        error
+    } =
+        await supabaseClient.auth.signInWithOtp({
+
+            email:email,
+
+            options:{
+                shouldCreateUser:true
+            }
+
+        });
+
+
+    if(error){
+
+        console.error(error);
+
+        message.textContent =
+            error.message;
+
+        message.className =
+            "notice error";
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("emailStep")
+        .classList.add("hidden");
+
+    document
+        .getElementById("otpStep")
+        .classList.remove("hidden");
+
+
+    message.textContent =
+        "کد ۸ رقمی به Gmail شما ارسال شد.";
+
+    message.className =
+        "notice success";
+
+}
+
+
+/* =====================================================
+   VERIFY OTP
+===================================================== */
+
+async function verifyOTP(){
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const code =
+        document
+        .getElementById("otpCode")
+        .value
+        .trim();
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+    if(!/^\d{8}$/.test(code)){
+
+        message.textContent =
+            "کد باید دقیقاً ۸ رقم باشد.";
+
+        message.className =
+            "notice error";
+
+        return;
+
+    }
+
+
+    message.textContent =
+        "در حال بررسی کد...";
+
+    message.className =
+        "notice";
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient.auth.verifyOtp({
+
+            email:email,
+
+            token:code,
+
+            type:"email"
+
+        });
+
+
+    if(error){
+
+        console.error(error);
+
+        message.textContent =
+            "کد اشتباه یا منقضی شده است.";
+
+        message.className =
+            "notice error";
+
+        return;
+
+    }
+
+
+    currentUser =
+        data.user;
+
+
+    closeModal("loginModal");
+
+    await updateUserUI();
+
+}
+
+
+/* =====================================================
+   SESSION
+===================================================== */
+
+async function loadUser(){
+
+    const {
+        data
+    } =
+        await supabaseClient.auth.getUser();
+
+    currentUser =
+        data?.user || null;
+
+    await updateUserUI();
+
+}
+
+
+async function updateUserUI(){
+
+    const emailElement =
+        document.getElementById("userEmail");
+
+    const loginButton =
+        document.getElementById("loginButton");
+
+    const logoutButton =
+        document.getElementById("logoutButton");
+
+
+    if(!currentUser){
+
+        emailElement.textContent =
+            "";
+
+        loginButton.classList.remove(
+            "hidden"
+        );
+
+        logoutButton.classList.add(
+            "hidden"
+        );
+
+        document
+            .getElementById(
+                "subscriptionStatus"
+            )
+            .innerHTML = "";
+
+        return;
+
+    }
+
+
+    emailElement.textContent =
+        currentUser.email;
+
+    loginButton.classList.add(
+        "hidden"
+    );
+
+    logoutButton.classList.remove(
+        "hidden"
+    );
+
+
+    await showSubscriptionStatus();
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function logout(){
+
+    await supabaseClient.auth.signOut();
+
+    currentUser = null;
+
+    await updateUserUI();
+
+}
+
+
+/* =====================================================
+   SUBSCRIPTION
+===================================================== */
+
+async function hasActiveSubscription(){
+
+    if(!currentUser)
+        return false;
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .rpc(
+            "has_active_subscription",
+            {
+                p_user_id:
+                    currentUser.id
+            }
+        );
+
+
+    if(error){
+
+        console.error(error);
+
+        return false;
+
+    }
+
+
+    return data === true;
+
+}
+
+
+/* =====================================================
+   SUBSCRIPTION STATUS
+===================================================== */
+
+async function showSubscriptionStatus(){
+
+    const box =
+        document.getElementById(
+            "subscriptionStatus"
+        );
+
+
+    if(!currentUser){
+
+        box.innerHTML = "";
+
+        return;
+
+    }
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .rpc(
+            "get_my_subscription"
+        );
+
+
+    if(error){
+
+        console.error(error);
+
+        return;
+
+    }
+
+
+    if(!data || data.active === false){
+
+        box.innerHTML = `
+
+            <div class="notice">
+
+                شما اشتراک فعال ندارید.
+
+                <button
+                    class="btn"
+                    onclick="openSubscription()"
+                    style="margin-right:10px">
+
+                    خرید اشتراک
+
+                </button>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const expire =
+        new Date(
+            data.expires_at
+        ).toLocaleDateString(
+            "fa-IR"
+        );
+
+
+    box.innerHTML = `
+
+        <div class="notice success">
+
+            اشتراک فعال:
+            ${data.plan}
+
+            <br>
+
+            تاریخ پایان:
+            ${expire}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   OPEN STAGE
+===================================================== */
+
+async function openStage(id){
+
+    currentStage = id;
+
+
+    if(id <= FREE_STAGE_LIMIT){
+
+        showLesson(id);
+
+        return;
+
+    }
+
+
+    if(!currentUser){
+
+        openLogin();
+
+        return;
+
+    }
+
+
+    const active =
+        await hasActiveSubscription();
+
+
+    if(!active){
+
+        openSubscription();
+
+        return;
+
+    }
+
+
+    showLesson(id);
+
+}
+
+
+/* =====================================================
+   LESSON
+===================================================== */
+
+function showLesson(id){
+
+    const lesson =
+        createLesson(id);
+
+
+    document
+        .getElementById("lessonTitle")
+        .textContent =
+            `مرحله ${id} — ${lesson.level}`;
+
+
+    document
+        .getElementById("lessonContent")
+        .innerHTML = `
+
+        <div class="lesson">
+
+            <p>
+                کلمه امروز:
+            </p>
+
+            <div class="english">
+                ${lesson.word}
+
+                <button
+                    class="btn"
+                    onclick="speakEnglish('${escapeJS(lesson.word)}')">
+                    🔊 تلفظ
+                </button>
+
+            </div>
+
+            <div class="translation">
+                ${lesson.translation}
+            </div>
+
+
+            <p>
+                جمله:
+            </p>
+
+            <div class="english">
+                ${lesson.sentence}
+
+                <button
+                    class="btn"
+                    onclick="speakEnglish('${escapeJS(lesson.sentence)}')">
+                    🔊 تلفظ
+                </button>
+
+            </div>
+
+
+            <div class="translation">
+
+                ترجمه:
+                ${lesson.translation}
+
+            </div>
+
+
+            <button
+                class="btn"
+                onclick="completeStage(${id})">
+
+                تکمیل مرحله
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    openModal("lessonModal");
+
+}
+
+
+/* =====================================================
+   COMPLETE STAGE
+===================================================== */
+
+function completeStage(id){
+
+    let completed =
+        JSON.parse(
+            localStorage.getItem(
+                "english_completed"
+            ) || "[]"
+        );
+
+
+    if(!completed.includes(id)){
+
+        completed.push(id);
+
+    }
+
+
+    localStorage.setItem(
+        "english_completed",
+        JSON.stringify(completed)
+    );
+
+
+    document
+        .getElementById(
+            "completedCount"
+        )
+        .textContent =
+            completed.length;
+
+
+    alert(
+        "مرحله با موفقیت تکمیل شد."
+    );
+
+}
+
+
+/* =====================================================
+   PAYMENT
+===================================================== */
+
+function selectPlan(plan){
+
+    selectedPlan = plan;
+
+    const info =
+        PLANS[plan];
+
+
+    document
+        .getElementById(
+            "selectedPlanText"
+        )
+        .innerHTML = `
+
+        <div class="notice">
+
+            اشتراک انتخاب‌شده:
+            <strong>
+                ${info.title}
+            </strong>
+
+            <br>
+
+            مبلغ:
+            <strong>
+                ${info.price.toLocaleString("fa-IR")}
+                تومان
+            </strong>
+
+        </div>
+
+    `;
+
+
+    closeModal(
+        "subscriptionModal"
+    );
+
+    openModal(
+        "paymentModal"
+    );
+
+}
+
+
+/* =====================================================
+   SUBMIT PAYMENT
+===================================================== */
+
+async function submitPayment(){
+
+    if(!currentUser){
+
+        closeModal("paymentModal");
+
+        openLogin();
+
+        return;
+
+    }
+
+
+    if(!selectedPlan){
+
+        return;
+
+    }
+
+
+    const reference =
+        document
+        .getElementById(
+            "paymentReference"
+        )
+        .value
+        .trim();
+
+
+    const info =
+        PLANS[selectedPlan];
+
+
+    const message =
+        document.getElementById(
+            "paymentMessage"
+        );
+
+
+    message.textContent =
+        "در حال ثبت درخواست...";
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+        .from("payment_requests")
+        .insert({
+
+            user_id:
+                currentUser.id,
+
+            plan:
+                selectedPlan,
+
+            amount:
+                info.price,
+
+            payment_reference:
+                reference || null
+
+        });
+
+
+    if(error){
+
+        console.error(error);
+
+        message.textContent =
+            error.message;
+
+        message.className =
+            "notice error";
+
+        return;
+
+    }
+
+
+    message.textContent =
+        "درخواست پرداخت ثبت شد. پس از بررسی ادمین اشتراک فعال می‌شود.";
+
+    message.className =
+        "notice success";
+
+
+    document
+        .getElementById(
+            "paymentReference"
+        )
+        .value = "";
+
+}
+
+
+/* =====================================================
+   TTS
+===================================================== */
+
+let englishVoice = null;
+
+
+function loadVoices(){
+
+    const voices =
+        speechSynthesis.getVoices();
+
+    englishVoice =
+        voices.find(
+            v =>
+                v.lang &&
+                v.lang
+                .toLowerCase()
+                .startsWith("en") &&
+                v.name
+                .toLowerCase()
+                .includes("google")
+        );
+
+    if(!englishVoice){
+
+        englishVoice =
+            voices.find(
+                v =>
+                    v.lang &&
+                    v.lang
+                    .toLowerCase()
+                    .startsWith("en")
+            );
+
+    }
+
+}
+
+
+if("speechSynthesis" in window){
+
+    loadVoices();
+
+    speechSynthesis.onvoiceschanged =
+        loadVoices;
+
+}
+
+
+function speakEnglish(text){
+
+    if(!text)
+        return;
+
+
+    if(!("speechSynthesis" in window)){
+
+        alert(
+            "قابلیت تلفظ در این دستگاه فعال نیست."
+        );
+
+        return;
+
+    }
+
+
+    speechSynthesis.cancel();
+
+
+    const utterance =
+        new SpeechSynthesisUtterance(
+            text
+        );
+
+
+    utterance.lang =
+        "en-US";
+
+    utterance.rate =
+        .82;
+
+    utterance.pitch =
+        1;
+
+    utterance.volume =
+        1;
+
+
+    if(englishVoice){
+
+        utterance.voice =
+            englishVoice;
+
+    }
+
+
+    speechSynthesis.speak(
+        utterance
+    );
+
+}
+
+
+/* =====================================================
+   MODALS
+===================================================== */
+
+function openModal(id){
+
+    document
+        .getElementById(id)
+        .classList.add("show");
+
+}
+
+
+function closeModal(id){
+
+    document
+        .getElementById(id)
+        .classList.remove("show");
+
+}
+
+
+function openLogin(){
+
+    document
+        .getElementById("loginModal")
+        .classList.add("show");
+
+}
+
+
+function openSubscription(){
+
+    if(!currentUser){
+
+        openLogin();
+
+        return;
+
+    }
+
+    openModal(
+        "subscriptionModal"
+    );
+
+}
+
+
+function backToEmail(){
+
+    document
+        .getElementById("otpStep")
+        .classList.add("hidden");
+
+    document
+        .getElementById("emailStep")
+        .classList.remove("hidden");
+
+}
+
+
+/* =====================================================
+   ESCAPE
+===================================================== */
+
+function escapeJS(value){
+
+    return String(value)
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'")
+        .replace(/"/g,"&quot;");
+
+}
+
+
+/* =====================================================
+   AUTH STATE
+===================================================== */
+
+supabaseClient
+.auth
+.onAuthStateChange(
+    async (event,session) => {
+
+        currentUser =
+            session?.user || null;
+
+        await updateUserUI();
+
+    }
+);
+
+
+/* =====================================================
+   INIT
+===================================================== */
+
+renderStages();
+
+loadUser();
+
+</script>
+
+</body>
+</html>
