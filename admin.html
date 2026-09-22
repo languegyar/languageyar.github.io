@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>پنل مدیریت | English Master</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#09090f;
+    color:white;
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+}
+
+.container{
+    width:min(1100px,94%);
+    margin:auto;
+}
+
+header{
+    background:#11111b;
+    border-bottom:1px solid #29293a;
+    padding:20px 0;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+h1{
+    margin:0;
+    font-size:23px;
+}
+
+button{
+    border:0;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.btn{
+    background:#7c5cff;
+    color:white;
+    padding:11px 17px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.btn.red{
+    background:#d83d5c;
+}
+
+.btn.green{
+    background:#20b86a;
+}
+
+.btn.gray{
+    background:#292938;
+}
+
+.login{
+    max-width:450px;
+    margin:80px auto;
+    background:#13131e;
+    border:1px solid #29293a;
+    border-radius:20px;
+    padding:25px;
+}
+
+input{
+    width:100%;
+    background:#0c0c14;
+    border:1px solid #303044;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    margin:7px 0;
+    outline:none;
+}
+
+.otp{
+    direction:ltr;
+    text-align:center;
+    letter-spacing:7px;
+    font-size:25px;
+}
+
+.hidden{
+    display:none!important;
+}
+
+.notice{
+    background:#171722;
+    border:1px solid #29293a;
+    padding:15px;
+    border-radius:15px;
+    margin:15px 0;
+}
+
+.error{
+    color:#ff5c75;
+}
+
+.success{
+    color:#28d17c;
+}
+
+.dashboard{
+    padding:30px 0;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.card{
+    background:#13131e;
+    border:1px solid #29293a;
+    border-radius:18px;
+    padding:20px;
+}
+
+.number{
+    font-size:28px;
+    color:#7c5cff;
+    font-weight:bold;
+}
+
+.table-wrap{
+    overflow:auto;
+    background:#13131e;
+    border:1px solid #29293a;
+    border-radius:18px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:900px;
+}
+
+th,
+td{
+    padding:14px;
+    border-bottom:1px solid #29293a;
+    text-align:right;
+}
+
+th{
+    background:#181824;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:8px;
+    background:#292938;
+}
+
+.pending{
+    color:#ffbd4a;
+}
+
+.approved{
+    color:#28d17c;
+}
+
+.rejected{
+    color:#ff5c75;
+}
+
+.actions{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+@media(max-width:700px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="container header">
+
+<h1>
+پنل مدیریت English Master
+</h1>
+
+<div>
+
+<span id="adminEmail"></span>
+
+<button
+id="logoutButton"
+class="btn red hidden"
+onclick="logout()">
+
+خروج
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- LOGIN -->
+
+<div
+id="loginBox"
+class="login">
+
+<h2>
+ورود مدیر
+</h2>
+
+<p>
+فقط حسابی که در جدول
+admin_users
+ثبت شده باشد می‌تواند وارد شود.
+</p>
+
+
+<div id="emailStep">
+
+<input
+id="email"
+type="email"
+placeholder="admin@gmail.com"
+autocomplete="email">
+
+
+<button
+class="btn"
+style="width:100%"
+onclick="sendOTP()">
+
+ارسال کد
+
+</button>
+
+</div>
+
+
+<div
+id="otpStep"
+class="hidden">
+
+<input
+id="otp"
+class="otp"
+type="text"
+inputmode="numeric"
+maxlength="8"
+placeholder="12345678">
+
+
+<button
+class="btn"
+style="width:100%"
+onclick="verifyOTP()">
+
+ورود
+
+</button>
+
+</div>
+
+
+<div
+id="message"
+class="notice">
+</div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div
+id="dashboard"
+class="dashboard hidden">
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="number"
+id="pendingCount">
+0
+</div>
+
+درخواست‌های در انتظار
+
+</div>
+
+
+<div class="card">
+
+<div class="number"
+id="approvedCount">
+0
+</div>
+
+پرداخت‌های تأییدشده
+
+</div>
+
+
+<div class="card">
+
+<div class="number"
+id="subscriptionCount">
+0
+</div>
+
+اشتراک‌های فعال
+
+</div>
+
+</div>
+
+
+<div
+id="adminMessage"
+class="notice">
+</div>
+
+
+<h2>
+درخواست‌های پرداخت
+</h2>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>شناسه</th>
+
+<th>کاربر</th>
+
+<th>پلن</th>
+
+<th>مبلغ</th>
+
+<th>پیگیری</th>
+
+<th>وضعیت</th>
+
+<th>تاریخ</th>
+
+<th>عملیات</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="paymentTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<br>
+
+
+<h2>
+اشتراک‌ها
+</h2>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>شناسه</th>
+
+<th>کاربر</th>
+
+<th>پلن</th>
+
+<th>شروع</th>
+
+<th>پایان</th>
+
+<th>وضعیت</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="subscriptionTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+    "https://nlaqjfimsgcmdsolvmxn.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "YOUR_SUPABASE_ANON_KEY";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+
+let currentUser = null;
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(text,error=false){
+
+    const box =
+        document.getElementById(
+            "message"
+        );
+
+    box.textContent = text;
+
+    box.className =
+        error
+        ? "notice error"
+        : "notice";
+
+}
+
+
+/* =====================================================
+   SEND OTP
+===================================================== */
+
+async function sendOTP(){
+
+    const email =
+        document
+        .getElementById("email")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    if(!email.endsWith("@gmail.com")){
+
+        showMessage(
+            "فقط Gmail مجاز است.",
+            true
+        );
+
+        return;
+
+    }
+
+
+    showMessage(
+        "در حال ارسال کد..."
+    );
+
+
+    const {
+        error
+    } =
+        await supabaseClient.auth.signInWithOtp({
+
+            email:email,
+
+            options:{
+                shouldCreateUser:false
+            }
+
+        });
+
+
+    if(error){
+
+        console.error(error);
+
+        showMessage(
+            error.message,
+            true
+        );
+
+        return;
+
+    }
+
+
+    document
+        .getElementById(
+            "emailStep"
+        )
+        .classList.add("hidden");
+
+
+    document
+        .getElementById(
+            "otpStep"
+        )
+        .classList.remove("hidden");
+
+
+    showMessage(
+        "کد ۸ رقمی ارسال شد."
+    );
+
+}
+
+
+/* =====================================================
+   VERIFY
+===================================================== */
+
+async function verifyOTP(){
+
+    const email =
+        document
+        .getElementById("email")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    const token =
+        document
+        .getElementById("otp")
+        .value
+        .trim();
+
+
+    if(!/^\d{8}$/.test(token)){
+
+        showMessage(
+            "کد باید ۸ رقمی باشد.",
+            true
+        );
+
+        return;
+
+    }
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient.auth.verifyOtp({
+
+            email:email,
+
+            token:token,
+
+            type:"email"
+
+        });
+
+
+    if(error){
+
+        console.error(error);
+
+        showMessage(
+            "کد اشتباه یا منقضی شده است.",
+            true
+        );
+
+        return;
+
+    }
+
+
+    currentUser =
+        data.user;
+
+
+    await checkAdmin();
+
+}
+
+
+/* =====================================================
+   ADMIN CHECK
+===================================================== */
+
+async function checkAdmin(){
+
+    if(!currentUser){
+
+        showMessage(
+            "ورود انجام نشده.",
+            true
+        );
+
+        return;
+
+    }
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .rpc("is_admin");
+
+
+    if(error){
+
+        console.error(error);
+
+        await supabaseClient.auth.signOut();
+
+        showMessage(
+            "خطا در بررسی دسترسی مدیر.",
+            true
+        );
+
+        return;
+
+    }
+
+
+    if(data !== true){
+
+        await supabaseClient.auth.signOut();
+
+        showMessage(
+            "این حساب مدیر نیست.",
+            true
+        );
+
+        return;
+
+    }
+
+
+    document
+        .getElementById(
+            "loginBox"
+        )
+        .classList.add("hidden");
+
+
+    document
+        .getElementById(
+            "dashboard"
+        )
+        .classList.remove("hidden");
+
+
+    document
+        .getElementById(
+            "logoutButton"
+        )
+        .classList.remove("hidden");
+
+
+    document
+        .getElementById(
+            "adminEmail"
+        )
+        .textContent =
+            currentUser.email;
+
+
+    await loadDashboard();
+
+}
+
+
+/* =====================================================
+   LOAD PAYMENTS
+===================================================== */
+
+async function loadPayments(){
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .from("payment_requests")
+        .select("*")
+        .order(
+            "created_at",
+            {
+                ascending:false
+            }
+        );
+
+
+    if(error){
+
+        console.error(error);
+
+        return [];
+
+    }
+
+
+    return data || [];
+
+}
+
+
+/* =====================================================
+   LOAD USERS
+===================================================== */
+
+async function loadProfiles(ids){
+
+    if(!ids.length)
+        return {};
+
+
+    const uniqueIds =
+        [...new Set(ids)];
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .from("profiles")
+        .select("id,email")
+        .in(
+            "id",
+            uniqueIds
+        );
+
+
+    if(error){
+
+        console.error(error);
+
+        return {};
+
+    }
+
+
+    const result = {};
+
+
+    for(const profile of data || []){
+
+        result[profile.id] =
+            profile.email;
+
+    }
+
+
+    return result;
+
+}
+
+
+/* =====================================================
+   PAYMENT TABLE
+===================================================== */
+
+async function renderPayments(){
+
+    const payments =
+        await loadPayments();
+
+
+    const ids =
+        payments.map(
+            p => p.user_id
+        );
+
+
+    const profiles =
+        await loadProfiles(ids);
+
+
+    const table =
+        document.getElementById(
+            "paymentTable"
+        );
+
+
+    table.innerHTML = "";
+
+
+    let pending = 0;
+    let approved = 0;
+
+
+    for(const payment of payments){
+
+        if(payment.status === "pending")
+            pending++;
+
+        if(payment.status === "approved")
+            approved++;
+
+
+        const row =
+            document.createElement("tr");
+
+
+        let action = "";
+
+
+        if(payment.status === "pending"){
+
+            action = `
+
+                <div class="actions">
+
+                    <button
+                        class="btn green"
+                        onclick="approvePayment(${payment.id})">
+
+                        تأیید
+
+                    </button>
+
+                    <button
+                        class="btn red"
+                        onclick="rejectPayment(${payment.id})">
+
+                        رد
+
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+        else{
+
+            action = "-";
+
+        }
+
+
+        const date =
+            new Date(
+                payment.created_at
+            ).toLocaleString(
+                "fa-IR"
+            );
+
+
+        row.innerHTML = `
+
+            <td>
+                ${payment.id}
+            </td>
+
+            <td>
+                ${profiles[payment.user_id] || payment.user_id}
+            </td>
+
+            <td>
+                ${planName(payment.plan)}
+            </td>
+
+            <td>
+                ${Number(payment.amount)
+                    .toLocaleString("fa-IR")}
+                تومان
+            </td>
+
+            <td>
+                ${payment.payment_reference || "-"}
+            </td>
+
+            <td>
+                <span class="badge ${payment.status}">
+                    ${statusName(payment.status)}
+                </span>
+            </td>
+
+            <td>
+                ${date}
+            </td>
+
+            <td>
+                ${action}
+            </td>
+
+        `;
+
+
+        table.appendChild(row);
+
+    }
+
+
+    document
+        .getElementById(
+            "pendingCount"
+        )
+        .textContent =
+            pending;
+
+
+    document
+        .getElementById(
+            "approvedCount"
+        )
+        .textContent =
+            approved;
+
+}
+
+
+/* =====================================================
+   LOAD SUBSCRIPTIONS
+===================================================== */
+
+async function renderSubscriptions(){
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .from("subscriptions")
+        .select("*")
+        .order(
+            "created_at",
+            {
+                ascending:false
+            }
+        );
+
+
+    if(error){
+
+        console.error(error);
+
+        return;
+
+    }
+
+
+    const ids =
+        (data || []).map(
+            x => x.user_id
+        );
+
+
+    const profiles =
+        await loadProfiles(ids);
+
+
+    const table =
+        document.getElementById(
+            "subscriptionTable"
+        );
+
+
+    table.innerHTML = "";
+
+
+    let active = 0;
+
+
+    for(const sub of data || []){
+
+        const isActive =
+            sub.status === "approved" &&
+            sub.expires_at &&
+            new Date(
+                sub.expires_at
+            ) > new Date();
+
+
+        if(isActive)
+            active++;
+
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>
+                ${sub.id}
+            </td>
+
+            <td>
+                ${profiles[sub.user_id] || sub.user_id}
+            </td>
+
+            <td>
+                ${planName(sub.plan)}
+            </td>
+
+            <td>
+                ${formatDate(sub.starts_at)}
+            </td>
+
+            <td>
+                ${formatDate(sub.expires_at)}
+            </td>
+
+            <td>
+                ${statusName(sub.status)}
+            </td>
+
+        `;
+
+
+        table.appendChild(row);
+
+    }
+
+
+    document
+        .getElementById(
+            "subscriptionCount"
+        )
+        .textContent =
+            active;
+
+}
+
+
+/* =====================================================
+   APPROVE
+===================================================== */
+
+async function approvePayment(id){
+
+    if(!confirm(
+        "این پرداخت تأیید شود؟"
+    )){
+
+        return;
+
+    }
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .rpc(
+            "approve_payment",
+            {
+                p_payment_id:id
+            }
+        );
+
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "پرداخت تأیید شد و اشتراک فعال شد."
+    );
+
+
+    await loadDashboard();
+
+}
+
+
+/* =====================================================
+   REJECT
+===================================================== */
+
+async function rejectPayment(id){
+
+    if(!confirm(
+        "این پرداخت رد شود؟"
+    )){
+
+        return;
+
+    }
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .rpc(
+            "reject_payment",
+            {
+                p_payment_id:id
+            }
+        );
+
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "پرداخت رد شد."
+    );
+
+
+    await loadDashboard();
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+async function loadDashboard(){
+
+    const message =
+        document.getElementById(
+            "adminMessage"
+        );
+
+
+    message.textContent =
+        "در حال بروزرسانی...";
+
+
+    await renderPayments();
+
+    await renderSubscriptions();
+
+
+    message.textContent =
+        "اطلاعات بروزرسانی شد.";
+
+}
+
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+function planName(plan){
+
+    if(plan === "month")
+        return "یک ماهه";
+
+    if(plan === "threeMonth")
+        return "سه ماهه";
+
+    if(plan === "year")
+        return "یک ساله";
+
+    return plan;
+
+}
+
+
+function statusName(status){
+
+    if(status === "pending")
+        return "در انتظار";
+
+    if(status === "approved")
+        return "تأیید شده";
+
+    if(status === "rejected")
+        return "رد شده";
+
+    if(status === "expired")
+        return "منقضی";
+
+    return status;
+
+}
+
+
+function formatDate(date){
+
+    if(!date)
+        return "-";
+
+    return new Date(date)
+        .toLocaleString(
+            "fa-IR"
+        );
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function logout(){
+
+    await supabaseClient.auth.signOut();
+
+    currentUser = null;
+
+    document
+        .getElementById(
+            "dashboard"
+        )
+        .classList.add("hidden");
+
+    document
+        .getElementById(
+            "loginBox"
+        )
+        .classList.remove("hidden");
+
+    document
+        .getElementById(
+            "logoutButton"
+        )
+        .classList.add("hidden");
+
+}
+
+
+/* =====================================================
+   SESSION CHECK
+===================================================== */
+
+supabaseClient
+.auth
+.onAuthStateChange(
+    async (event,session) => {
+
+        currentUser =
+            session?.user || null;
+
+    }
+);
+
+
+/* =====================================================
+   INIT
+===================================================== */
+
+(async function(){
+
+    const {
+        data
+    } =
+        await supabaseClient.auth.getUser();
+
+
+    if(data?.user){
+
+        currentUser =
+            data.user;
+
+        await checkAdmin();
+
+    }
+
+})();
+
+</script>
+
+</body>
+</html>
