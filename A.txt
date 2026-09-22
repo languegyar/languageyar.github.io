@@ -1,0 +1,1886 @@
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش اول: درس 1 تا 10 + آزمون
+==================================================
+
+=== درس 1 (A1) ===
+معنی‌ها:
+1. Hello = سلام
+2. Goodbye = خداحافظ
+3. Please = لطفاً
+4. Thank you = ممنون
+5. Sorry = ببخشید
+
+مکالمه:
+A: Hello!
+B: Hello! How are you?
+A: I'm fine, thank you. And you?
+B: I'm fine, too.
+
+=== درس 2 (A1) ===
+معنی‌ها:
+1. Yes = بله
+2. No = نه
+3. Maybe = شاید
+4. OK = باشه
+5. Sure = حتماً
+
+مکالمه:
+A: Are you a student?
+B: Yes, I am.
+A: Are you tired?
+B: No, I'm not.
+
+=== درس 3 (A1) ===
+معنی‌ها:
+1. Name = اسم
+2. Friend = دوست
+3. Family = خانواده
+4. Home = خانه
+5. School = مدرسه
+
+مکالمه:
+A: What's your name?
+B: My name is Ali.
+A: Who is he?
+B: He is my friend.
+
+=== درس 4 (A1) ===
+معنی‌ها:
+1. Water = آب
+2. Bread = نان
+3. Apple = سیب
+4. Milk = شیر
+5. Tea = چای
+
+مکالمه:
+A: I want water, please.
+B: Here you are.
+A: Thank you.
+B: You're welcome.
+
+=== درس 5 (A1) ===
+معنی‌ها:
+1. Big = بزرگ
+2. Small = کوچک
+3. New = جدید
+4. Old = قدیمی
+5. Good = خوب
+
+مکالمه:
+A: Is this your book?
+B: Yes, it's my new book.
+A: Is it big?
+B: No, it's small.
+
+=== درس 6 (A1) ===
+معنی‌ها:
+1. Go = رفتن
+2. Come = آمدن
+3. Eat = خوردن
+4. Drink = نوشیدن
+5. Sleep = خوابیدن
+
+مکالمه:
+A: Let's go to the park.
+B: OK. I want to eat.
+A: Me too. Let's drink tea first.
+B: Good idea.
+
+=== درس 7 (A1) ===
+معنی‌ها:
+1. Red = قرمز
+2. Blue = آبی
+3. Green = سبز
+4. Black = سیاه
+5. White = سفید
+
+مکالمه:
+A: What color is your bag?
+B: It's blue.
+A: And your shoes?
+B: They are black.
+
+=== درس 8 (A1) ===
+معنی‌ها:
+1. Mother = مادر
+2. Father = پدر
+3. Brother = برادر
+4. Sister = خواهر
+5. Baby = نوزاد
+
+مکالمه:
+A: Who is she?
+B: She is my mother.
+A: Do you have a brother?
+B: Yes, I have one brother.
+
+=== درس 9 (A1) ===
+معنی‌ها:
+1. Morning = صبح
+2. Afternoon = بعدازظهر
+3. Evening = عصر
+4. Night = شب
+5. Today = امروز
+
+مکالمه:
+A: Good morning!
+B: Good morning! How are you today?
+A: I'm good. See you in the evening.
+B: See you!
+
+=== درس 10 (A1) ===
+معنی‌ها:
+1. Happy = خوشحال
+2. Sad = غمگین
+3. Hot = گرم
+4. Cold = سرد
+5. Tired = خسته
+
+مکالمه:
+A: Are you happy?
+B: No, I'm sad.
+A: Why?
+B: I'm tired and it's cold.
+
+==================================================
+        آزمون درس 1 تا 10 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Hello = ..........
+2. Thank you = ..........
+3. Friend = ..........
+4. Water = ..........
+5. Big = ..........
+6. Sleep = ..........
+7. Red = ..........
+8. Sister = ..........
+9. Night = ..........
+10. Happy = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: Good morning!
+B: Good ..........!
+A: How are you ..........?
+B: I'm .........., thank you.
+A: What's your ..........?
+B: My name .......... Ali.
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: Hello! Are you a student?
+B: Yes, I am. And you?
+A: No, I'm a teacher.
+B: Nice to meet you.
+A: Nice to meet you, too.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Hello / name / friend / happy / today
+
+==================================================
+        پایان بخش اول – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش دوم: درس 11 تا 20 + آزمون
+==================================================
+
+=== درس 11 (A1) ===
+معنی‌ها:
+1. Book = کتاب
+2. Pen = خودکار
+3. Table = میز
+4. Chair = صندلی
+5. Door = در
+
+مکالمه:
+A: What's this?
+B: It's a book.
+A: And what's that?
+B: It's a pen.
+
+=== درس 12 (A1) ===
+معنی‌ها:
+1. Man = مرد
+2. Woman = زن
+3. Boy = پسر
+4. Girl = دختر
+5. Child = بچه
+
+مکالمه:
+A: Who is that man?
+B: He is my father.
+A: And the woman?
+B: She is my mother.
+
+=== درس 13 (A1) ===
+معنی‌ها:
+1. Hand = دست
+2. Eye = چشم
+3. Head = سر
+4. Foot = پا
+5. Hair = مو
+
+مکالمه:
+A: What's this?
+B: It's my hand.
+A: And these?
+B: They are my eyes.
+
+=== درس 14 (A1) ===
+معنی‌ها:
+1. City = شهر
+2. Street = خیابان
+3. Car = ماشین
+4. Bus = اتوبوس
+5. Shop = مغازه
+
+مکالمه:
+A: Where do you live?
+B: I live in a big city.
+A: Is there a shop near your home?
+B: Yes, there is.
+
+=== درس 15 (A1) ===
+معنی‌ها:
+1. Open = باز کردن
+2. Close = بستن
+3. Read = خواندن
+4. Write = نوشتن
+5. Listen = گوش دادن
+
+مکالمه:
+A: Please open the door.
+B: OK. Should I close the window too?
+A: Yes, please. And listen to me.
+B: I'm listening.
+
+=== درس 16 (A1) ===
+معنی‌ها:
+1. Monday = دوشنبه
+2. Tuesday = سه‌شنبه
+3. Wednesday = چهارشنبه
+4. Thursday = پنجشنبه
+5. Friday = جمعه
+
+مکالمه:
+A: What day is it today?
+B: It's Monday.
+A: Do you work on Friday?
+B: No, I don't.
+
+=== درس 17 (A1) ===
+معنی‌ها:
+1. Breakfast = صبحانه
+2. Lunch = ناهار
+3. Dinner = شام
+4. Food = غذا
+5. Restaurant = رستوران
+
+مکالمه:
+A: What do you eat for breakfast?
+B: I eat bread and cheese.
+A: Let's go to a restaurant for dinner.
+B: Good idea!
+
+=== درس 18 (A1) ===
+معنی‌ها:
+1. Run = دویدن
+2. Walk = راه رفتن
+3. Play = بازی کردن
+4. Work = کار کردن
+5. Study = درس خواندن
+
+مکالمه:
+A: What do you do in the morning?
+B: I run in the park.
+A: Do you study at night?
+B: Yes, I study English.
+
+=== درس 19 (A1) ===
+معنی‌ها:
+1. Beautiful = زیبا
+2. Ugly = زشت
+3. Fast = سریع
+4. Slow = کند
+5. Easy = آسان
+
+مکالمه:
+A: Is your car fast?
+B: No, it's slow.
+A: Is English easy?
+B: Yes, it's easy and beautiful.
+
+=== درس 20 (A1) ===
+معنی‌ها:
+1. Love = دوست داشتن
+2. Like = خوش آمدن
+3. Want = خواستن
+4. Need = نیاز داشتن
+5. Have = داشتن
+
+مکالمه:
+A: Do you like tea?
+B: Yes, I love tea.
+A: Do you want some now?
+B: Yes, I need it. I'm tired.
+
+==================================================
+        آزمون درس 11 تا 20 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Book = ..........
+2. Woman = ..........
+3. Eye = ..........
+4. Street = ..........
+5. Close = ..........
+6. Wednesday = ..........
+7. Dinner = ..........
+8. Study = ..........
+9. Fast = ..........
+10. Need = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: What's ..........?
+B: It's a book.
+A: Who is that ..........?
+B: He is my father.
+A: Where do you ..........?
+B: I live in a big ...........
+A: Do you .......... tea?
+B: Yes, I .......... tea.
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: What do you do in the morning?
+B: I walk in the park and eat breakfast.
+A: Do you work on Monday?
+B: Yes, I work every day.
+A: Is your job easy?
+B: No, it's hard but I love it.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Restaurant / dinner / like / want / food
+
+==================================================
+        پایان بخش دوم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش سوم: درس 21 تا 30 + آزمون
+==================================================
+
+=== درس 21 (A1) ===
+معنی‌ها:
+1. House = خانه
+2. Room = اتاق
+3. Kitchen = آشپزخانه
+4. Bathroom = حمام
+5. Bedroom = اتاق خواب
+
+مکالمه:
+A: How many rooms are in your house?
+B: There are four rooms.
+A: Do you have a big kitchen?
+B: Yes, and a small bathroom.
+
+=== درس 22 (A1) ===
+معنی‌ها:
+1. Hot = گرم
+2. Cold = سرد
+3. Warm = گرم (ملایم)
+4. Cool = خنک
+5. Weather = هوا
+
+مکالمه:
+A: How's the weather today?
+B: It's cold.
+A: Is it warm in summer?
+B: Yes, it's very hot.
+
+=== درس 23 (A1) ===
+معنی‌ها:
+1. Buy = خریدن
+2. Sell = فروختن
+3. Pay = پرداخت کردن
+4. Money = پول
+5. Price = قیمت
+
+مکالمه:
+A: How much is this book?
+B: It's ten dollars.
+A: I want to buy it.
+B: Please pay at the door.
+
+=== درس 24 (A1) ===
+معنی‌ها:
+1. Ask = پرسیدن
+2. Answer = جواب دادن
+3. Help = کمک کردن
+4. Talk = صحبت کردن
+5. Say = گفتن
+
+مکالمه:
+A: Can I ask you a question?
+B: Yes, please.
+A: Can you help me?
+B: Sure. What do you want to say?
+
+=== درس 25 (A1) ===
+معنی‌ها:
+1. Teacher = معلم
+2. Student = دانش‌آموز
+3. Doctor = دکتر
+4. Driver = راننده
+5. Cook = آشپز
+
+مکالمه:
+A: What do you do?
+B: I'm a teacher.
+A: What does your brother do?
+B: He is a doctor.
+
+=== درس 26 (A1) ===
+معنی‌ها:
+1. Always = همیشه
+2. Often = اغلب
+3. Sometimes = بعضی وقت‌ها
+4. Never = هرگز
+5. Usually = معمولاً
+
+مکالمه:
+A: Do you always drink tea?
+B: No, I sometimes drink coffee.
+A: Do you ever drink milk?
+B: Never. I don't like milk.
+
+=== درس 27 (A1) ===
+معنی‌ها:
+1. Short = کوتاه
+2. Long = بلند
+3. Tall = قدبلند
+4. Fat = چاق
+5. Thin = لاغر
+
+مکالمه:
+A: Is your sister tall?
+B: Yes, she is tall and thin.
+A: Is your hair long?
+B: No, it's short.
+
+=== درس 28 (A1) ===
+معنی‌ها:
+1. Clean = تمیز
+2. Dirty = کثیف
+3. Full = پر
+4. Empty = خالی
+5. Broken = شکسته
+
+مکالمه:
+A: Is your room clean?
+B: No, it's dirty.
+A: Is the glass full?
+B: No, it's empty.
+
+=== درس 29 (A1) ===
+معنی‌ها:
+1. Begin = شروع کردن
+2. Finish = تمام کردن
+3. Wait = صبر کردن
+4. Stop = متوقف کردن
+5. Start = آغاز کردن
+
+مکالمه:
+A: When does the class begin?
+B: It begins at eight.
+A: Please wait for me.
+B: OK, but don't be late. It finishes at ten.
+
+=== درس 30 (A1) ===
+معنی‌ها:
+1. Today = امروز
+2. Tomorrow = فردا
+3. Yesterday = دیروز
+4. Week = هفته
+5. Month = ماه
+
+مکالمه:
+A: What day is it today?
+B: It's Friday.
+A: What will you do tomorrow?
+B: I will visit my family. Yesterday I was busy.
+
+==================================================
+        آزمون درس 21 تا 30 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Kitchen = ..........
+2. Weather = ..........
+3. Buy = ..........
+4. Answer = ..........
+5. Teacher = ..........
+6. Sometimes = ..........
+7. Tall = ..........
+8. Clean = ..........
+9. Finish = ..........
+10. Tomorrow = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: How many .......... are in your house?
+B: There are four .......... .
+A: How's the .......... today?
+B: It's .......... .
+A: Can I .......... you a question?
+B: Yes, please. I can .......... you.
+A: What do you ..........?
+B: I'm a .......... .
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: What time does the class begin?
+B: It begins at nine. Please don't be late.
+A: How much is this pen?
+B: It's two dollars. Do you want to buy it?
+A: Yes, but I need to pay by card.
+B: No problem.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+House / clean / room / buy / money
+
+==================================================
+        پایان بخش سوم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش چهارم: درس 31 تا 40 + آزمون
+==================================================
+
+=== درس 31 (A1) ===
+معنی‌ها:
+1. In = در (داخل)
+2. On = روی
+3. Under = زیر
+4. Behind = پشت
+5. Next to = کنار
+
+مکالمه:
+A: Where is the cat?
+B: It's under the table.
+A: Where is my book?
+B: It's on the chair, next to your bag.
+
+=== درس 32 (A1) ===
+معنی‌ها:
+1. Left = چپ
+2. Right = راست
+3. Up = بالا
+4. Down = پایین
+5. Straight = مستقیم
+
+مکالمه:
+A: Where is the bank?
+B: Go straight, then turn right.
+A: Is it on the left?
+B: No, it's on the right, next to the shop.
+
+=== درس 33 (A1) ===
+معنی‌ها:
+1. Ticket = بلیط
+2. Airport = فرودگاه
+3. Train = قطار
+4. Plane = هواپیما
+5. Travel = سفر کردن
+
+مکالمه:
+A: I want to travel to London.
+B: Do you have a ticket?
+A: Yes, I have a plane ticket.
+B: Then go to the airport at seven.
+
+=== درس 34 (A1) ===
+معنی‌ها:
+1. Music = موسیقی
+2. Song = آهنگ
+3. Film = فیلم
+4. Game = بازی
+5. Sport = ورزش
+
+مکالمه:
+A: What's your favorite sport?
+B: I love football.
+A: Do you like music?
+B: Yes, I listen to songs every night.
+
+=== درس 35 (A1) ===
+معنی‌ها:
+1. Doctor = دکتر
+2. Nurse = پرستار
+3. Sick = بیمار
+4. Medicine = دارو
+5. Hospital = بیمارستان
+
+مکالمه:
+A: I'm sick.
+B: What's wrong?
+A: I have a headache. I need medicine.
+B: Let's go to the hospital.
+
+=== درس 36 (A1) ===
+معنی‌ها:
+1. Morning = صبح
+2. Noon = ظهر
+3. Midnight = نیمه‌شب
+4. Early = زود
+5. Late = دیر
+
+مکالمه:
+A: What time do you wake up?
+B: I wake up early, at six.
+A: Do you sleep at noon?
+B: No, I sleep at midnight.
+
+=== درس 37 (A1) ===
+معنی‌ها:
+1. Open = باز
+2. Closed = بسته
+3. Free = آزاد / رایگان
+4. Busy = شلوغ
+5. Ready = آماده
+
+مکالمه:
+A: Is the shop open?
+B: No, it's closed.
+A: Are you busy tomorrow?
+B: No, I'm free. I'm ready to help.
+
+=== درس 38 (A1) ===
+معنی‌ها:
+1. Hot dog = هات‌داگ
+2. Sandwich = ساندویچ
+3. Salad = سالاد
+4. Soup = سوپ
+5. Rice = برنج
+
+مکالمه:
+A: What do you want for lunch?
+B: A sandwich, please.
+A: Do you want soup?
+B: No, I want rice and salad.
+
+=== درس 39 (A1) ===
+معنی‌ها:
+1. Spring = بهار
+2. Summer = تابستان
+3. Autumn = پاییز
+4. Winter = زمستان
+5. Season = فصل
+
+مکالمه:
+A: What's your favorite season?
+B: I love spring.
+A: Why?
+B: Because the weather is nice. I don't like winter.
+
+=== درس 40 (A1) ===
+معنی‌ها:
+1. Give = دادن
+2. Take = گرفتن / بردن
+3. Put = گذاشتن
+4. Bring = آوردن
+5. Send = فرستادن
+
+مکالمه:
+A: Please give me the pen.
+B: Here you are.
+A: Can you take this book to Ali?
+B: Sure. I will send it today.
+
+==================================================
+        آزمون درس 31 تا 40 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Under = ..........
+2. Straight = ..........
+3. Ticket = ..........
+4. Sport = ..........
+5. Hospital = ..........
+6. Early = ..........
+7. Busy = ..........
+8. Soup = ..........
+9. Winter = ..........
+10. Bring = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: Where is the cat?
+B: It's .......... the table.
+A: Where is the bank?
+B: Go .........., then turn .......... .
+A: I want to .......... to London.
+B: Do you have a ..........?
+A: I'm .......... .
+B: Let's go to the .......... .
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: What's your favorite season?
+B: I love summer because it's hot.
+A: Do you like winter?
+B: No, it's too cold for me.
+A: What do you do in summer?
+B: I play football and travel.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Doctor / sick / medicine / hospital / help
+
+==================================================
+        پایان بخش چهارم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش پنجم: درس 41 تا 50 + آزمون
+==================================================
+
+=== درس 41 (A1) ===
+معنی‌ها:
+1. Beautiful = زیبا
+2. Handsome = خوش‌تیپ
+3. Cute = بامزه
+4. Kind = مهربان
+5. Funny = بامزه / خنده‌دار
+
+مکالمه:
+A: Your sister is very beautiful.
+B: Thank you. She is also very kind.
+A: Is your brother handsome?
+B: Yes, and he is funny too.
+
+=== درس 42 (A1) ===
+معنی‌ها:
+1. Speak = صحبت کردن
+2. Understand = فهمیدن
+3. Know = دانستن
+4. Learn = یاد گرفتن
+5. Teach = یاد دادن
+
+مکالمه:
+A: Do you speak English?
+B: Yes, a little.
+A: Do you understand me?
+B: Yes, I understand. I want to learn more.
+
+=== درس 43 (A1) ===
+معنی‌ها:
+1. Send = فرستادن
+2. Receive = دریافت کردن
+3. Call = تماس گرفتن
+4. Message = پیام
+5. Phone = تلفن
+
+مکالمه:
+A: Did you receive my message?
+B: No, I didn't.
+A: Please call me tonight.
+B: OK, I will call you at eight.
+
+=== درس 44 (A1) ===
+معنی‌ها:
+1. Sea = دریا
+2. Beach = ساحل
+3. Mountain = کوه
+4. River = رودخانه
+5. Forest = جنگل
+
+مکالمه:
+A: Where do you want to go?
+B: I want to go to the beach.
+A: Do you like mountains?
+B: Yes, but I love the sea more.
+
+=== درس 45 (A1) ===
+معنی‌ها:
+1. Animal = حیوان
+2. Cat = گربه
+3. Dog = سگ
+4. Bird = پرنده
+5. Fish = ماهی
+
+مکالمه:
+A: Do you have a pet?
+B: Yes, I have a cat.
+A: Does your friend have a dog?
+B: Yes, he has a big dog and two birds.
+
+=== درس 46 (A1) ===
+معنی‌ها:
+1. Job = شغل
+2. Office = دفتر
+3. Company = شرکت
+4. Boss = رئیس
+5. Salary = حقوق
+
+مکالمه:
+A: What's your job?
+B: I work in an office.
+A: Is your boss nice?
+B: Yes, he is nice. The salary is good too.
+
+=== درس 47 (A1) ===
+معنی‌ها:
+1. Wash = شستن
+2. Cook = پختن
+3. Clean = تمیز کردن
+4. Help = کمک کردن
+5. Fix = تعمیر کردن
+
+مکالمه:
+A: Can you help me?
+B: Sure. What do you want to do?
+A: I want to cook dinner and wash the dishes.
+B: OK, I will clean the kitchen.
+
+=== درس 48 (A1) ===
+معنی‌ها:
+1. Breakfast = صبحانه
+2. Snack = میان‌وعده
+3. Dessert = دسر
+4. Coffee = قهوه
+5. Juice = آبمیوه
+
+مکالمه:
+A: What do you want to drink?
+B: I want orange juice.
+A: Do you want a snack?
+B: Yes, I want a small dessert too.
+
+=== درس 49 (A1) ===
+معنی‌ها:
+1. Rich = ثروتمند
+2. Poor = فقیر
+3. Expensive = گران
+4. Cheap = ارزان
+5. Free = رایگان
+
+مکالمه:
+A: Is this restaurant expensive?
+B: No, it's cheap.
+A: Is the water free?
+B: Yes, the water is free.
+
+=== درس 50 (A1) ===
+معنی‌ها:
+1. Give up = تسلیم شدن
+2. Try = تلاش کردن
+3. Win = بردن
+4. Lose = باختن
+5. Practice = تمرین کردن
+
+مکالمه:
+A: English is hard. I want to give up.
+B: Don't give up! You must try.
+A: Do you think I can win?
+B: Yes, if you practice every day.
+
+==================================================
+        آزمون درس 41 تا 50 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Handsome = ..........
+2. Understand = ..........
+3. Receive = ..........
+4. Beach = ..........
+5. Bird = ..........
+6. Salary = ..........
+7. Wash = ..........
+8. Dessert = ..........
+9. Cheap = ..........
+10. Practice = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: Do you .......... English?
+B: Yes, a little. I want to .......... more.
+A: Did you .......... my message?
+B: No, I didn't. Please .......... me tonight.
+A: Is this restaurant ..........?
+B: No, it's .......... .
+A: English is hard. I want to .......... .
+B: Don't ..........! You must .......... .
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: Where do you want to go on holiday?
+B: I want to go to the sea.
+A: Do you like the mountains?
+B: Yes, but I love the beach more.
+A: Do you have a pet?
+B: Yes, I have a cat and a dog.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Job / office / boss / salary / company
+
+==================================================
+        پایان بخش پنجم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش ششم: درس 51 تا 60 + آزمون
+==================================================
+
+=== درس 51 (A1) ===
+معنی‌ها:
+1. Already = قبلاً / همین حالا
+2. Yet = هنوز
+3. Still = هنوز هم
+4. Just = تازه / فقط
+5. Ever = تا حالا
+
+مکالمه:
+A: Have you eaten lunch yet?
+B: Yes, I've already eaten.
+A: Have you ever been to Paris?
+B: No, never. But I still want to go.
+
+=== درس 52 (A1) ===
+معنی‌ها:
+1. Borrow = قرض گرفتن
+2. Lend = قرض دادن
+3. Keep = نگه داشتن
+4. Return = برگرداندن
+5. Share = شریک شدن
+
+مکالمه:
+A: Can I borrow your pen?
+B: Sure, here you are.
+A: When should I return it?
+B: Keep it. You don't need to return it today.
+
+=== درس 53 (A1) ===
+معنی‌ها:
+1. Trip = سفر
+2. Holiday = تعطیلات
+3. Hotel = هتل
+4. Map = نقشه
+5. Camera = دوربین
+
+مکالمه:
+A: How was your trip?
+B: It was great!
+A: Did you have a map?
+B: Yes, and I took many photos with my camera.
+
+=== درس 54 (A1) ===
+معنی‌ها:
+1. Story = داستان
+2. News = اخبار
+3. Magazine = مجله
+4. Newspaper = روزنامه
+5. Website = وب‌سایت
+
+مکالمه:
+A: Do you read the news?
+B: Yes, every morning.
+A: Do you read newspapers?
+B: No, I read news on a website.
+
+=== درس 55 (A1) ===
+معنی‌ها:
+1. Remember = به یاد آوردن
+2. Forget = فراموش کردن
+3. Think = فکر کردن
+4. Believe = باور کردن
+5. Hope = امیدوار بودن
+
+مکالمه:
+A: Do you remember my name?
+B: Yes, I remember. You are Sara.
+A: I hope you don't forget it.
+B: Don't worry. I believe you are a good friend.
+
+=== درس 56 (A1) ===
+معنی‌ها:
+1. Meet = ملاقات کردن
+2. Visit = دیدن کردن
+3. Invite = دعوت کردن
+4. Join = ملحق شدن
+5. Introduce = معرفی کردن
+
+مکالمه:
+A: I want to invite you to my party.
+B: Thank you! I will join.
+A: Can I introduce my friend to you?
+B: Sure, I want to meet him.
+
+=== درس 57 (A1) ===
+معنی‌ها:
+1. Floor = طبقه / کف
+2. Wall = دیوار
+3. Window = پنجره
+4. Key = کلید
+5. Garden = باغ
+
+مکالمه:
+A: Which floor do you live on?
+B: I live on the third floor.
+A: Is there a garden?
+B: Yes, and there is a big window in my room.
+
+=== درس 58 (A1) ===
+معنی‌ها:
+1. Sometimes = بعضی وقت‌ها
+2. Usually = معمولاً
+3. Often = اغلب
+4. Rarely = به ندرت
+5. Never = هرگز
+
+مکالمه:
+A: Do you usually walk to work?
+B: Sometimes. I often take the bus.
+A: Do you drive?
+B: Rarely. I never drive in the city.
+
+=== درس 59 (A1) ===
+معنی‌ها:
+1. Angry = عصبانی
+2. Afraid = ترسیده
+3. Surprised = متعجب
+4. Excited = هیجان‌زده
+5. Bored = بی‌حوصله
+
+مکالمه:
+A: Why are you angry?
+B: I'm not angry. I'm just tired.
+A: Are you excited about the trip?
+B: Yes! I'm not bored at all.
+
+=== درس 60 (A1) ===
+معنی‌ها:
+1. Coffee shop = کافه
+2. Bakery = نانوایی
+3. Pharmacy = داروخانه
+4. Library = کتابخانه
+5. Bank = بانک
+
+مکالمه:
+A: Where are you going?
+B: I'm going to the pharmacy.
+A: Is there a coffee shop near it?
+B: Yes, it's next to the bank.
+
+==================================================
+        آزمون درس 51 تا 60 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Already = ..........
+2. Borrow = ..........
+3. Hotel = ..........
+4. Newspaper = ..........
+5. Remember = ..........
+6. Invite = ..........
+7. Garden = ..........
+8. Rarely = ..........
+9. Surprised = ..........
+10. Pharmacy = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: Have you eaten lunch ..........?
+B: Yes, I've .......... eaten.
+A: Can I .......... your pen?
+B: Sure. When should I .......... it?
+A: Do you .......... my name?
+B: Yes, I .......... it.
+A: Which .......... do you live on?
+B: The third .......... .
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: How was your trip?
+B: It was great! I visited many places.
+A: Did you take photos?
+B: Yes, with my camera. I also bought a map.
+A: Would you like to travel again?
+B: Yes, I hope so.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Invite / party / meet / join / friend
+
+==================================================
+        پایان بخش ششم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش هفتم: درس 61 تا 70 + آزمون
+==================================================
+
+=== درس 61 (A1) ===
+معنی‌ها:
+1. Bus stop = ایستگاه اتوبوس
+2. Station = ایستگاه
+3. Ticket office = باجه بلیط
+4. Platform = سکو
+5. Passenger = مسافر
+
+مکالمه:
+A: Where is the bus stop?
+B: It's near the station.
+A: Where can I buy a ticket?
+B: At the ticket office, then go to platform 3.
+
+=== درس 62 (A1) ===
+معنی‌ها:
+1. Answer = پاسخ دادن
+2. Repeat = تکرار کردن
+3. Spell = هجی کردن
+4. Pronounce = تلفظ کردن
+5. Translate = ترجمه کردن
+
+مکالمه:
+A: Can you repeat that, please?
+B: Sure. How do you spell your name?
+A: S-A-R-A.
+B: Can you translate this word for me?
+
+=== درس 63 (A1) ===
+معنی‌ها:
+1. Wear = پوشیدن
+2. Take off = درآوردن
+3. Put on = پوشیدن
+4. Try on = پرو کردن
+5. Fit = اندازه بودن
+
+مکالمه:
+A: Can I try on this shirt?
+B: Sure. What size do you wear?
+A: Medium. Does it fit?
+B: Yes, it fits well.
+
+=== درس 64 (A1) ===
+معنی‌ها:
+1. Introduce = معرفی کردن
+2. Greet = سلام کردن
+3. Shake hands = دست دادن
+4. Welcome = خوش‌آمد گفتن
+5. Goodbye = خداحافظی
+
+مکالمه:
+A: Let me introduce my friend.
+B: Nice to meet you.
+A: Nice to meet you too. Welcome to our home.
+B: Thank you. Goodbye for now.
+
+=== درس 65 (A1) ===
+معنی‌ها:
+1. Breakfast time = وقت صبحانه
+2. Lunch time = وقت ناهار
+3. Dinner time = وقت شام
+4. Bedtime = وقت خواب
+5. Free time = وقت آزاد
+
+مکالمه:
+A: What time is dinner?
+B: At seven. What do you do in your free time?
+A: I read books. What about you?
+B: I watch TV before bedtime.
+
+=== درس 66 (A1) ===
+معنی‌ها:
+1. Look for = جستجو کردن
+2. Find = پیدا کردن
+3. Lose = گم کردن
+4. Take = برداشتن
+5. Carry = حمل کردن
+
+مکالمه:
+A: What are you looking for?
+B: I'm looking for my keys.
+A: Did you find them?
+B: No, I lost them. Can you help me carry this bag?
+
+=== درس 67 (A1) ===
+معنی‌ها:
+1. Week = هفته
+2. Weekend = آخر هفته
+3. Monday = دوشنبه
+4. Birthday = تولد
+5. Party = مهمانی
+
+مکالمه:
+A: What do you do on the weekend?
+B: I visit my family.
+A: When is your birthday?
+B: It's next Monday. I will have a party.
+
+=== درس 68 (A1) ===
+معنی‌ها:
+1. Learn = یاد گرفتن
+2. Study = مطالعه کردن
+3. Practice = تمرین کردن
+4. Review = مرور کردن
+5. Test = آزمون
+
+مکالمه:
+A: Do you study every day?
+B: Yes, I study English.
+A: Do you review your lessons?
+B: Yes, before every test.
+
+=== درس 69 (A1) ===
+معنی‌ها:
+1. Country = کشور
+2. Capital = پایتخت
+3. Language = زبان
+4. Culture = فرهنگ
+5. People = مردم
+
+مکالمه:
+A: What country are you from?
+B: I'm from Iran. The capital is Tehran.
+A: What language do you speak?
+B: Persian. The people are very kind.
+
+=== درس 70 (A1) ===
+معنی‌ها:
+1. Look = نگاه کردن
+2. See = دیدن
+3. Watch = تماشا کردن
+4. Hear = شنیدن
+5. Feel = حس کردن
+
+مکالمه:
+A: Look at that bird!
+B: I see it. It's beautiful.
+A: Do you hear the music?
+B: Yes, I feel happy now.
+
+==================================================
+        آزمون درس 61 تا 70 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Station = ..........
+2. Passenger = ..........
+3. Repeat = ..........
+4. Wear = ..........
+5. Welcome = ..........
+6. Free time = ..........
+7. Find = ..........
+8. Weekend = ..........
+9. Review = ..........
+10. Language = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: Where is the bus ..........?
+B: It's near the .......... .
+A: Can you .......... that, please?
+B: Sure. How do you .......... your name?
+A: Can I .......... on this shirt?
+B: Sure. Does it ..........?
+A: What are you .......... for?
+B: I'm .......... for my keys.
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: What country are you from?
+B: I'm from Iran.
+A: What language do you speak?
+B: Persian. The people are very kind.
+A: Do you study English?
+B: Yes, I study and review every day.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Weekend / birthday / party / invite / family
+
+==================================================
+        پایان بخش هفتم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش هشتم: درس 71 تا 80 + آزمون
+==================================================
+
+=== درس 71 (A1) ===
+معنی‌ها:
+1. Bag = کیف
+2. Wallet = کیف پول
+3. Umbrella = چتر
+4. Glasses = عینک
+5. Watch = ساعت مچی
+
+مکالمه:
+A: What's in your bag?
+B: My wallet, glasses and an umbrella.
+A: Is that your watch?
+B: Yes, it's a new watch.
+
+=== درس 72 (A1) ===
+معنی‌ها:
+1. Tired = خسته
+2. Hungry = گرسنه
+3. Thirsty = تشنه
+4. Sleepy = خواب‌آلود
+5. Full = سیر
+
+مکالمه:
+A: Are you hungry?
+B: Yes, I'm very hungry.
+A: Are you thirsty too?
+B: Yes, and I'm sleepy. I want to sleep.
+
+=== درس 73 (A1) ===
+معنی‌ها:
+1. Cold water = آب سرد
+2. Hot tea = چای گرم
+3. Fresh bread = نان تازه
+4. Sweet cake = کیک شیرین
+5. Sour lemon = لیموی ترش
+
+مکالمه:
+A: Do you want cold water?
+B: No, I want hot tea.
+A: Do you like sweet cake?
+B: Yes, but I don't like sour lemon.
+
+=== درس 74 (A1) ===
+معنی‌ها:
+1. Sunny = آفتابی
+2. Rainy = بارانی
+3. Cloudy = ابری
+4. Snowy = برفی
+5. Windy = بادی
+
+مکالمه:
+A: What's the weather like today?
+B: It's cloudy and windy.
+A: Was it rainy yesterday?
+B: Yes, and tomorrow will be sunny.
+
+=== درس 75 (A1) ===
+معنی‌ها:
+1. First = اول
+2. Second = دوم
+3. Third = سوم
+4. Last = آخر
+5. Next = بعدی
+
+مکالمه:
+A: Who is first in line?
+B: Ali is first.
+A: Who is next?
+B: Sara is second, and I am third. You are last.
+
+=== درس 76 (A1) ===
+معنی‌ها:
+1. On the left = در سمت چپ
+2. On the right = در سمت راست
+3. In front of = جلوی
+4. Behind = پشت
+5. Between = بین
+
+مکالمه:
+A: Where is the bank?
+B: It's on the left, in front of the park.
+A: And the pharmacy?
+B: It's between the bank and the shop.
+
+=== درس 77 (A1) ===
+معنی‌ها:
+1. How much = چه قدر (قیمت)
+2. How many = چه تعداد
+3. How old = چند ساله
+4. How long = چه مدت
+5. How far = چه فاصله‌ای
+
+مکالمه:
+A: How much is this bag?
+B: It's twenty dollars.
+A: How old is your brother?
+B: He is ten. How far is your house from here?
+
+=== درس 78 (A1) ===
+معنی‌ها:
+1. Today = امروز
+2. Tonight = امشب
+3. This week = این هفته
+4. Next week = هفته آینده
+5. Last week = هفته گذشته
+
+مکالمه:
+A: Are you free tonight?
+B: Yes, I am.
+A: Let's meet this week.
+B: OK. How about next week? I was busy last week.
+
+=== درس 79 (A1) ===
+معنی‌ها:
+1. Thank you = ممنون
+2. You're welcome = خواهش می‌کنم
+3. Excuse me = ببخشید
+4. I'm sorry = متأسفم
+5. No problem = مشکلی نیست
+
+مکالمه:
+A: Excuse me, is this seat free?
+B: Yes, it is.
+A: Thank you.
+B: You're welcome. No problem.
+
+=== درس 80 (A1) ===
+معنی‌ها:
+1. Begin = شروع کردن
+2. Continue = ادامه دادن
+3. Stop = متوقف کردن
+4. Finish = تمام کردن
+5. Wait = صبر کردن
+
+مکالمه:
+A: When does the film begin?
+B: It begins at eight.
+A: Please wait for me.
+B: OK, but don't be late. It finishes at ten.
+
+==================================================
+        آزمون درس 71 تا 80 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Wallet = ..........
+2. Umbrella = ..........
+3. Thirsty = ..........
+4. Cloudy = ..........
+5. Third = ..........
+6. Between = ..........
+7. How far = ..........
+8. Tonight = ..........
+9. You're welcome = ..........
+10. Continue = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: What's in your ..........?
+B: My .........., glasses and an umbrella.
+A: Are you ..........?
+B: Yes, I'm very hungry.
+A: What's the weather like today?
+B: It's .......... and .......... .
+A: Who is .......... in line?
+B: Ali is first. I am .......... .
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: Excuse me, how much is this watch?
+B: It's fifty dollars.
+A: That's expensive. Do you have a cheaper one?
+B: Yes, this one is twenty dollars.
+A: OK, I'll take it. Thank you.
+B: You're welcome.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Weather / sunny / rainy / umbrella / today
+
+==================================================
+        پایان بخش هشتم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش نهم: درس 81 تا 90 + آزمون
+==================================================
+
+=== درس 81 (A1) ===
+معنی‌ها:
+1. Always = همیشه
+2. Usually = معمولاً
+3. Often = اغلب
+4. Sometimes = بعضی وقت‌ها
+5. Never = هرگز
+
+مکالمه:
+A: Do you always wake up early?
+B: No, I usually wake up at seven.
+A: Do you often drink coffee?
+B: Sometimes. I never drink tea at night.
+
+=== درس 82 (A1) ===
+معنی‌ها:
+1. Buy = خریدن
+2. Sell = فروختن
+3. Pay = پرداخت کردن
+4. Cost = هزینه داشتن
+5. Spend = خرج کردن
+
+مکالمه:
+A: How much does this shirt cost?
+B: It costs thirty dollars.
+A: I want to buy it. Can I pay by card?
+B: Yes, of course.
+
+=== درس 83 (A1) ===
+معنی‌ها:
+1. Open = باز کردن
+2. Close = بستن
+3. Push = هل دادن
+4. Pull = کشیدن
+5. Turn = چرخاندن
+
+مکالمه:
+A: Can you open the window?
+B: Sure. Should I close the door too?
+A: Yes, please. Push the button to open it.
+B: OK.
+
+=== درس 84 (A1) ===
+معنی‌ها:
+1. Letter = نامه
+2. Email = ایمیل
+3. Address = آدرس
+4. Stamp = تمبر
+5. Post office = اداره پست
+
+مکالمه:
+A: Where is the post office?
+B: It's next to the bank.
+A: I want to send a letter.
+B: You need a stamp and the address.
+
+=== درس 85 (A1) ===
+معنی‌ها:
+1. Weekend = آخر هفته
+2. Holiday = تعطیلات
+3. Vacation = مرخصی
+4. Free time = وقت آزاد
+5. Busy = شلوغ
+
+مکالمه:
+A: What do you do on the weekend?
+B: I usually rest.
+A: Are you free this weekend?
+B: No, I'm busy. I'm going on vacation next week.
+
+=== درس 86 (A1) ===
+معنی‌ها:
+1. Doctor = دکتر
+2. Dentist = دندانپزشک
+3. Nurse = پرستار
+4. Patient = بیمار
+5. Appointment = نوبت
+
+مکالمه:
+A: I have a toothache.
+B: You should see a dentist.
+A: Do I need an appointment?
+B: Yes, call the dentist's office.
+
+=== درس 87 (A1) ===
+معنی‌ها:
+1. Run = دویدن
+2. Walk = راه رفتن
+3. Jump = پریدن
+4. Swim = شنا کردن
+5. Ride = سوار شدن
+
+مکالمه:
+A: Can you swim?
+B: Yes, I can swim well.
+A: Can you ride a bike?
+B: Yes, and I can run fast too.
+
+=== درس 88 (A1) ===
+معنی‌ها:
+1. Sometimes = بعضی وقت‌ها
+2. Always = همیشه
+3. Usually = معمولاً
+4. Rarely = به ندرت
+5. Never = هرگز
+
+مکالمه:
+A: Do you usually eat breakfast?
+B: Yes, always.
+A: Do you sometimes eat fast food?
+B: Rarely. I never eat fast food.
+
+=== درس 89 (A1) ===
+معنی‌ها:
+1. Floor = طبقه / کف
+2. Ceiling = سقف
+3. Wall = دیوار
+4. Window = پنجره
+5. Stairs = پله
+
+مکالمه:
+A: Which floor is your apartment on?
+B: On the second floor.
+A: Is there a lift?
+B: No, there are stairs. The walls are white.
+
+=== درس 90 (A1) ===
+معنی‌ها:
+1. Hello = سلام
+2. Good morning = صبح بخیر
+3. Good afternoon = عصر بخیر
+4. Good evening = شب بخیر
+5. Good night = شب بخیر (خواب)
+
+مکالمه:
+A: Good morning! How are you?
+B: Good morning! I'm fine, thanks.
+A: Good night, see you tomorrow.
+B: Good night!
+
+==================================================
+        آزمون درس 81 تا 90 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید ---
+1. Usually = ..........
+2. Cost = ..........
+3. Pull = ..........
+4. Email = ..........
+5. Vacation = ..........
+6. Dentist = ..........
+7. Ride = ..........
+8. Rarely = ..........
+9. Ceiling = ..........
+10. Good evening = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: Do you .......... wake up early?
+B: No, I .......... wake up at seven.
+A: How much does this shirt ..........?
+B: It .......... thirty dollars.
+A: Where is the .......... office?
+B: It's next to the .......... .
+A: I have a .......... .
+B: You should see a .......... .
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: Can you swim?
+B: Yes, I can swim well.
+A: Can you ride a bike?
+B: Yes, and I can run fast too.
+A: Are you free this weekend?
+B: No, I'm busy. I'm going on vacation.
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Post office / letter / stamp / address / send
+
+==================================================
+        پایان بخش نهم – منتظر «ادامه» هستم
+==================================================
+==================================================
+        A1.txt  |  سطح A1  |  درس 1 تا 100
+        بخش دهم: درس 91 تا 100 + آزمون نهایی A1
+==================================================
+
+=== درس 91 (A1) ===
+معنی‌ها:
+1. Airport = فرودگاه
+2. Flight = پرواز
+3. Passport = گذرنامه
+4. Luggage = چمدان
+5. Boarding pass = کارت پرواز
+
+مکالمه:
+A: Where is your passport?
+B: It's in my bag.
+A: Do you have your boarding pass?
+B: Yes, and my luggage is ready.
+
+=== درس 92 (A1) ===
+معنی‌ها:
+1. Happy = خوشحال
+2. Sad = غمگین
+3. Angry = عصبانی
+4. Nervous = مضطرب
+5. Calm = آرام
+
+مکالمه:
+A: You look nervous.
+B: Yes, I have a test tomorrow.
+A: Don't worry. Stay calm.
+B: Thank you. I feel better now.
+
+=== درس 93 (A1) ===
+معنی‌ها:
+1. Clean = تمیز کردن
+2. Wash = شستن
+3. Dry = خشک کردن
+4. Iron = اتو کردن
+5. Fold = تا کردن
+
+مکالمه:
+A: Can you help me clean the house?
+B: Sure. What should I do first?
+A: Please wash the dishes and dry them.
+B: OK. And I will fold the clothes.
+
+=== درس 94 (A1) ===
+معنی‌ها:
+1. Friendly = خوش‌برخورد
+2. Polite = مؤدب
+3. Quiet = ساکت
+4. Loud = پرصدا
+5. Serious = جدی
+
+مکالمه:
+A: Is your teacher friendly?
+B: Yes, she is very friendly and polite.
+A: Is she strict?
+B: No, but she is serious about homework.
+
+=== درس 95 (A1) ===
+معنی‌ها:
+1. Breakfast = صبحانه
+2. Lunch = ناهار
+3. Dinner = شام
+4. Snack = میان‌وعده
+5. Menu = منو
+
+مکالمه:
+A: Can I see the menu?
+B: Sure, here you are.
+A: I want chicken for dinner.
+B: And what do you want to drink?
+
+=== درس 96 (A1) ===
+معنی‌ها:
+1. Bank = بانک
+2. Money = پول
+3. Account = حساب
+4. Card = کارت
+5. Cash = پول نقد
+
+مکالمه:
+A: I want to open a bank account.
+B: Do you have your ID card?
+A: Yes, here it is.
+B: Do you want to deposit cash?
+
+=== درس 97 (A1) ===
+معنی‌ها:
+1. Big = بزرگ
+2. Large = وسیع
+3. Small = کوچک
+4. Tiny = خیلی کوچک
+5. Huge = عظیم
+
+مکالمه:
+A: Is your city big?
+B: Yes, it's huge.
+A: Is your apartment small?
+B: It's tiny, but I love it.
+
+=== درس 98 (A1) ===
+معنی‌ها:
+1. Ask = پرسیدن
+2. Answer = جواب دادن
+3. Explain = توضیح دادن
+4. Repeat = تکرار کردن
+5. Understand = فهمیدن
+
+مکالمه:
+A: Can I ask a question?
+B: Sure, go ahead.
+A: Can you explain this word?
+B: Yes, I will repeat it slowly.
+
+=== درس 99 (A1) ===
+معنی‌ها:
+1. Morning = صبح
+2. Noon = ظهر
+3. Afternoon = بعدازظهر
+4. Evening = عصر
+5. Night = شب
+
+مکالمه:
+A: When do you study?
+B: In the morning and evening.
+A: Do you work in the afternoon?
+B: Yes, from noon to evening.
+
+=== درس 100 (A1) ===
+معنی‌ها:
+1. Goodbye = خداحافظ
+2. See you = می‌بینمت
+3. Take care = مراقب خودت باش
+4. Good luck = موفق باشی
+5. Have a nice day = روز خوبی داشته باشی
+
+مکالمه:
+A: I have to go now. Goodbye!
+B: See you tomorrow!
+A: Take care. Good luck with your test.
+B: Thank you! Have a nice day.
+
+==================================================
+        آزمون نهایی درس 1 تا 100 (A1)
+==================================================
+
+--- بخش اول: معنی کلمات را بنویسید (20 کلمه) ---
+1. Hello = ..........
+2. Friend = ..........
+3. Water = ..........
+4. Big = ..........
+5. Mother = ..........
+6. Street = ..........
+7. Weather = ..........
+8. Sometimes = ..........
+9. Hospital = ..........
+10. Beautiful = ..........
+11. Borrow = ..........
+12. Weekend = ..........
+13. Language = ..........
+14. Wallet = ..........
+15. Thirsty = ..........
+16. Airport = ..........
+17. Polite = ..........
+18. Menu = ..........
+19. Huge = ..........
+20. Good luck = ..........
+
+--- بخش دوم: جای خالی را کامل کنید ---
+A: What's your ..........?
+B: My name .......... Ali.
+A: Where do you ..........?
+B: I live in a big .......... .
+A: How much does this shirt ..........?
+B: It .......... thirty dollars.
+A: Are you .......... this weekend?
+B: No, I'm .......... . I have a party.
+A: Can you .......... this word?
+B: Yes, I will .......... it slowly.
+
+--- بخش سوم: مکالمه زیر را به فارسی ترجمه کنید ---
+A: Excuse me, where is the post office?
+B: Go straight, then turn left.
+A: Is it far from here?
+B: No, it's between the bank and the pharmacy.
+A: Thank you so much.
+B: You're welcome. Have a nice day!
+
+--- بخش چهارم: مکالمه بسازید ---
+با استفاده از این کلمات یک مکالمه کوتاه بنویسید:
+Airport / passport / flight / luggage / goodbye
+
+--- بخش پنجم: جملات زیر را به انگلیسی ترجمه کنید ---
+1. من یک دانش‌آموز هستم.
+2. اسم تو چیه؟
+3. من آب می‌خواهم.
+4. هوا امروز سرد است.
+5. من دوست دارم سفر کنم.
+6. او یک معلم مهربان است.
+7. دیروز به بیمارستان رفتم.
+8. آیا تو انگلیسی صحبت می‌کنی؟
+9. من هرگز قهوه نمی‌خورم.
+10. موفق باشی و مراقب خودت باش!
+
+==================================================
+        پایان سطح A1 (درس 1 تا 100)
+        🎉 تبریک! شما سطح A1 را کامل کردید.
+        
+        مرحله بعدی: A1+ (درس 101 تا 250)
+        فایل جدید: A1plus.txt
+        برای شروع بنویسید: «شروع A1+»
+==================================================
