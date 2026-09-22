@@ -1,2290 +1,2482 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>English Master | آموزش زبان انگلیسی</title>
-
-  <meta name="description"
-        content="آموزش زبان انگلیسی از A1 تا سطوح بالاتر با درس، مکالمه، لغات و آزمون">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Tahoma, Arial, sans-serif;
-    }
-
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #171923;
-      --muted: #707784;
-      --primary: #6757ff;
-      --primary2: #806cff;
-      --border: #e5e7ef;
-      --success: #20b26b;
-      --danger: #ef4444;
-      --warning: #f59e0b;
-      --shadow: 0 8px 30px rgba(0,0,0,.07);
-    }
-
-    body.dark {
-      --bg: #0e1017;
-      --card: #171a23;
-      --text: #f4f5f7;
-      --muted: #a2a7b2;
-      --border: #292e3a;
-      --shadow: 0 8px 30px rgba(0,0,0,.25);
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      transition: .25s;
-    }
-
-    button {
-      border: none;
-      cursor: pointer;
-    }
-
-    .app {
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      padding-bottom: 100px;
-    }
-
-    /* HEADER */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 18px;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 21px;
-      font-weight: bold;
-      background: linear-gradient(135deg, var(--primary), var(--primary2));
-      box-shadow: 0 7px 20px rgba(103,87,255,.3);
-    }
-
-    .logo-title {
-      font-weight: bold;
-      font-size: 17px;
-    }
-
-    .logo-sub {
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 3px;
-    }
-
-    .icon-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 13px;
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      font-size: 19px;
-    }
-
-    /* HOME */
-
-    main {
-      padding: 18px;
-    }
-
-    .hero {
-      background: linear-gradient(
-        135deg,
-        var(--primary),
-        var(--primary2)
-      );
-      color: white;
-      border-radius: 25px;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 15px 35px rgba(103,87,255,.25);
-    }
-
-    .hero h1 {
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      line-height: 1.9;
-      opacity: .92;
-      font-size: 14px;
-    }
-
-    .progress-box {
-      margin-top: 20px;
-    }
-
-    .progress-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      margin-bottom: 8px;
-    }
-
-    .progress {
-      width: 100%;
-      height: 9px;
-      background: rgba(255,255,255,.25);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-
-    .progress > div {
-      height: 100%;
-      background: white;
-      border-radius: 99px;
-      transition: .4s;
-    }
-
-    /* SECTION */
-
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 25px 0 13px;
-    }
-
-    .section-title h2 {
-      font-size: 18px;
-    }
-
-    .section-title span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* LEVELS */
-
-    .levels {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .level {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 19px;
-      padding: 17px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      text-align: right;
-    }
-
-    .level.locked {
-      opacity: .65;
-    }
-
-    .level-icon {
-      width: 45px;
-      height: 45px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: rgba(103,87,255,.12);
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .level h3 {
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .level p {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    .lock {
-      position: absolute;
-      top: 13px;
-      left: 13px;
-      font-size: 17px;
-    }
-
-    /* LESSONS */
-
-    .lessons {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    .lesson {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      padding: 14px;
-      cursor: pointer;
-      transition: .2s;
-      position: relative;
-    }
-
-    .lesson:hover {
-      transform: translateY(-2px);
-    }
-
-    .lesson.locked {
-      opacity: .55;
-      cursor: not-allowed;
-    }
-
-    .lesson-number {
-      color: var(--primary);
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 7px;
-    }
-
-    .lesson-title {
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .lesson-status {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .stars {
-      color: #fbbf24;
-      letter-spacing: 1px;
-      margin-top: 7px;
-      font-size: 13px;
-    }
-
-    /* LESSON PAGE */
-
-    .back-btn {
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 11px 15px;
-      border-radius: 13px;
-      margin-bottom: 15px;
-    }
-
-    .lesson-head {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 20px;
-      margin-bottom: 14px;
-    }
-
-    .lesson-head h1 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .lesson-head p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 21px;
-      padding: 19px;
-      margin-bottom: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .card-title {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    /* VOCAB */
-
-    .word {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .word:last-child {
-      border-bottom: none;
-    }
-
-    .word-en {
-      direction: ltr;
-      text-align: left;
-      font-weight: bold;
-    }
-
-    .word-fa {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    .speak-btn {
-      width: 37px;
-      height: 37px;
-      flex-shrink: 0;
-      border-radius: 11px;
-      background: rgba(103,87,255,.12);
-      color: var(--primary);
-      font-size: 16px;
-    }
-
-    /* CONVERSATION */
-
-    .chat {
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-    }
-
-    .message {
-      max-width: 88%;
-      padding: 12px 14px;
-      border-radius: 16px;
-      line-height: 1.7;
-      font-size: 13px;
-    }
-
-    .message.a {
-      align-self: flex-start;
-      background: rgba(103,87,255,.12);
-      direction: ltr;
-      text-align: left;
-      border-bottom-left-radius: 4px;
-    }
-
-    .message.b {
-      align-self: flex-end;
-      background: var(--primary);
-      color: white;
-      direction: ltr;
-      text-align: left;
-      border-bottom-right-radius: 4px;
-    }
-
-    .speaker {
-      font-size: 10px;
-      opacity: .65;
-      margin-bottom: 3px;
-    }
-
-    .translation {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 4px;
-      direction: rtl;
-      text-align: right;
-    }
-
-    /* BUTTON */
-
-    .primary-btn {
-      width: 100%;
-      background: linear-gradient(135deg, var(--primary), var(--primary2));
-      color: white;
-      padding: 15px;
-      border-radius: 15px;
-      font-weight: bold;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-
-    .secondary-btn {
-      width: 100%;
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 14px;
-      border-radius: 15px;
-      margin-top: 8px;
-    }
-
-    /* EXAM */
-
-    .exam-question {
-      padding: 17px;
-      background: var(--bg);
-      border-radius: 17px;
-      margin-bottom: 13px;
-      border: 1px solid var(--border);
-    }
-
-    .question-number {
-      color: var(--primary);
-      font-weight: bold;
-      font-size: 12px;
-      margin-bottom: 8px;
-    }
-
-    .question-text {
-      direction: ltr;
-      text-align: left;
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-
-    .options {
-      display: grid;
-      gap: 8px;
-    }
-
-    .option {
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 11px;
-      border-radius: 12px;
-      direction: ltr;
-      text-align: left;
-    }
-
-    .option.selected {
-      border-color: var(--primary);
-      background: rgba(103,87,255,.1);
-    }
-
-    .result {
-      text-align: center;
-      padding: 25px;
-    }
-
-    .score {
-      font-size: 45px;
-      font-weight: bold;
-      color: var(--primary);
-      margin: 12px;
-    }
-
-    .result-message {
-      line-height: 2;
-      color: var(--muted);
-    }
-
-    /* SETTINGS */
-
-    .setting {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .setting:last-child {
-      border-bottom: none;
-    }
-
-    .setting-title {
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .setting-sub {
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 4px;
-    }
-
-    .switch {
-      width: 50px;
-      height: 28px;
-      border-radius: 99px;
-      background: #777;
-      padding: 3px;
-      transition: .2s;
-    }
-
-    .switch span {
-      width: 22px;
-      height: 22px;
-      background: white;
-      display: block;
-      border-radius: 50%;
-      transition: .2s;
-    }
-
-    .switch.active {
-      background: var(--primary);
-    }
-
-    .switch.active span {
-      transform: translateX(-22px);
-    }
-
-    /* BOTTOM NAV */
-
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(900px, 100%);
-      z-index: 100;
-      padding: 10px 13px calc(10px + env(safe-area-inset-bottom));
-      background: color-mix(in srgb, var(--card) 94%, transparent);
-      backdrop-filter: blur(18px);
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .nav-btn {
-      background: transparent;
-      color: var(--muted);
-      padding: 7px;
-      border-radius: 13px;
-      font-size: 11px;
-    }
-
-    .nav-btn.active {
-      color: var(--primary);
-      background: rgba(103,87,255,.1);
-    }
-
-    .nav-icon {
-      display: block;
-      font-size: 19px;
-      margin-bottom: 3px;
-    }
-
-    /* MODAL */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.65);
-      z-index: 200;
-      display: none;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .modal.show {
-      display: flex;
-    }
-
-    .modal-box {
-      width: min(600px, 100%);
-      background: var(--card);
-      border-radius: 25px 25px 0 0;
-      padding: 24px;
-      max-height: 85vh;
-      overflow-y: auto;
-    }
-
-    .modal-box h2 {
-      margin-bottom: 10px;
-    }
-
-    .modal-box p {
-      color: var(--muted);
-      line-height: 1.9;
-      font-size: 13px;
-    }
-
-    .close-btn {
-      float: left;
-      background: var(--bg);
-      color: var(--text);
-      width: 35px;
-      height: 35px;
-      border-radius: 10px;
-    }
-
-    /* EMPTY */
-
-    .empty {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
-    }
-
-    .empty-icon {
-      font-size: 45px;
-      margin-bottom: 10px;
-    }
-
-    /* RESPONSIVE */
-
-    @media (min-width: 650px) {
-      .levels {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .lessons {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    @media (max-width: 400px) {
-      main {
-        padding: 13px;
-      }
-
-      .levels {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .lessons {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero h1 {
-        font-size: 21px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English Master | آموزش زبان انگلیسی</title>
+
+<meta name="description"
+content="آموزش زبان انگلیسی از سطح A1 با درس، لغات، مکالمه و آزمون">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Tahoma,Arial,sans-serif;
+}
+
+:root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#172033;
+    --muted:#718096;
+    --primary:#5b5bf7;
+    --primary2:#7c5cff;
+    --border:#e5e7eb;
+    --success:#16a34a;
+    --danger:#ef4444;
+    --shadow:0 8px 30px rgba(0,0,0,.07);
+}
+
+body.dark{
+    --bg:#0f1117;
+    --card:#181b24;
+    --text:#f5f7fb;
+    --muted:#9ca3af;
+    --border:#292d38;
+    --shadow:0 8px 30px rgba(0,0,0,.25);
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    transition:.25s;
+}
+
+button{
+    border:0;
+    cursor:pointer;
+}
+
+.app{
+    max-width:1100px;
+    margin:auto;
+    padding-bottom:90px;
+}
+
+/* HEADER */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--bg);
+    border-bottom:1px solid var(--border);
+    padding:15px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo h1{
+    font-size:18px;
+}
+
+.logo small{
+    display:block;
+    color:var(--muted);
+    margin-top:3px;
+}
+
+.icon-btn{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:var(--card);
+    color:var(--text);
+    border:1px solid var(--border);
+    font-size:19px;
+}
+
+/* MAIN */
+
+main{
+    padding:20px;
+}
+
+.section-title{
+    margin-bottom:15px;
+}
+
+.section-title h2{
+    font-size:23px;
+}
+
+.section-title p{
+    color:var(--muted);
+    margin-top:6px;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#5b5bf7,#8b5cf6);
+    border-radius:25px;
+    color:white;
+    padding:28px;
+    margin-bottom:25px;
+    box-shadow:0 15px 40px rgba(91,91,247,.25);
+}
+
+.hero h2{
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    line-height:1.9;
+    opacity:.92;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.btn{
+    padding:13px 20px;
+    border-radius:13px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.btn-primary{
+    background:white;
+    color:#5146e5;
+}
+
+.btn-dark{
+    background:rgba(0,0,0,.18);
+    color:white;
+}
+
+/* PROGRESS */
+
+.progress-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:25px;
+    box-shadow:var(--shadow);
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.progress-top span:last-child{
+    color:var(--primary);
+    font-weight:bold;
+}
+
+.progress-bar{
+    width:100%;
+    height:11px;
+    background:var(--border);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,var(--primary),var(--primary2));
+    border-radius:20px;
+    transition:.4s;
+}
+
+/* LEVELS */
+
+.level-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.level-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:var(--shadow);
+}
+
+.level-card:hover{
+    transform:translateY(-3px);
+}
+
+.level-icon{
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    background:rgba(91,91,247,.12);
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.level-card h3{
+    margin-bottom:7px;
+}
+
+.level-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
+}
+
+.locked{
+    opacity:.6;
+}
+
+.lock{
+    float:left;
+}
+
+/* LESSONS */
+
+.lesson-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.lesson-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:19px;
+    padding:18px;
+    box-shadow:var(--shadow);
+    cursor:pointer;
+    transition:.2s;
+}
+
+.lesson-card:hover{
+    transform:translateY(-3px);
+}
+
+.lesson-number{
+    color:var(--primary);
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.lesson-card h3{
+    font-size:17px;
+    margin-bottom:12px;
+}
+
+.lesson-info{
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.stars{
+    color:#f59e0b;
+    letter-spacing:2px;
+}
+
+.completed{
+    border-color:rgba(22,163,74,.45);
+}
+
+.lesson-locked{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+/* LESSON PAGE */
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--card);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:10px 15px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.lesson-header{
+    background:linear-gradient(135deg,#5b5bf7,#8b5cf6);
+    color:white;
+    border-radius:23px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.lesson-header small{
+    opacity:.8;
+}
+
+.lesson-header h2{
+    margin-top:8px;
+}
+
+.content-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+}
+
+.content-card h3{
+    margin-bottom:16px;
+}
+
+.vocab-item{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:14px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.vocab-item:last-child{
+    border-bottom:0;
+}
+
+.vocab-en{
+    direction:ltr;
+    text-align:left;
+    font-weight:bold;
+}
+
+.vocab-fa{
+    color:var(--muted);
+}
+
+.conversation{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.message{
+    max-width:85%;
+    padding:13px 16px;
+    border-radius:16px;
+    line-height:1.8;
+}
+
+.message.a{
+    align-self:flex-start;
+    background:rgba(91,91,247,.12);
+}
+
+.message.b{
+    align-self:flex-end;
+    background:rgba(22,163,74,.12);
+}
+
+.message-speaker{
+    font-size:11px;
+    color:var(--primary);
+    font-weight:bold;
+    margin-bottom:4px;
+}
+
+.message-en{
+    direction:ltr;
+    text-align:left;
+}
+
+.message-fa{
+    color:var(--muted);
+    margin-top:5px;
+    font-size:13px;
+}
+
+.complete-btn{
+    width:100%;
+    padding:16px;
+    border-radius:16px;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+/* EXAM */
+
+.exam-question{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.exam-question h3{
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+.options{
+    display:grid;
+    gap:10px;
+}
+
+.option{
+    padding:13px;
+    border:1px solid var(--border);
+    background:var(--bg);
+    color:var(--text);
+    border-radius:12px;
+    text-align:right;
+}
+
+.option.selected{
+    border-color:var(--primary);
+    background:rgba(91,91,247,.1);
+}
+
+.submit-exam{
+    width:100%;
+    padding:16px;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    color:white;
+    border-radius:15px;
+    font-size:16px;
+    font-weight:bold;
+}
+
+/* SETTINGS */
+
+.setting-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:12px;
+}
+
+.setting-item p{
+    color:var(--muted);
+    margin-top:5px;
+    font-size:12px;
+}
+
+.toggle{
+    width:52px;
+    height:29px;
+    background:var(--border);
+    border-radius:30px;
+    position:relative;
+}
+
+.toggle::after{
+    content:"";
+    position:absolute;
+    width:23px;
+    height:23px;
+    background:white;
+    border-radius:50%;
+    top:3px;
+    right:3px;
+    transition:.2s;
+}
+
+body.dark .toggle{
+    background:var(--primary);
+}
+
+body.dark .toggle::after{
+    right:26px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(100%,1100px);
+    background:var(--card);
+    border-top:1px solid var(--border);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    z-index:100;
+}
+
+.nav-btn{
+    background:none;
+    color:var(--muted);
+    padding:13px 5px;
+    font-size:12px;
+}
+
+.nav-btn.active{
+    color:var(--primary);
+    font-weight:bold;
+}
+
+.nav-icon{
+    display:block;
+    font-size:19px;
+    margin-bottom:3px;
+}
+
+/* MESSAGE */
+
+.toast{
+    position:fixed;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%) translateY(-20px);
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    border-radius:15px;
+    padding:15px 20px;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:200;
+    min-width:250px;
+    text-align:center;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* LOADING */
+
+.loading{
+    text-align:center;
+    padding:60px 20px;
+    color:var(--muted);
+}
+
+.spinner{
+    width:40px;
+    height:40px;
+    border:4px solid var(--border);
+    border-top-color:var(--primary);
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+    margin:0 auto 15px;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* EMPTY */
+
+.empty{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    color:var(--muted);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .level-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .lesson-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    main{
+        padding:14px;
+    }
+
+    .header{
+        padding:12px 14px;
+    }
+
+    .hero{
+        padding:22px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .level-grid,
+    .lesson-grid{
+        grid-template-columns:1fr;
+    }
+
+    .message{
+        max-width:94%;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="app">
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
+<header class="header">
 
-      <div class="logo">
-        <div class="logo-icon">EN</div>
+    <div class="logo">
+
+        <div class="logo-icon">
+            EN
+        </div>
 
         <div>
-          <div class="logo-title">English Master</div>
-          <div class="logo-sub">یادگیری زبان انگلیسی</div>
+            <h1>English Master</h1>
+            <small>یادگیری زبان انگلیسی</small>
         </div>
-      </div>
-
-      <button class="icon-btn" onclick="toggleDarkMode()" id="themeBtn">
-        🌙
-      </button>
 
     </div>
-  </header>
 
-  <!-- CONTENT -->
-  <main id="app"></main>
+    <button class="icon-btn" onclick="toggleTheme()" id="themeBtn">
+        🌙
+    </button>
 
-</div>
+</header>
 
-<!-- BOTTOM NAV -->
+<main id="app">
+
+    <div class="loading">
+
+        <div class="spinner"></div>
+
+        <p>
+            در حال بارگذاری درس‌ها...
+        </p>
+
+    </div>
+
+</main>
+
 <nav class="bottom-nav">
 
-  <button class="nav-btn active" onclick="showHome()">
-    <span class="nav-icon">🏠</span>
-    خانه
-  </button>
+    <button class="nav-btn active" onclick="showHome()" id="navHome">
+        <span class="nav-icon">🏠</span>
+        خانه
+    </button>
 
-  <button class="nav-btn" onclick="showLevels()">
-    <span class="nav-icon">📚</span>
-    درس‌ها
-  </button>
+    <button class="nav-btn" onclick="showLevels()" id="navLessons">
+        <span class="nav-icon">📚</span>
+        درس‌ها
+    </button>
 
-  <button class="nav-btn" onclick="showSettings()">
-    <span class="nav-icon">⚙️</span>
-    تنظیمات
-  </button>
+    <button class="nav-btn" onclick="showSettings()" id="navSettings">
+        <span class="nav-icon">⚙️</span>
+        تنظیمات
+    </button>
 
 </nav>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-
-  <div class="modal-box">
-
-    <button class="close-btn" onclick="closeModal()">×</button>
-
-    <h2 id="modalTitle"></h2>
-
-    <p id="modalText"></p>
-
-  </div>
-
 </div>
+
+<div class="toast" id="toast"></div>
+
 
 <script>
 
-/* =========================================================
-   ENGLISH MASTER
-   خواندن مستقیم A.txt و Aplus.txt
-========================================================= */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 let lessons = {};
-let currentLesson = null;
-
-const STORAGE_KEY = "english_master_progress_v1";
 
 let progress = JSON.parse(
-  localStorage.getItem(STORAGE_KEY) || "{}"
+    localStorage.getItem("english_master_progress_v1") || "{}"
 );
 
+let currentLesson = null;
 
-/* =========================================================
-   خواندن فایل‌های TXT
-========================================================= */
+let examAnswers = {};
 
-async function loadEnglishData() {
+let examQuestions = [];
 
-  try {
 
-    const responses = await Promise.all([
-      fetch("./A.txt"),
-      fetch("./Aplus.txt")
-    ]);
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
 
-    if (!responses[0].ok) {
-      throw new Error("A.txt پیدا نشد");
-    }
+function saveProgress(){
 
-    if (!responses[1].ok) {
-      throw new Error("Aplus.txt پیدا نشد");
-    }
-
-    const a1Text = await responses[0].text();
-    const aPlusText = await responses[1].text();
-
-    const a1Lessons = parseLessons(a1Text);
-    const aPlusLessons = parseLessons(aPlusText);
-
-    lessons = {
-      ...a1Lessons,
-      ...aPlusLessons
-    };
-
-    console.log(
-      "English Master loaded:",
-      Object.keys(lessons).length,
-      "lessons"
+    localStorage.setItem(
+        "english_master_progress_v1",
+        JSON.stringify(progress)
     );
 
-    showHome();
+}
 
-  } catch (error) {
 
-    console.error(error);
+/* =====================================================
+   THEME
+===================================================== */
+
+function loadTheme(){
+
+    const theme =
+        localStorage.getItem("english_master_theme");
+
+    if(theme === "dark"){
+
+        document.body.classList.add("dark");
+
+        document.getElementById("themeBtn").textContent = "☀️";
+
+    }
+
+}
+
+
+function toggleTheme(){
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem(
+        "english_master_theme",
+        dark ? "dark" : "light"
+    );
+
+    document.getElementById("themeBtn").textContent =
+        dark ? "☀️" : "🌙";
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showMessage(title,text){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerHTML =
+        `<strong>${escapeHTML(title)}</strong>
+         <br>
+         <small>${escapeHTML(text)}</small>`;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },1800);
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    if(value === undefined || value === null)
+        return "";
+
+    return String(value)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+
+}
+
+
+/* =====================================================
+   PARSE TXT FILE
+===================================================== */
+
+function parseLessons(text){
+
+    const result = {};
+
+    /*
+      هر درس با این ساختار شروع می‌شود:
+
+      === درس 1 (A1) ===
+    */
+
+    const sections = text.split(
+        /(?=^===\s*درس\s+\d+\s*\([^)]+\)\s*===)/gm
+    );
+
+    for(const section of sections){
+
+        const header = section.match(
+            /^===\s*درس\s+(\d+)\s*\(([^)]+)\)\s*===/m
+        );
+
+        if(!header)
+            continue;
+
+        const id =
+            Number(header[1]);
+
+        const level =
+            header[2].trim();
+
+        const body =
+            section
+            .slice(header[0].length)
+            .trim();
+
+
+        /* =========================
+           VOCABULARY
+        ========================= */
+
+        const vocab = [];
+
+        const vocabMatch = body.match(
+            /معنی‌ها:\s*([\s\S]*?)(?=\n\s*مکالمه:|\n={5,}|$)/
+        );
+
+        if(vocabMatch){
+
+            const lines =
+                vocabMatch[1].split(/\r?\n/);
+
+            for(const line of lines){
+
+                const match =
+                    line.match(
+                        /^\s*\d+\.\s*(.*?)\s*=\s*(.*?)\s*$/
+                    );
+
+                if(match){
+
+                    vocab.push({
+
+                        en:match[1].trim(),
+
+                        fa:match[2].trim()
+
+                    });
+
+                }
+
+            }
+
+        }
+
+
+        /* =========================
+           CONVERSATION
+        ========================= */
+
+        const conversation = [];
+
+        const conversationMatch =
+            body.match(
+                /مکالمه:\s*([\s\S]*?)(?=\n={5,}|$)/
+            );
+
+        if(conversationMatch){
+
+            const conversationText =
+                conversationMatch[1].trim();
+
+            const lines =
+                conversationText.split(/\r?\n/);
+
+            for(const line of lines){
+
+                const match =
+                    line.match(
+                        /^\s*([A-Z])\s*:\s*(.+?)\s*$/
+                    );
+
+                if(match){
+
+                    conversation.push({
+
+                        speaker:
+                            match[1].trim(),
+
+                        en:
+                            match[2].trim()
+
+                    });
+
+                }
+
+            }
+
+        }
+
+
+        result[id] = {
+
+            id:id,
+
+            level:level,
+
+            title:"درس " + id,
+
+            vocab:vocab,
+
+            conversation:conversation
+
+        };
+
+    }
+
+    return result;
+
+}
+
+
+/* =====================================================
+   LOAD TXT FILES
+===================================================== */
+
+async function loadEnglishData(){
+
+    try{
+
+        const responses =
+            await Promise.all([
+
+                fetch("./A.txt"),
+
+                fetch("./Aplus.txt")
+
+            ]);
+
+
+        if(!responses[0].ok){
+
+            throw new Error(
+                "A.txt پیدا نشد"
+            );
+
+        }
+
+
+        if(!responses[1].ok){
+
+            throw new Error(
+                "Aplus.txt پیدا نشد"
+            );
+
+        }
+
+
+        const a1Text =
+            await responses[0].text();
+
+        const aPlusText =
+            await responses[1].text();
+
+
+        const a1Lessons =
+            parseLessons(a1Text);
+
+        const aPlusLessons =
+            parseLessons(aPlusText);
+
+
+        lessons = {
+
+            ...a1Lessons,
+
+            ...aPlusLessons
+
+        };
+
+
+        console.log(
+            "English Master loaded:",
+            Object.keys(lessons).length,
+            "lessons"
+        );
+
+
+        showHome();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        document.getElementById("app").innerHTML = `
+
+            <div class="empty">
+
+                <h2>❌ خطا در بارگذاری</h2>
+
+                <p style="margin-top:12px">
+                    ${escapeHTML(error.message)}
+                </p>
+
+                <p style="margin-top:12px">
+                    مطمئن شوید فایل‌های
+                    <b>A.txt</b>
+                    و
+                    <b>Aplus.txt</b>
+                    کنار index.html قرار دارند.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   TOTAL LESSONS
+===================================================== */
+
+function getLessonIds(){
+
+    return Object.keys(lessons)
+        .map(Number)
+        .sort((a,b)=>a-b);
+
+}
+
+
+function getTotalLessons(){
+
+    return getLessonIds().length;
+
+}
+
+
+function getCompletedCount(){
+
+    return getLessonIds()
+        .filter(id =>
+            progress[id] &&
+            progress[id].completed
+        )
+        .length;
+
+}
+
+
+function getProgressPercent(){
+
+    const total =
+        getTotalLessons();
+
+    if(!total)
+        return 0;
+
+    return Math.round(
+        getCompletedCount() /
+        total *
+        100
+    );
+
+}
+
+
+/* =====================================================
+   LESSON UNLOCK
+===================================================== */
+
+function isLessonUnlocked(id){
+
+    /*
+      درس اول همیشه باز است.
+      هر درس بعدی زمانی باز می‌شود
+      که درس قبلی کامل شده باشد.
+    */
+
+    if(id === 1)
+        return true;
+
+    const previous =
+        progress[id - 1];
+
+    return !!(
+        previous &&
+        previous.completed
+    );
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function showHome(){
+
+    setActiveNav("navHome");
+
+    const completed =
+        getCompletedCount();
+
+    const total =
+        getTotalLessons();
+
+    const percent =
+        getProgressPercent();
+
+    const next =
+        getLessonIds()
+        .find(id =>
+            !progress[id] ||
+            !progress[id].completed
+        );
+
 
     document.getElementById("app").innerHTML = `
-      <div class="empty">
 
-        <div class="empty-icon">⚠️</div>
-
-        <h2>خطا در بارگذاری درس‌ها</h2>
-
-        <p style="margin-top:10px">
-          مطمئن شوید این سه فایل در کنار هم قرار دارند:
-        </p>
-
-        <div class="card" style="margin-top:15px;text-align:left;direction:ltr">
-          index.html<br>
-          A.txt<br>
-          Aplus.txt
-        </div>
-
-      </div>
-    `;
-
-  }
-
-}
-
-
-/* =========================================================
-   تبدیل متن TXT به درس
-========================================================= */
-
-function parseLessons(text) {
-
-  const result = {};
-
-  const regex = /===\s*درس\s+(\d+)\s*\(([^)]+)\)\s*===([\s\S]*?)(?=\n===\s*درس\s+\d+|\n={10,}|$)/g;
-
-  let match;
-
-  while ((match = regex.exec(text)) !== null) {
-
-    const id = Number(match[1]);
-    const level = match[2].trim();
-    const body = match[3];
-
-    const vocab = [];
-    const conversation = [];
-
-    /* -----------------------------
-       معنی‌ها
-    ----------------------------- */
-
-    const meaningMatch = body.match(
-      /معنی‌ها:\s*([\s\S]*?)(?=\n\s*مکالمه:|$)/
-    );
-
-    if (meaningMatch) {
-
-      const lines = meaningMatch[1].split(/\r?\n/);
-
-      for (const line of lines) {
-
-        const m = line.match(
-          /^\s*\d+\.\s*(.*?)\s*=\s*(.*?)\s*$/
-        );
-
-        if (m) {
-
-          vocab.push({
-            en: m[1].trim(),
-            fa: m[2].trim()
-          });
-
-        }
-
-      }
-
-    }
-
-
-    /* -----------------------------
-       مکالمه
-    ----------------------------- */
-
-    const conversationMatch = body.match(
-      /مکالمه:\s*([\s\S]*?)/
-    );
-
-    if (conversationMatch) {
-
-      const lines = conversationMatch[1].split(/\r?\n/);
-
-      for (const line of lines) {
-
-        const m = line.match(
-          /^\s*([A-Z])\s*:\s*(.+?)\s*$/
-        );
-
-        if (m) {
-
-          conversation.push({
-            speaker: m[1],
-            en: m[2].trim()
-          });
-
-        }
-
-      }
-
-    }
-
-
-    result[id] = {
-      id,
-      level,
-      title: "درس " + id,
-      vocab,
-      conversation
-    };
-
-  }
-
-  return result;
-}
-
-
-/* =========================================================
-   ذخیره پیشرفت
-========================================================= */
-
-function saveProgress() {
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(progress)
-  );
-
-}
-
-
-function getLessonProgress(id) {
-
-  return progress[id] || {
-    completed: false,
-    stars: 0
-  };
-
-}
-
-
-/* =========================================================
-   تعیین اینکه درس باز است یا نه
-========================================================= */
-
-function isLessonUnlocked(id) {
-
-  if (id === 1) {
-    return true;
-  }
-
-  const previous = getLessonProgress(id - 1);
-
-  return previous.completed === true;
-}
-
-
-/* =========================================================
-   صفحه خانه
-========================================================= */
-
-function showHome() {
-
-  setActiveNav(0);
-
-  const total = Object.keys(lessons).length;
-
-  const completed = Object.values(progress)
-    .filter(x => x.completed)
-    .length;
-
-  const percent = total
-    ? Math.round((completed / total) * 100)
-    : 0;
-
-  document.getElementById("app").innerHTML = `
-
-    <section class="hero">
-
-      <h1>انگلیسی را حرفه‌ای یاد بگیر 🚀</h1>
-
-      <p>
-        درس به درس جلو برو، مکالمه‌ها را بخوان،
-        لغات را یاد بگیر و بعد از هر ۱۰ درس در آزمون شرکت کن.
-      </p>
-
-      <div class="progress-box">
-
-        <div class="progress-info">
-          <span>پیشرفت شما</span>
-          <span>${percent}%</span>
-        </div>
-
-        <div class="progress">
-          <div style="width:${percent}%"></div>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <div class="section-title">
-
-      <h2>سطح‌ها</h2>
-
-      <span>
-        A1 رایگان
-      </span>
-
-    </div>
-
-
-    <div class="levels">
-
-      ${levelCard(
-        "A1",
-        "مقدماتی",
-        "درس‌های ۱ تا ۱۰۰",
-        "🟢",
-        true
-      )}
-
-      ${levelCard(
-        "A1+",
-        "مقدماتی پیشرفته",
-        "درس‌های ۱۰۱ تا ۲۵۰",
-        "🔵",
-        false
-      )}
-
-      ${levelCard(
-        "A2",
-        "پایه",
-        "در حال آماده‌سازی",
-        "🟣",
-        false
-      )}
-
-      ${levelCard(
-        "B1",
-        "متوسط",
-        "در حال آماده‌سازی",
-        "🟠",
-        false
-      )}
-
-    </div>
-
-
-    <div class="section-title">
-
-      <h2>ادامه یادگیری</h2>
-
-    </div>
-
-    ${getContinueLesson()}
-
-  `;
-
-}
-
-
-function levelCard(
-  name,
-  title,
-  description,
-  icon,
-  unlocked
-) {
-
-  return `
-
-    <div
-      class="level ${unlocked ? "" : "locked"}"
-      onclick="${
-        unlocked
-        ? `showLevel('${name}')`
-        : `showLockedLevel('${name}')`
-      }"
-    >
-
-      ${!unlocked ? `<div class="lock">🔒</div>` : ""}
-
-      <div class="level-icon">
-        ${icon}
-      </div>
-
-      <h3>${name}</h3>
-
-      <p>
-        ${title}<br>
-        ${description}
-      </p>
-
-    </div>
-  `;
-}
-
-
-/* =========================================================
-   ادامه درس
-========================================================= */
-
-function getContinueLesson() {
-
-  const ids = Object.keys(lessons)
-    .map(Number)
-    .sort((a,b) => a-b);
-
-  for (const id of ids) {
-
-    if (!getLessonProgress(id).completed) {
-
-      const lesson = lessons[id];
-
-      return `
-
-        <div
-          class="card"
-          style="cursor:pointer"
-          onclick="openLesson(${id})"
-        >
-
-          <div style="display:flex;align-items:center;gap:13px">
-
-            <div class="level-icon">
-              📖
-            </div>
-
-            <div style="flex:1">
-
-              <div style="font-size:11px;color:var(--muted)">
-                ادامه یادگیری
-              </div>
-
-              <div style="font-weight:bold;margin-top:4px">
-                ${lesson.title}
-              </div>
-
-              <div style="font-size:11px;color:var(--muted);margin-top:4px">
-                ${lesson.level}
-              </div>
-
-            </div>
-
-            <div>
-              ←
-            </div>
-
-          </div>
-
-        </div>
-      `;
-    }
-  }
-
-  return `
-
-    <div class="card">
-
-      <div class="empty">
-
-        <div class="empty-icon">🎉</div>
-
-        <h3>همه درس‌ها را تمام کردی!</h3>
-
-      </div>
-
-    </div>
-  `;
-}
-
-
-/* =========================================================
-   صفحه سطح
-========================================================= */
-
-function showLevel(level) {
-
-  setActiveNav(1);
-
-  let min = 1;
-  let max = 100;
-
-  if (level === "A1+") {
-    min = 101;
-    max = 250;
-  }
-
-  const ids = Object.keys(lessons)
-    .map(Number)
-    .filter(id => id >= min && id <= max)
-    .sort((a,b) => a-b);
-
-  document.getElementById("app").innerHTML = `
-
-    <button
-      class="back-btn"
-      onclick="showHome()"
-    >
-      ← بازگشت
-    </button>
-
-    <div class="lesson-head">
-
-      <h1>${level}</h1>
-
-      <p>
-        ${level === "A1"
-          ? "سطح مقدماتی"
-          : "سطح A1+"}
-      </p>
-
-    </div>
-
-    <div class="lessons">
-
-      ${
-        ids.length
-        ? ids.map(id => lessonCard(id)).join("")
-        : `
-          <div class="card" style="grid-column:1/-1">
-            <div class="empty">
-              <div class="empty-icon">🚧</div>
-              این سطح هنوز آماده نشده است.
-            </div>
-          </div>
-        `
-      }
-
-    </div>
-
-  `;
-}
-
-
-/* =========================================================
-   کارت درس
-========================================================= */
-
-function lessonCard(id) {
-
-  const lesson = lessons[id];
-
-  if (!lesson) return "";
-
-  const p = getLessonProgress(id);
-
-  const unlocked = isLessonUnlocked(id);
-
-  const stars =
-    "★".repeat(p.stars || 0) +
-    "☆".repeat(3 - (p.stars || 0));
-
-  return `
-
-    <div
-      class="lesson ${unlocked ? "" : "locked"}"
-      onclick="${unlocked ? `openLesson(${id})` : `showLockedLesson('${id}')`}"
-    >
-
-      <div class="lesson-number">
-        ${lesson.level}
-      </div>
-
-      <div class="lesson-title">
-        درس ${id}
-      </div>
-
-      <div class="lesson-status">
-
-        ${
-          p.completed
-          ? "✓ تکمیل شده"
-          : unlocked
-            ? "شروع درس"
-            : "🔒 قفل"
-        }
-
-      </div>
-
-      ${
-        p.completed
-        ? `<div class="stars">${stars}</div>`
-        : ""
-      }
-
-    </div>
-
-  `;
-}
-
-
-/* =========================================================
-   باز کردن درس
-========================================================= */
-
-function openLesson(id) {
-
-  if (!isLessonUnlocked(id)) {
-
-    showLockedLevel(id);
-
-    return;
-  }
-
-  const lesson = lessons[id];
-
-  if (!lesson) return;
-
-  currentLesson = lesson;
-
-  setActiveNav(1);
-
-  const p = getLessonProgress(id);
-
-  document.getElementById("app").innerHTML = `
-
-    <button
-      class="back-btn"
-      onclick="showLevel('${lesson.level}')"
-    >
-      ← بازگشت
-    </button>
-
-
-    <div class="lesson-head">
-
-      <h1>${lesson.title}</h1>
-
-      <p>
-        سطح ${lesson.level}
-      </p>
-
-      ${
-        p.completed
-        ? `
-          <div class="stars">
-            ${"★".repeat(p.stars)}
-            ${"☆".repeat(3-p.stars)}
-          </div>
-        `
-        : ""
-      }
-
-    </div>
-
-
-    <!-- لغات -->
-
-    <div class="card">
-
-      <div class="card-title">
-        📚 لغات درس
-      </div>
-
-      <div>
-
-        ${
-          lesson.vocab.length
-          ? lesson.vocab.map(word => `
-
-              <div class="word">
-
-                <div style="flex:1">
-
-                  <div class="word-en">
-                    ${escapeHtml(word.en)}
-                  </div>
-
-                  <div class="word-fa">
-                    ${escapeHtml(word.fa)}
-                  </div>
-
-                </div>
+        <section class="hero">
+
+            <h2>
+                👋 به English Master خوش آمدی
+            </h2>
+
+            <p>
+                قدم‌به‌قدم انگلیسی یاد بگیر،
+                لغات جدید یاد بگیر،
+                مکالمه تمرین کن و بعد از هر ۱۰ درس
+                خودت را با آزمون محک بزن.
+            </p>
+
+            <div class="hero-buttons">
+
+                ${
+                    next
+                    ?
+                    `
+                    <button
+                        class="btn btn-primary"
+                        onclick="openLesson(${next})"
+                    >
+                        ▶ ادامه یادگیری
+                    </button>
+                    `
+                    :
+                    `
+                    <button
+                        class="btn btn-primary"
+                        onclick="showLevels()"
+                    >
+                        🎉 مشاهده درس‌ها
+                    </button>
+                    `
+                }
 
                 <button
-                  class="speak-btn"
-                  onclick="speak('${escapeAttr(word.en)}')"
+                    class="btn btn-dark"
+                    onclick="showLevels()"
                 >
-                  🔊
+                    📚 همه درس‌ها
                 </button>
 
-              </div>
-
-          `).join("")
-          : `
-            <div class="empty">
-              لغتی برای این درس پیدا نشد.
             </div>
-          `
-        }
 
-      </div>
-
-    </div>
+        </section>
 
 
-    <!-- مکالمه -->
+        <section class="progress-card">
 
-    <div class="card">
+            <div class="progress-top">
 
-      <div class="card-title">
-        💬 مکالمه
-      </div>
+                <span>
+                    پیشرفت شما
+                </span>
 
-      <div class="chat">
+                <span>
+                    ${percent}%
+                </span>
 
-        ${
-          lesson.conversation.length
-          ? lesson.conversation.map(msg => `
-
-              <div class="message ${msg.speaker === "A" ? "a" : "b"}">
-
-                <div class="speaker">
-                  ${msg.speaker}
-                </div>
-
-                <div>
-                  ${escapeHtml(msg.en)}
-                </div>
-
-                <div class="translation">
-                  ${translateSimple(msg.en)}
-                </div>
-
-              </div>
-
-          `).join("")
-          : `
-            <div class="empty">
-              مکالمه‌ای برای این درس پیدا نشد.
             </div>
-          `
-        }
 
-      </div>
+            <div class="progress-bar">
 
-    </div>
+                <div
+                    class="progress-fill"
+                    style="width:${percent}%"
+                ></div>
+
+            </div>
+
+            <p style="
+                margin-top:10px;
+                color:var(--muted);
+                font-size:13px;
+            ">
+                ${completed}
+                درس از
+                ${total}
+                درس کامل شده
+            </p>
+
+        </section>
 
 
-    <button
-      class="primary-btn"
-      onclick="completeLesson(${id})"
-    >
-      ${p.completed ? "مرور و ثبت دوباره درس ✓" : "درس را یاد گرفتم ✓"}
-    </button>
+        <div class="section-title">
+
+            <h2>
+                🎓 سطح‌ها
+            </h2>
+
+            <p>
+                مسیر یادگیری خودت را انتخاب کن
+            </p>
+
+        </div>
 
 
-    ${
-      id % 10 === 0
-      ? `
-        <button
-          class="secondary-btn"
-          onclick="startExam(${id})"
+        <div class="level-grid">
+
+            ${renderLevelCard("A1","مقدماتی","شروع انگلیسی از پایه",1)}
+
+            ${renderLevelCard("A1+","مقدماتی پلاس","تقویت پایه و مکالمه",31)}
+
+            ${renderLevelCard("A2","متوسط","مکالمه‌های روزمره",61)}
+
+            ${renderLevelCard("B1","متوسط رو به بالا","ارتباط بهتر و روان‌تر",91)}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   LEVEL CARD
+===================================================== */
+
+function renderLevelCard(
+    level,
+    description,
+    startId
+){
+
+    const firstLesson =
+        lessons[startId];
+
+    const unlocked =
+        isLessonUnlocked(startId);
+
+
+    return `
+
+        <div
+            class="level-card ${!unlocked ? "locked" : ""}"
+            onclick="${
+                unlocked
+                ?
+                `openLesson(${startId})`
+                :
+                `showMessage(
+                    '🔒 قفل است',
+                    'ابتدا درس‌های قبلی را کامل کن.'
+                )`
+            }"
         >
-          📝 شرکت در آزمون درس‌های ${id-9} تا ${id}
+
+            <div class="level-icon">
+                ${level}
+            </div>
+
+            <span class="lock">
+                ${unlocked ? "🔓" : "🔒"}
+            </span>
+
+            <h3>
+                سطح ${level}
+            </h3>
+
+            <p>
+                ${description}
+            </p>
+
+            ${
+                firstLesson
+                ?
+                `
+                <small style="
+                    display:block;
+                    margin-top:12px;
+                    color:var(--muted);
+                ">
+                    از درس ${startId}
+                </small>
+                `
+                :
+                ""
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   LEVELS PAGE
+===================================================== */
+
+function showLevels(){
+
+    setActiveNav("navLessons");
+
+    const ids =
+        getLessonIds();
+
+
+    document.getElementById("app").innerHTML = `
+
+        <div class="section-title">
+
+            <h2>
+                📚 درس‌ها
+            </h2>
+
+            <p>
+                درس‌ها به ترتیب باز می‌شوند.
+            </p>
+
+        </div>
+
+        <div class="lesson-grid">
+
+            ${
+                ids.length
+                ?
+                ids.map(id =>
+                    renderLessonCard(id)
+                ).join("")
+                :
+                `
+                <div class="empty">
+                    هیچ درسی پیدا نشد.
+                </div>
+                `
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   LESSON CARD
+===================================================== */
+
+function renderLessonCard(id){
+
+    const lesson =
+        lessons[id];
+
+    const unlocked =
+        isLessonUnlocked(id);
+
+    const data =
+        progress[id];
+
+    const completed =
+        data &&
+        data.completed;
+
+    const stars =
+        data &&
+        data.stars
+        ?
+        data.stars
+        :
+        0;
+
+
+    let starText = "";
+
+    for(let i=0;i<3;i++){
+
+        starText +=
+            i < stars ? "★" : "☆";
+
+    }
+
+
+    return `
+
+        <div
+            class="
+                lesson-card
+                ${completed ? "completed" : ""}
+                ${!unlocked ? "lesson-locked" : ""}
+            "
+            onclick="${
+                unlocked
+                ?
+                `openLesson(${id})`
+                :
+                `showMessage(
+                    '🔒 درس قفل است',
+                    'ابتدا درس قبلی را کامل کن.'
+                )`
+            }"
+        >
+
+            <div class="lesson-number">
+                درس ${id}
+            </div>
+
+            <h3>
+                ${escapeHTML(
+                    lesson.title
+                )}
+            </h3>
+
+            <div class="lesson-info">
+
+                <span>
+                    ${lesson.level}
+                </span>
+
+                <span class="stars">
+                    ${
+                        completed
+                        ?
+                        starText
+                        :
+                        (
+                            unlocked
+                            ?
+                            "▶ شروع"
+                            :
+                            "🔒"
+                        )
+                    }
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   OPEN LESSON
+===================================================== */
+
+function openLesson(id){
+
+    const lesson =
+        lessons[id];
+
+    if(!lesson)
+        return;
+
+
+    if(!isLessonUnlocked(id)){
+
+        showMessage(
+            "🔒 درس قفل است",
+            "ابتدا درس قبلی را کامل کن."
+        );
+
+        return;
+
+    }
+
+
+    currentLesson =
+        id;
+
+
+    document.getElementById("app").innerHTML = `
+
+        <button
+            class="back-btn"
+            onclick="showLevels()"
+        >
+            ← بازگشت به درس‌ها
         </button>
-      `
-      : ""
-    }
 
-  `;
 
-}
+        <section class="lesson-header">
 
+            <small>
+                سطح ${escapeHTML(lesson.level)}
+            </small>
 
-/* =========================================================
-   ترجمه ساده مکالمه
-   توجه:
-   ترجمه اصلی مکالمه در TXT برای بخش‌های آزمون وجود دارد،
-   اما برای مکالمه درس‌ها در فایل فقط متن انگلیسی ذخیره شده.
-========================================================= */
+            <h2>
+                📖 درس ${id}
+            </h2>
 
-function translateSimple(text) {
+        </section>
 
-  const dictionary = {
 
-    "Hello": "سلام",
-    "Hi": "سلام",
-    "Good morning": "صبح بخیر",
-    "Good evening": "عصر بخیر",
-    "Thank you": "ممنون",
-    "Thanks": "ممنون",
-    "Yes": "بله",
-    "No": "نه",
-    "Please": "لطفاً",
-    "Goodbye": "خداحافظ",
-    "How are you?": "حالت چطور است؟",
-    "What's your name?": "اسمت چیست؟",
-    "My name is Ali.": "اسم من علی است.",
-    "Where do you live?": "کجا زندگی می‌کنی؟",
-    "I live in a big city.": "من در یک شهر بزرگ زندگی می‌کنم.",
-    "What do you do?": "چه کار می‌کنی؟",
-    "I'm a teacher.": "من معلم هستم.",
-    "Do you study every day?": "آیا هر روز مطالعه می‌کنی؟",
-    "Yes, I study English.": "بله، انگلیسی مطالعه می‌کنم.",
-    "What country are you from?": "اهل کدام کشور هستی؟",
-    "I'm from Iran.": "من اهل ایران هستم.",
-    "What language do you speak?": "چه زبانی صحبت می‌کنی؟",
-    "Persian.": "فارسی.",
-    "What's the weather like today?": "امروز هوا چطور است؟",
-    "It's cloudy and windy.": "هوا ابری و بادی است."
+        <section class="content-card">
 
-  };
+            <h3>
+                📝 معنی‌ها
+            </h3>
 
-  if (dictionary[text]) {
-    return dictionary[text];
-  }
+            ${
+                lesson.vocab.length
+                ?
+                lesson.vocab.map(item => `
 
-  return "";
-}
+                    <div class="vocab-item">
 
+                        <div class="vocab-en">
+                            ${escapeHTML(item.en)}
+                        </div>
 
-/* =========================================================
-   تکمیل درس
-========================================================= */
+                        <div class="vocab-fa">
+                            ${escapeHTML(item.fa)}
+                        </div>
 
-function completeLesson(id) {
-
-  if (!progress[id]) {
-
-    progress[id] = {
-      completed: true,
-      stars: 1
-    };
-
-  } else {
-
-    progress[id].completed = true;
-
-    if (!progress[id].stars) {
-      progress[id].stars = 1;
-    }
-
-  }
-
-  saveProgress();
-
-  showMessage(
-    "درس کامل شد 🎉",
-    "آفرین! این درس با موفقیت ثبت شد. حالا می‌توانی سراغ درس بعدی بروی."
-  );
-
-  setTimeout(() => {
-    openLesson(id);
-  }, 900);
-
-}
-
-
-/* =========================================================
-   آزمون
-========================================================= */
-
-function startExam(endLesson) {
-
-  const startLessonNumber = endLesson - 9;
-
-  const available = [];
-
-  for (
-    let i = startLessonNumber;
-    i <= endLesson;
-    i++
-  ) {
-
-    if (lessons[i]) {
-      available.push(lessons[i]);
-    }
-
-  }
-
-  if (!available.length) {
-
-    showMessage(
-      "آزمون موجود نیست",
-      "درس‌های این بخش در فایل TXT پیدا نشدند."
-    );
-
-    return;
-  }
-
-  const questions = createExamQuestions(available);
-
-  window.currentExam = {
-    endLesson,
-    questions,
-    answers: {}
-  };
-
-  renderExam();
-
-}
-
-
-/* =========================================================
-   ساخت سؤال آزمون از لغات خود TXT
-========================================================= */
-
-function createExamQuestions(lessonList) {
-
-  const questions = [];
-
-  for (const lesson of lessonList) {
-
-    for (const word of lesson.vocab) {
-
-      if (questions.length >= 10) {
-        break;
-      }
-
-      const wrong = [];
-
-      for (const other of lessonList) {
-
-        for (const w of other.vocab) {
-
-          if (
-            w.en !== word.en &&
-            wrong.length < 3
-          ) {
-
-            wrong.push(w.fa);
-
-          }
-
-        }
-
-      }
-
-      const options = [
-        word.fa,
-        ...wrong
-      ].slice(0, 4);
-
-      while (options.length < 4) {
-        options.push("گزینه دیگر");
-      }
-
-      shuffle(options);
-
-      questions.push({
-        type: "meaning",
-        text: word.en,
-        answer: word.fa,
-        options
-      });
-
-    }
-
-    if (questions.length >= 10) {
-      break;
-    }
-
-  }
-
-  return questions.slice(0, 10);
-}
-
-
-/* =========================================================
-   نمایش آزمون
-========================================================= */
-
-function renderExam() {
-
-  const exam = window.currentExam;
-
-  if (!exam) return;
-
-  document.getElementById("app").innerHTML = `
-
-    <button
-      class="back-btn"
-      onclick="openLesson(${exam.endLesson})"
-    >
-      ← خروج از آزمون
-    </button>
-
-
-    <div class="lesson-head">
-
-      <h1>📝 آزمون</h1>
-
-      <p>
-        برای قبولی حداقل ۷۰٪ لازم است.
-      </p>
-
-    </div>
-
-
-    <div class="card">
-
-      ${
-        exam.questions.map((q, index) => `
-
-          <div class="exam-question">
-
-            <div class="question-number">
-              سؤال ${index + 1}
-            </div>
-
-            <div class="question-text">
-              معنی این کلمه چیست؟
-              <br><br>
-              <strong>${escapeHtml(q.text)}</strong>
-            </div>
-
-            <div class="options">
-
-              ${
-                q.options.map((option, oi) => `
-
-                  <button
-                    class="option ${
-                      exam.answers[index] === option
-                      ? "selected"
-                      : ""
-                    }"
-                    onclick="selectAnswer(${index}, '${escapeAttr(option)}')"
-                  >
-                    ${escapeHtml(option)}
-                  </button>
+                    </div>
 
                 `).join("")
-              }
+                :
+                `
+                <div class="empty">
+                    معنی‌ای برای این درس پیدا نشد.
+                </div>
+                `
+            }
 
-            </div>
-
-          </div>
-
-        `).join("")
-      }
+        </section>
 
 
-      <button
-        class="primary-btn"
-        onclick="submitExam()"
-      >
-        پایان آزمون
-      </button>
+        <section class="content-card">
 
-    </div>
+            <h3>
+                💬 مکالمه
+            </h3>
 
-  `;
+            ${
+                lesson.conversation.length
+                ?
+                `
+                <div class="conversation">
+
+                    ${
+                        lesson.conversation
+                        .map(item => `
+
+                            <div class="
+                                message
+                                ${item.speaker === "A" ? "a" : "b"}
+                            ">
+
+                                <div class="message-speaker">
+                                    گوینده ${escapeHTML(item.speaker)}
+                                </div>
+
+                                <div class="message-en">
+                                    ${escapeHTML(item.en)}
+                                </div>
+
+                            </div>
+
+                        `)
+                        .join("")
+                    }
+
+                </div>
+                `
+                :
+                `
+                <div class="empty">
+                    مکالمه‌ای برای این درس پیدا نشد.
+                </div>
+                `
+            }
+
+        </section>
+
+
+        <section class="content-card">
+
+            <h3>
+                🎯 پایان درس
+            </h3>
+
+            <p style="
+                color:var(--muted);
+                line-height:1.9;
+                margin-bottom:15px;
+            ">
+                وقتی لغات و مکالمه این درس را یاد گرفتی،
+                روی دکمه زیر بزن.
+            </p>
+
+            <button
+                class="complete-btn"
+                onclick="completeLesson(${id})"
+            >
+                ✅ یاد گرفتم
+            </button>
+
+        </section>
+
+    `;
 
 }
 
 
-/* =========================================================
-   انتخاب جواب
-========================================================= */
+/* =====================================================
+   COMPLETE LESSON
+===================================================== */
 
-function selectAnswer(index, answer) {
+function completeLesson(id){
 
-  window.currentExam.answers[index] = answer;
+    if(!progress[id]){
 
-  renderExam();
+        progress[id] = {
 
-}
+            completed:true,
 
+            stars:1
 
-/* =========================================================
-   نتیجه آزمون
-========================================================= */
+        };
 
-function submitExam() {
-
-  const exam = window.currentExam;
-
-  let correct = 0;
-
-  exam.questions.forEach((q, i) => {
-
-    if (exam.answers[i] === q.answer) {
-      correct++;
     }
 
-  });
+    else{
 
-  const score = Math.round(
-    correct / exam.questions.length * 100
-  );
+        progress[id].completed =
+            true;
 
-  const passed = score >= 70;
+        if(!progress[id].stars){
 
-  let stars = 0;
+            progress[id].stars = 1;
 
-  if (passed) {
+        }
 
-    if (score >= 90) {
-      stars = 3;
-    } else if (score >= 80) {
-      stars = 2;
-    } else {
-      stars = 1;
     }
 
-    const end = exam.endLesson;
-
-    if (!progress[end]) {
-      progress[end] = {};
-    }
-
-    progress[end].examPassed = true;
-    progress[end].examScore = score;
-    progress[end].stars = Math.max(
-      progress[end].stars || 0,
-      stars
-    );
 
     saveProgress();
 
-  }
 
+    /*
+      بعد از کامل کردن درس،
+      به درس بعدی می‌رویم.
+    */
 
-  document.getElementById("app").innerHTML = `
+    const nextId =
+        id + 1;
 
-    <div class="card">
 
-      <div class="result">
+    if(lessons[nextId]){
 
-        <div style="font-size:50px">
-          ${passed ? "🎉" : "📚"}
-        </div>
+        showMessage(
+            "🎉 درس کامل شد",
+            "آفرین! حالا می‌ریم سراغ درس بعدی."
+        );
 
-        <h2>
-          ${passed ? "آزمون را قبول شدی!" : "این بار قبول نشدی"}
-        </h2>
 
-        <div class="score">
-          ${score}%
-        </div>
+        setTimeout(()=>{
 
-        <div class="result-message">
+            openLesson(nextId);
 
-          پاسخ صحیح:
-          ${correct}
-          از
-          ${exam.questions.length}
+        },900);
 
-          <br><br>
 
-          ${
-            passed
-            ? `
-              حداقل نمره قبولی ۷۰٪ است.
-              <br>
-              ⭐ ${stars} ستاره گرفتی.
-            `
-            : `
-              برای قبولی باید حداقل ۷۰٪ بگیری.
-              <br>
-              دوباره تلاش کن 💪
-            `
-          }
+        return;
 
-        </div>
+    }
 
-        ${
-          passed
-          ? `
-            <button
-              class="primary-btn"
-              onclick="showLevel('${lessons[exam.endLesson]?.level || "A1"}')"
-            >
-              ادامه درس‌ها
-            </button>
-          `
-          : `
-            <button
-              class="primary-btn"
-              onclick="startExam(${exam.endLesson})"
-            >
-              🔄 تلاش دوباره
-            </button>
-          `
-        }
 
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   تنظیمات
-========================================================= */
-
-function showSettings() {
-
-  setActiveNav(2);
-
-  const dark =
-    document.body.classList.contains("dark");
-
-  document.getElementById("app").innerHTML = `
-
-    <div class="section-title">
-
-      <h2>⚙️ تنظیمات</h2>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="setting">
-
-        <div>
-
-          <div class="setting-title">
-            حالت تاریک
-          </div>
-
-          <div class="setting-sub">
-            تغییر ظاهر برنامه
-          </div>
-
-        </div>
-
-        <button
-          class="switch ${dark ? "active" : ""}"
-          onclick="toggleDarkMode()"
-        >
-          <span></span>
-        </button>
-
-      </div>
-
-
-      <div class="setting">
-
-        <div>
-
-          <div class="setting-title">
-            حذف پیشرفت
-          </div>
-
-          <div class="setting-sub">
-            تمام درس‌ها دوباره قفل می‌شوند.
-          </div>
-
-        </div>
-
-        <button
-          class="secondary-btn"
-          style="width:auto;margin:0;padding:9px 13px"
-          onclick="resetProgress()"
-        >
-          حذف
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="card-title">
-        درباره English Master
-      </div>
-
-      <p style="color:var(--muted);line-height:2;font-size:13px">
-
-        English Master یک سیستم آموزشی مرحله‌ای
-        برای یادگیری زبان انگلیسی است.
-
-        <br><br>
-
-        هر درس شامل لغات و مکالمه است.
-
-        <br>
-
-        بعد از هر ۱۰ درس می‌توانی در آزمون شرکت کنی.
-
-        <br>
-
-        حداقل نمره قبولی آزمون ۷۰٪ است.
-
-      </p>
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   صفحه درس‌ها
-========================================================= */
-
-function showLevels() {
-
-  setActiveNav(1);
-
-  document.getElementById("app").innerHTML = `
-
-    <div class="section-title">
-
-      <h2>📚 درس‌ها</h2>
-
-    </div>
-
-
-    <div class="levels">
-
-      ${levelCard(
-        "A1",
-        "مقدماتی",
-        "درس‌های ۱ تا ۱۰۰",
-        "🟢",
-        true
-      )}
-
-      ${levelCard(
-        "A1+",
-        "مقدماتی پیشرفته",
-        "درس‌های ۱۰۱ تا ۲۵۰",
-        "🔵",
-        false
-      )}
-
-      ${levelCard(
-        "A2",
-        "پایه",
-        "به‌زودی",
-        "🟣",
-        false
-      )}
-
-      ${levelCard(
-        "B1",
-        "متوسط",
-        "به‌زودی",
-        "🟠",
-        false
-      )}
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   سطح قفل
-========================================================= */
-
-function showLockedLevel(level) {
-
-  showMessage(
-    "🔒 این بخش قفل است",
-    level.length <= 4
-      ? "برای دسترسی به این سطح ابتدا باید مراحل قبلی را تکمیل کنید."
-      : "ابتدا درس قبلی را کامل کنید."
-  );
-
-}
-
-
-/* =========================================================
-   پیام
-========================================================= */
-
-function showMessage(title, text) {
-
-  document.getElementById("modalTitle").textContent =
-    title;
-
-  document.getElementById("modalText").textContent =
-    text;
-
-  document.getElementById("modal").classList.add("show");
-
-}
-
-
-function closeModal() {
-
-  document.getElementById("modal")
-    .classList.remove("show");
-
-}
-
-
-/* =========================================================
-   حالت تاریک
-========================================================= */
-
-function toggleDarkMode() {
-
-  document.body.classList.toggle("dark");
-
-  const dark =
-    document.body.classList.contains("dark");
-
-  localStorage.setItem(
-    "english_master_dark",
-    dark ? "1" : "0"
-  );
-
-  const btn = document.getElementById("themeBtn");
-
-  if (btn) {
-    btn.textContent = dark ? "☀️" : "🌙";
-  }
-
-}
-
-
-/* =========================================================
-   بازیابی حالت تاریک
-========================================================= */
-
-function loadTheme() {
-
-  const dark =
-    localStorage.getItem("english_master_dark");
-
-  if (dark === "1") {
-
-    document.body.classList.add("dark");
-
-  }
-
-}
-
-
-/* =========================================================
-   ناوبری
-========================================================= */
-
-function setActiveNav(index) {
-
-  document
-    .querySelectorAll(".nav-btn")
-    .forEach((btn, i) => {
-
-      btn.classList.toggle(
-        "active",
-        i === index
-      );
-
-    });
-
-}
-
-
-/* =========================================================
-   تلفظ انگلیسی
-========================================================= */
-
-function speak(text) {
-
-  if (!("speechSynthesis" in window)) {
+    /*
+      اگر درس بعدی وجود نداشت
+    */
 
     showMessage(
-      "تلفظ در دسترس نیست",
-      "مرورگر شما از قابلیت تبدیل متن به صدا پشتیبانی نمی‌کند."
+        "🎉 تبریک!",
+        "تمام درس‌های این بخش را کامل کردی."
     );
 
-    return;
-  }
 
-  speechSynthesis.cancel();
+    setTimeout(()=>{
 
-  const utterance =
-    new SpeechSynthesisUtterance(text);
+        showLevels();
 
-  utterance.lang = "en-US";
-  utterance.rate = .85;
-  utterance.pitch = 1;
-
-  speechSynthesis.speak(utterance);
+    },1000);
 
 }
 
 
-/* =========================================================
-   حذف پیشرفت
-========================================================= */
+/* =====================================================
+   EXAM AFTER EVERY 10 LESSONS
+===================================================== */
 
-function resetProgress() {
+function shouldShowExam(id){
 
-  const ok = confirm(
-    "آیا مطمئن هستید تمام پیشرفت حذف شود؟"
-  );
-
-  if (!ok) return;
-
-  progress = {};
-
-  localStorage.removeItem(STORAGE_KEY);
-
-  showMessage(
-    "انجام شد",
-    "تمام پیشرفت‌ها حذف شدند."
-  );
-
-  setTimeout(showHome, 800);
+    return (
+        id % 10 === 0
+    );
 
 }
 
 
-/* =========================================================
-   ابزارها
-========================================================= */
+/*
+  نسخه پیشرفته‌تر:
+  اگر درس دهم، بیستم، سی‌ام و...
+  کامل شود، آزمون همان ده درس باز می‌شود.
+*/
 
-function shuffle(array) {
+function completeLessonWithExam(id){
 
-  for (
-    let i = array.length - 1;
-    i > 0;
-    i--
-  ) {
+    completeLesson(id);
 
-    const j =
-      Math.floor(Math.random() * (i + 1));
+}
 
-    [
-      array[i],
-      array[j]
-    ] = [
-      array[j],
-      array[i]
+
+/* =====================================================
+   START EXAM
+===================================================== */
+
+function startExam(endLesson){
+
+    const startLesson =
+        endLesson - 9;
+
+
+    const available =
+        [];
+
+
+    for(
+        let i=startLesson;
+        i<=endLesson;
+        i++
+    ){
+
+        if(lessons[i]){
+
+            available.push(
+                lessons[i]
+            );
+
+        }
+
+    }
+
+
+    if(!available.length){
+
+        showMessage(
+            "❌ خطا",
+            "سؤال کافی برای آزمون وجود ندارد."
+        );
+
+        return;
+
+    }
+
+
+    examQuestions = [];
+
+
+    /*
+      از لغات درس‌ها سؤال می‌سازیم.
+    */
+
+    for(const lesson of available){
+
+        for(const word of lesson.vocab){
+
+            examQuestions.push({
+
+                question:
+                    `معنی «${word.en}» چیست؟`,
+
+                answer:
+                    word.fa,
+
+                lesson:
+                    lesson.id
+
+            });
+
+        }
+
+    }
+
+
+    /*
+      حداکثر 10 سؤال
+    */
+
+    examQuestions =
+        shuffle(examQuestions)
+        .slice(
+            0,
+            Math.min(10,examQuestions.length)
+        );
+
+
+    examAnswers = {};
+
+
+    renderExam(
+        endLesson
+    );
+
+}
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array){
+
+    const arr =
+        [...array];
+
+    for(
+        let i=arr.length-1;
+        i>0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i+1)
+            );
+
+        [
+            arr[i],
+            arr[j]
+        ] =
+        [
+            arr[j],
+            arr[i]
+        ];
+
+    }
+
+    return arr;
+
+}
+
+
+/* =====================================================
+   EXAM RENDER
+===================================================== */
+
+function renderExam(endLesson){
+
+    setActiveNav("navLessons");
+
+
+    document.getElementById("app").innerHTML = `
+
+        <button
+            class="back-btn"
+            onclick="showLevels()"
+        >
+            ← بازگشت
+        </button>
+
+
+        <section class="lesson-header">
+
+            <small>
+                آزمون
+            </small>
+
+            <h2>
+                📝 آزمون درس‌های
+                ${endLesson - 9}
+                تا
+                ${endLesson}
+            </h2>
+
+            <p style="margin-top:10px">
+                برای قبولی حداقل ۷۰٪ پاسخ صحیح لازم است.
+            </p>
+
+        </section>
+
+
+        ${
+            examQuestions.map(
+                (q,index)=>`
+
+                    <div class="exam-question">
+
+                        <h3>
+                            ${index+1}.
+                            ${escapeHTML(q.question)}
+                        </h3>
+
+                        <div class="options">
+
+                            ${makeOptions(q,index)}
+
+                        </div>
+
+                    </div>
+
+                `
+            ).join("")
+        }
+
+
+        <button
+            class="submit-exam"
+            onclick="submitExam(${endLesson})"
+        >
+            📊 ثبت پاسخ‌ها
+        </button>
+
+    `;
+
+}
+
+
+/* =====================================================
+   MAKE OPTIONS
+===================================================== */
+
+function makeOptions(question,index){
+
+    const answers = [
+
+        question.answer
+
     ];
 
-  }
 
-  return array;
+    /*
+      جواب‌های اشتباه را از کل لغات می‌گیریم.
+    */
+
+    const allWords =
+        Object.values(lessons)
+        .flatMap(
+            lesson =>
+                lesson.vocab
+                .map(v=>v.fa)
+        );
+
+
+    const wrong =
+        shuffle(
+            allWords.filter(
+                x => x !== question.answer
+            )
+        )
+        .slice(0,3);
+
+
+    answers.push(...wrong);
+
+
+    const finalOptions =
+        shuffle(
+            [...new Set(answers)]
+        )
+        .slice(0,4);
+
+
+    return finalOptions
+        .map(
+            option => `
+
+                <button
+                    class="option"
+                    onclick="
+                        selectExamAnswer(
+                            ${index},
+                            this,
+                            '${escapeHTML(option).replaceAll("'","\\'")}'
+                        )
+                    "
+                >
+                    ${escapeHTML(option)}
+                </button>
+
+            `
+        )
+        .join("");
 
 }
 
 
-function escapeHtml(value) {
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
 
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+function selectExamAnswer(
+    index,
+    element,
+    answer
+){
+
+    examAnswers[index] =
+        answer;
+
+
+    const parent =
+        element.parentElement;
+
+
+    parent
+        .querySelectorAll(".option")
+        .forEach(btn =>
+            btn.classList.remove("selected")
+        );
+
+
+    element.classList.add(
+        "selected"
+    );
 
 }
 
 
-function escapeAttr(value) {
+/* =====================================================
+   SUBMIT EXAM
+===================================================== */
 
-  return String(value)
-    .replace(/\\/g, "\\\\")
-    .replace(/'/g, "\\'")
-    .replace(/"/g, "&quot;");
+function submitExam(endLesson){
+
+    let correct = 0;
+
+
+    examQuestions.forEach(
+        (question,index)=>{
+
+            if(
+                examAnswers[index] ===
+                question.answer
+            ){
+
+                correct++;
+
+            }
+
+        }
+    );
+
+
+    const total =
+        examQuestions.length;
+
+
+    const percent =
+        total
+        ?
+        Math.round(
+            correct / total * 100
+        )
+        :
+        0;
+
+
+    /*
+      حداقل 70 درصد
+    */
+
+    if(percent >= 70){
+
+        /*
+          سه ستاره برای نمره‌های بالا
+        */
+
+        let stars = 1;
+
+        if(percent >= 90)
+            stars = 3;
+
+        else if(percent >= 80)
+            stars = 2;
+
+
+        /*
+          برای ده درس پایانی
+          نتیجه آزمون ذخیره می‌شود.
+        */
+
+        progress[
+            "exam_" + endLesson
+        ] = {
+
+            passed:true,
+
+            score:percent,
+
+            stars:stars
+
+        };
+
+
+        saveProgress();
+
+
+        document.getElementById("app").innerHTML = `
+
+            <div class="empty">
+
+                <div style="
+                    font-size:55px;
+                    margin-bottom:15px;
+                ">
+                    🎉
+                </div>
+
+                <h2>
+                    آزمون را قبول شدی!
+                </h2>
+
+                <p style="
+                    margin-top:12px;
+                    color:var(--muted);
+                ">
+                    نمره شما:
+                    <strong>
+                        ${percent}٪
+                    </strong>
+                </p>
+
+                <p style="
+                    margin-top:12px;
+                    color:#f59e0b;
+                    font-size:25px;
+                ">
+                    ${
+                        "★".repeat(stars)
+                    }${
+                        "☆".repeat(3-stars)
+                    }
+                </p>
+
+                <button
+                    class="complete-btn"
+                    style="margin-top:20px"
+                    onclick="showLevels()"
+                >
+                    ادامه یادگیری
+                </button>
+
+            </div>
+
+        `;
+
+    }
+
+    else{
+
+        document.getElementById("app").innerHTML = `
+
+            <div class="empty">
+
+                <div style="
+                    font-size:55px;
+                    margin-bottom:15px;
+                ">
+                    📚
+                </div>
+
+                <h2>
+                    این بار قبول نشدی
+                </h2>
+
+                <p style="
+                    margin-top:12px;
+                    color:var(--muted);
+                ">
+                    نمره شما:
+                    <strong>
+                        ${percent}٪
+                    </strong>
+                </p>
+
+                <p style="
+                    margin-top:10px;
+                    color:var(--muted);
+                ">
+                    برای قبولی حداقل ۷۰٪ لازم است.
+                </p>
+
+                <button
+                    class="complete-btn"
+                    style="margin-top:20px"
+                    onclick="startExam(${endLesson})"
+                >
+                    🔄 دوباره امتحان بده
+                </button>
+
+            </div>
+
+        `;
+
+    }
 
 }
 
 
-/* =========================================================
-   شروع برنامه
-========================================================= */
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+function showSettings(){
+
+    setActiveNav("navSettings");
+
+
+    const completed =
+        getCompletedCount();
+
+    const total =
+        getTotalLessons();
+
+
+    document.getElementById("app").innerHTML = `
+
+        <div class="section-title">
+
+            <h2>
+                ⚙️ تنظیمات
+            </h2>
+
+            <p>
+                تنظیمات برنامه
+            </p>
+
+        </div>
+
+
+        <div class="setting-item">
+
+            <div>
+
+                <strong>
+                    حالت تاریک
+                </strong>
+
+                <p>
+                    تغییر ظاهر برنامه
+                </p>
+
+            </div>
+
+            <button
+                class="toggle"
+                onclick="toggleTheme()"
+            ></button>
+
+        </div>
+
+
+        <div class="setting-item">
+
+            <div>
+
+                <strong>
+                    پیشرفت
+                </strong>
+
+                <p>
+                    ${completed}
+                    از
+                    ${total}
+                    درس کامل شده
+                </p>
+
+            </div>
+
+            <span>
+                📈
+            </span>
+
+        </div>
+
+
+        <div class="setting-item">
+
+            <div>
+
+                <strong>
+                    نسخه برنامه
+                </strong>
+
+                <p>
+                    English Master
+                </p>
+
+            </div>
+
+            <span>
+                1.0
+            </span>
+
+        </div>
+
+
+        <div class="content-card">
+
+            <h3>
+                ⚠️ پاک کردن پیشرفت
+            </h3>
+
+            <p style="
+                color:var(--muted);
+                line-height:1.9;
+                margin-bottom:15px;
+            ">
+                با این کار تمام درس‌های کامل‌شده
+                و نتایج آزمون‌ها پاک می‌شوند.
+            </p>
+
+            <button
+                class="complete-btn"
+                style="background:var(--danger)"
+                onclick="resetProgress()"
+            >
+                🗑 پاک کردن پیشرفت
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+function resetProgress(){
+
+    const ok =
+        confirm(
+            "آیا مطمئنی می‌خواهی تمام پیشرفت پاک شود؟"
+        );
+
+
+    if(!ok)
+        return;
+
+
+    progress = {};
+
+    saveProgress();
+
+    showMessage(
+        "انجام شد",
+        "پیشرفت شما پاک شد."
+    );
+
+
+    setTimeout(()=>{
+
+        showHome();
+
+    },700);
+
+}
+
+
+/* =====================================================
+   ACTIVE NAV
+===================================================== */
+
+function setActiveNav(id){
+
+    document
+        .querySelectorAll(".nav-btn")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+
+    const btn =
+        document.getElementById(id);
+
+
+    if(btn)
+        btn.classList.add("active");
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
 
 loadTheme();
 
