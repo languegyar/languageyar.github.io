@@ -1,1914 +1,2294 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>English Master | آموزش زبان انگلیسی</title>
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0">
+  <meta name="description"
+        content="آموزش زبان انگلیسی از A1 تا سطوح بالاتر با درس، مکالمه، لغات و آزمون">
 
-<title>English Master</title>
-
-<meta name="description"
-content="یادگیری زبان انگلیسی از A1 تا C1 در 1000 مرحله">
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<style>
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-    background:#09090f;
-    color:#fff;
-}
-
-button,
-input{
-    font-family:inherit;
-}
-
-button{
-    border:0;
-    cursor:pointer;
-}
-
-.container{
-    width:min(1100px,94%);
-    margin:auto;
-}
-
-header{
-    padding:20px 0;
-    border-bottom:1px solid #252535;
-    background:#0e0e17;
-    position:sticky;
-    top:0;
-    z-index:20;
-}
-
-.header-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-}
-
-.logo{
-    font-size:23px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#7c5cff;
-}
-
-.user-area{
-    display:flex;
-    gap:8px;
-    align-items:center;
-}
-
-.btn{
-    background:#7c5cff;
-    color:white;
-    padding:11px 17px;
-    border-radius:12px;
-    font-weight:bold;
-}
-
-.btn:hover{
-    opacity:.9;
-}
-
-.btn.secondary{
-    background:#20202d;
-}
-
-.btn.danger{
-    background:#d83d5c;
-}
-
-.hero{
-    text-align:center;
-    padding:35px 10px;
-}
-
-.hero h1{
-    font-size:32px;
-    margin:10px 0;
-}
-
-.hero p{
-    color:#aaa;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:
-        repeat(3,1fr);
-    gap:12px;
-    margin:20px 0;
-}
-
-.stat{
-    background:#13131e;
-    border:1px solid #252535;
-    border-radius:18px;
-    padding:18px;
-    text-align:center;
-}
-
-.stat-number{
-    display:block;
-    font-size:24px;
-    font-weight:bold;
-    color:#7c5cff;
-    margin-bottom:6px;
-}
-
-.section-title{
-    margin:30px 0 15px;
-}
-
-.stages{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fill,minmax(130px,1fr));
-    gap:10px;
-    padding-bottom:40px;
-}
-
-.stage{
-    background:#14141f;
-    border:1px solid #272738;
-    border-radius:15px;
-    padding:15px 8px;
-    min-height:110px;
-    text-align:center;
-    transition:.2s;
-}
-
-.stage:hover{
-    transform:translateY(-2px);
-    border-color:#7c5cff;
-}
-
-.stage.locked{
-    opacity:.5;
-}
-
-.stage-number{
-    font-size:22px;
-    font-weight:bold;
-}
-
-.stage-level{
-    color:#aaa;
-    font-size:13px;
-    margin:7px 0;
-}
-
-.free{
-    color:#28d17c;
-}
-
-.paid{
-    color:#ffb13b;
-}
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:15px;
-    z-index:100;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-card{
-    width:min(550px,100%);
-    max-height:90vh;
-    overflow:auto;
-    background:#13131e;
-    border:1px solid #2b2b3c;
-    border-radius:22px;
-    padding:25px;
-}
-
-.modal-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-}
-
-.close{
-    background:#242432;
-    color:white;
-    width:38px;
-    height:38px;
-    border-radius:50%;
-}
-
-input{
-    width:100%;
-    padding:14px;
-    background:#0c0c14;
-    border:1px solid #303044;
-    color:white;
-    border-radius:12px;
-    outline:none;
-    margin:7px 0;
-}
-
-input:focus{
-    border-color:#7c5cff;
-}
-
-.otp{
-    direction:ltr;
-    text-align:center;
-    letter-spacing:7px;
-    font-size:25px;
-}
-
-.plan-grid{
-    display:grid;
-    gap:12px;
-}
-
-.plan{
-    background:#191925;
-    border:1px solid #303044;
-    border-radius:16px;
-    padding:17px;
-}
-
-.plan h3{
-    margin-top:0;
-}
-
-.price{
-    font-size:24px;
-    color:#7c5cff;
-    font-weight:bold;
-}
-
-.payment-card{
-    background:#101019;
-    border:1px solid #303044;
-    border-radius:15px;
-    padding:15px;
-    margin:15px 0;
-}
-
-.card-number{
-    direction:ltr;
-    text-align:center;
-    font-size:22px;
-    letter-spacing:2px;
-    color:#7c5cff;
-}
-
-.lesson{
-    background:#13131e;
-    border:1px solid #29293b;
-    border-radius:22px;
-    padding:25px;
-    margin:20px 0 40px;
-}
-
-.english{
-    direction:ltr;
-    text-align:left;
-    font-size:24px;
-    line-height:1.7;
-    background:#0d0d15;
-    border-radius:15px;
-    padding:20px;
-}
-
-.translation{
-    color:#b8b8c8;
-    font-size:17px;
-    margin:15px 0;
-}
-
-.options{
-    display:grid;
-    gap:10px;
-}
-
-.option{
-    padding:14px;
-    border-radius:13px;
-    background:#20202d;
-    color:white;
-    border:1px solid #303044;
-    text-align:right;
-}
-
-.option:hover{
-    border-color:#7c5cff;
-}
-
-.correct{
-    background:#154e36!important;
-    border-color:#28d17c!important;
-}
-
-.wrong{
-    background:#54202c!important;
-    border-color:#d83d5c!important;
-}
-
-.notice{
-    padding:14px;
-    border-radius:13px;
-    background:#191925;
-    color:#bbb;
-    margin:12px 0;
-}
-
-.success{
-    color:#28d17c;
-}
-
-.error{
-    color:#ff5c75;
-}
-
-.hidden{
-    display:none!important;
-}
-
-@media(max-width:650px){
-
-    .stats{
-        grid-template-columns:1fr;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Tahoma, Arial, sans-serif;
     }
 
-    .hero h1{
-        font-size:25px;
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #171923;
+      --muted: #707784;
+      --primary: #6757ff;
+      --primary2: #806cff;
+      --border: #e5e7ef;
+      --success: #20b26b;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --shadow: 0 8px 30px rgba(0,0,0,.07);
     }
 
-    .stages{
-        grid-template-columns:
-            repeat(3,1fr);
+    body.dark {
+      --bg: #0e1017;
+      --card: #171a23;
+      --text: #f4f5f7;
+      --muted: #a2a7b2;
+      --border: #292e3a;
+      --shadow: 0 8px 30px rgba(0,0,0,.25);
     }
 
-    .stage{
-        min-height:95px;
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: .25s;
     }
 
-}
+    button {
+      border: none;
+      cursor: pointer;
+    }
 
-</style>
+    .app {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding-bottom: 100px;
+    }
 
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 18px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 21px;
+      font-weight: bold;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 7px 20px rgba(103,87,255,.3);
+    }
+
+    .logo-title {
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .logo-sub {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-size: 19px;
+    }
+
+    /* HOME */
+
+    main {
+      padding: 18px;
+    }
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary2)
+      );
+      color: white;
+      border-radius: 25px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 15px 35px rgba(103,87,255,.25);
+    }
+
+    .hero h1 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      line-height: 1.9;
+      opacity: .92;
+      font-size: 14px;
+    }
+
+    .progress-box {
+      margin-top: 20px;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 9px;
+      background: rgba(255,255,255,.25);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress > div {
+      height: 100%;
+      background: white;
+      border-radius: 99px;
+      transition: .4s;
+    }
+
+    /* SECTION */
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 25px 0 13px;
+    }
+
+    .section-title h2 {
+      font-size: 18px;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* LEVELS */
+
+    .levels {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .level {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      padding: 17px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      text-align: right;
+    }
+
+    .level.locked {
+      opacity: .65;
+    }
+
+    .level-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(103,87,255,.12);
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .level h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .level p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .lock {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      font-size: 17px;
+    }
+
+    /* LESSONS */
+
+    .lessons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .lesson {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 14px;
+      cursor: pointer;
+      transition: .2s;
+      position: relative;
+    }
+
+    .lesson:hover {
+      transform: translateY(-2px);
+    }
+
+    .lesson.locked {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .lesson-number {
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .lesson-title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .lesson-status {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .stars {
+      color: #fbbf24;
+      letter-spacing: 1px;
+      margin-top: 7px;
+      font-size: 13px;
+    }
+
+    /* LESSON PAGE */
+
+    .back-btn {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 11px 15px;
+      border-radius: 13px;
+      margin-bottom: 15px;
+    }
+
+    .lesson-head {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+
+    .lesson-head h1 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .lesson-head p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      padding: 19px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    /* VOCAB */
+
+    .word {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .word:last-child {
+      border-bottom: none;
+    }
+
+    .word-en {
+      direction: ltr;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .word-fa {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .speak-btn {
+      width: 37px;
+      height: 37px;
+      flex-shrink: 0;
+      border-radius: 11px;
+      background: rgba(103,87,255,.12);
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    /* CONVERSATION */
+
+    .chat {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .message {
+      max-width: 88%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .message.a {
+      align-self: flex-start;
+      background: rgba(103,87,255,.12);
+      direction: ltr;
+      text-align: left;
+      border-bottom-left-radius: 4px;
+    }
+
+    .message.b {
+      align-self: flex-end;
+      background: var(--primary);
+      color: white;
+      direction: ltr;
+      text-align: left;
+      border-bottom-right-radius: 4px;
+    }
+
+    .speaker {
+      font-size: 10px;
+      opacity: .65;
+      margin-bottom: 3px;
+    }
+
+    .translation {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* BUTTON */
+
+    .primary-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color: white;
+      padding: 15px;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .secondary-btn {
+      width: 100%;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 15px;
+      margin-top: 8px;
+    }
+
+    /* EXAM */
+
+    .exam-question {
+      padding: 17px;
+      background: var(--bg);
+      border-radius: 17px;
+      margin-bottom: 13px;
+      border: 1px solid var(--border);
+    }
+
+    .question-number {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      direction: ltr;
+      text-align: left;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .options {
+      display: grid;
+      gap: 8px;
+    }
+
+    .option {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 11px;
+      border-radius: 12px;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .option.selected {
+      border-color: var(--primary);
+      background: rgba(103,87,255,.1);
+    }
+
+    .result {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .score {
+      font-size: 45px;
+      font-weight: bold;
+      color: var(--primary);
+      margin: 12px;
+    }
+
+    .result-message {
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    /* SETTINGS */
+
+    .setting {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .setting:last-child {
+      border-bottom: none;
+    }
+
+    .setting-title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .setting-sub {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .switch {
+      width: 50px;
+      height: 28px;
+      border-radius: 99px;
+      background: #777;
+      padding: 3px;
+      transition: .2s;
+    }
+
+    .switch span {
+      width: 22px;
+      height: 22px;
+      background: white;
+      display: block;
+      border-radius: 50%;
+      transition: .2s;
+    }
+
+    .switch.active {
+      background: var(--primary);
+    }
+
+    .switch.active span {
+      transform: translateX(-22px);
+    }
+
+    /* BOTTOM NAV */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(900px, 100%);
+      z-index: 100;
+      padding: 10px 13px calc(10px + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--card) 94%, transparent);
+      backdrop-filter: blur(18px);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .nav-btn {
+      background: transparent;
+      color: var(--muted);
+      padding: 7px;
+      border-radius: 13px;
+      font-size: 11px;
+    }
+
+    .nav-btn.active {
+      color: var(--primary);
+      background: rgba(103,87,255,.1);
+    }
+
+    .nav-icon {
+      display: block;
+      font-size: 19px;
+      margin-bottom: 3px;
+    }
+
+    /* MODAL */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 200;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(600px, 100%);
+      background: var(--card);
+      border-radius: 25px 25px 0 0;
+      padding: 24px;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+
+    .modal-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .modal-box p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 13px;
+    }
+
+    .close-btn {
+      float: left;
+      background: var(--bg);
+      color: var(--text);
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+    }
+
+    /* EMPTY */
+
+    .empty {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+
+    .empty-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (min-width: 650px) {
+      .levels {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .lessons {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 400px) {
+      main {
+        padding: 13px;
+      }
+
+      .levels {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lessons {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 21px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+<div class="app">
 
-<div class="container header-inner">
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
 
-<div class="logo">
-English <span>Master</span>
-</div>
+      <div class="logo">
+        <div class="logo-icon">EN</div>
 
-<div class="user-area">
+        <div>
+          <div class="logo-title">English Master</div>
+          <div class="logo-sub">یادگیری زبان انگلیسی</div>
+        </div>
+      </div>
 
-<span id="userEmail"></span>
+      <button class="icon-btn" onclick="toggleDarkMode()" id="themeBtn">
+        🌙
+      </button>
 
-<button
-id="loginButton"
-class="btn"
-onclick="openLogin()">
-ورود
-</button>
+    </div>
+  </header>
 
-<button
-id="logoutButton"
-class="btn danger hidden"
-onclick="logout()">
-خروج
-</button>
-
-</div>
+  <!-- CONTENT -->
+  <main id="app"></main>
 
 </div>
 
-</header>
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
 
+  <button class="nav-btn active" onclick="showHome()">
+    <span class="nav-icon">🏠</span>
+    خانه
+  </button>
 
-<main class="container">
+  <button class="nav-btn" onclick="showLevels()">
+    <span class="nav-icon">📚</span>
+    درس‌ها
+  </button>
 
-<section class="hero">
+  <button class="nav-btn" onclick="showSettings()">
+    <span class="nav-icon">⚙️</span>
+    تنظیمات
+  </button>
 
-<h1>
-یادگیری انگلیسی از A1 تا C1
-</h1>
+</nav>
 
-<p>
-۱۰۰۰ مرحله آموزشی از مبتدی تا پیشرفته
-</p>
+<!-- MODAL -->
+<div class="modal" id="modal">
 
-<div class="stats">
+  <div class="modal-box">
 
-<div class="stat">
-<span
-class="stat-number"
-id="completedCount">
-0
-</span>
-مرحله تکمیل‌شده
-</div>
+    <button class="close-btn" onclick="closeModal()">×</button>
 
-<div class="stat">
-<span
-class="stat-number">
-100
-</span>
-مرحله رایگان
-</div>
+    <h2 id="modalTitle"></h2>
 
-<div class="stat">
-<span
-class="stat-number">
-900
-</span>
-مرحله پولی
-</div>
+    <p id="modalText"></p>
+
+  </div>
 
 </div>
-
-</section>
-
-
-<div id="subscriptionStatus"></div>
-
-
-<h2 class="section-title">
-مراحل آموزشی
-</h2>
-
-<div
-id="stages"
-class="stages">
-</div>
-
-</main>
-
-
-<!-- LOGIN MODAL -->
-
-<div
-id="loginModal"
-class="modal">
-
-<div class="modal-card">
-
-<div class="modal-head">
-
-<h2>
-ورود / ثبت‌نام
-</h2>
-
-<button
-class="close"
-onclick="closeModal('loginModal')">
-×
-</button>
-
-</div>
-
-
-<div id="emailStep">
-
-<p>
-برای ورود، Gmail خود را وارد کنید.
-</p>
-
-<input
-id="loginEmail"
-type="email"
-placeholder="example@gmail.com"
-autocomplete="email">
-
-<button
-class="btn"
-style="width:100%;margin-top:10px"
-onclick="sendOTP()">
-
-ارسال کد ۸ رقمی
-
-</button>
-
-</div>
-
-
-<div
-id="otpStep"
-class="hidden">
-
-<p>
-کد ۸ رقمی ارسال‌شده به ایمیل را وارد کنید.
-</p>
-
-<input
-id="otpCode"
-class="otp"
-type="text"
-inputmode="numeric"
-maxlength="8"
-autocomplete="one-time-code"
-placeholder="12345678">
-
-<button
-class="btn"
-style="width:100%;margin-top:10px"
-onclick="verifyOTP()">
-
-تأیید و ورود
-
-</button>
-
-<button
-class="btn secondary"
-style="width:100%;margin-top:8px"
-onclick="backToEmail()">
-
-تغییر ایمیل
-
-</button>
-
-</div>
-
-
-<p
-id="loginMessage"
-class="notice">
-</p>
-
-</div>
-
-</div>
-
-
-<!-- SUBSCRIPTION MODAL -->
-
-<div
-id="subscriptionModal"
-class="modal">
-
-<div class="modal-card">
-
-<div class="modal-head">
-
-<h2>
-خرید اشتراک
-</h2>
-
-<button
-class="close"
-onclick="closeModal('subscriptionModal')">
-×
-</button>
-
-</div>
-
-<div class="notice">
-
-مراحل ۱ تا ۱۰۰ رایگان هستند.
-<br>
-برای مراحل ۱۰۱ تا ۱۰۰۰ باید اشتراک فعال داشته باشید.
-
-</div>
-
-
-<div class="plan-grid">
-
-<div class="plan">
-
-<h3>
-اشتراک یک ماهه
-</h3>
-
-<div class="price">
-۲۵۰٬۰۰۰ تومان
-</div>
-
-<p>
-۳۰ روز
-</p>
-
-<button
-class="btn"
-onclick="selectPlan('month')">
-انتخاب
-</button>
-
-</div>
-
-
-<div class="plan">
-
-<h3>
-اشتراک سه ماهه
-</h3>
-
-<div class="price">
-۴۰۰٬۰۰۰ تومان
-</div>
-
-<p>
-۹۰ روز
-</p>
-
-<button
-class="btn"
-onclick="selectPlan('threeMonth')">
-انتخاب
-</button>
-
-</div>
-
-
-<div class="plan">
-
-<h3>
-اشتراک یک ساله
-</h3>
-
-<div class="price">
-۶۰۰٬۰۰۰ تومان
-</div>
-
-<p>
-۳۶۵ روز
-</p>
-
-<button
-class="btn"
-onclick="selectPlan('year')">
-انتخاب
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- PAYMENT MODAL -->
-
-<div
-id="paymentModal"
-class="modal">
-
-<div class="modal-card">
-
-<div class="modal-head">
-
-<h2>
-ثبت پرداخت
-</h2>
-
-<button
-class="close"
-onclick="closeModal('paymentModal')">
-×
-</button>
-
-</div>
-
-<div id="selectedPlanText"></div>
-
-
-<div class="payment-card">
-
-<div>
-شماره کارت:
-</div>
-
-<div class="card-number">
-6119 8619 2115 8506
-</div>
-
-<p>
-پس از کارت‌به‌کارت، شماره پیگیری یا توضیح پرداخت را وارد کنید.
-</p>
-
-</div>
-
-
-<input
-id="paymentReference"
-placeholder="شماره پیگیری / توضیح پرداخت">
-
-
-<button
-class="btn"
-style="width:100%;margin-top:10px"
-onclick="submitPayment()">
-
-ثبت درخواست پرداخت
-
-</button>
-
-
-<div
-id="paymentMessage"
-class="notice">
-</div>
-
-</div>
-
-</div>
-
-
-<!-- LESSON MODAL -->
-
-<div
-id="lessonModal"
-class="modal">
-
-<div class="modal-card">
-
-<div class="modal-head">
-
-<h2 id="lessonTitle">
-درس
-</h2>
-
-<button
-class="close"
-onclick="closeModal('lessonModal')">
-×
-</button>
-
-</div>
-
-<div id="lessonContent"></div>
-
-</div>
-
-</div>
-
 
 <script>
 
-/* =====================================================
-   SUPABASE
-===================================================== */
+/* =========================================================
+   ENGLISH MASTER
+   خواندن مستقیم A.txt و Aplus.txt
+========================================================= */
 
-const SUPABASE_URL =
-    "https://nlaqjfimsgcmdsolvmxn.supabase.co";
+let lessons = {};
+let currentLesson = null;
 
-const SUPABASE_ANON_KEY =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sYXFqZmltc2djbWRzb2x2bXhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwNjk5OTMsImV4cCI6MjEwNTY0NTk5M30.Ead9mQ1pEH3vf5zpnepCopjjiTdX01zFVgu5qkQaXtA";
+const STORAGE_KEY = "english_master_progress_v1";
 
-const supabaseClient =
-    window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_ANON_KEY
-    );
-
-
-/* =====================================================
-   DATA
-===================================================== */
-
-const FREE_STAGE_LIMIT = 100;
-
-const PLANS = {
-
-    month:{
-        title:"یک ماهه",
-        price:250000,
-        days:30
-    },
-
-    threeMonth:{
-        title:"سه ماهه",
-        price:400000,
-        days:90
-    },
-
-    year:{
-        title:"یک ساله",
-        price:600000,
-        days:365
-    }
-
-};
-
-
-let currentUser = null;
-let selectedPlan = null;
-let currentStage = null;
-
-
-/* =====================================================
-   LEVEL
-===================================================== */
-
-function getLevel(id){
-
-    if(id <= 100)
-        return "A1";
-
-    if(id <= 250)
-        return "A1+";
-
-    if(id <= 400)
-        return "A2";
-
-    if(id <= 550)
-        return "A2+";
-
-    if(id <= 700)
-        return "B1";
-
-    if(id <= 800)
-        return "B1+";
-
-    if(id <= 900)
-        return "B2";
-
-    if(id <= 950)
-        return "B2+";
-
-    return "C1";
-}
-
-
-/* =====================================================
-   STAGE GENERATOR
-===================================================== */
-
-function createLesson(id){
-
-    const level = getLevel(id);
-
-    const words = [
-
-        ["Hello","سلام"],
-        ["Good morning","صبح بخیر"],
-        ["Thank you","متشکرم"],
-        ["Please","لطفاً"],
-        ["Friend","دوست"],
-        ["School","مدرسه"],
-        ["Book","کتاب"],
-        ["Water","آب"],
-        ["Food","غذا"],
-        ["House","خانه"],
-        ["Family","خانواده"],
-        ["Happy","خوشحال"],
-        ["Important","مهم"],
-        ["Beautiful","زیبا"],
-        ["Learn","یاد گرفتن"]
-
-    ];
-
-    const word =
-        words[(id - 1) % words.length];
-
-    const sentences = {
-
-        "A1":
-            `I learn English every day.`,
-
-        "A1+":
-            `I usually practice English with my friends.`,
-
-        "A2":
-            `Yesterday, I went to school and studied English.`,
-
-        "A2+":
-            `I have been learning English because I want to communicate better.`,
-
-        "B1":
-            `I think learning English can help me communicate with people around the world.`,
-
-        "B1+":
-            `Although learning a language takes time, regular practice can make a big difference.`,
-
-        "B2":
-            `People who practice consistently tend to develop stronger communication skills over time.`,
-
-        "B2+":
-            `Understanding context is essential when interpreting complex English conversations.`,
-
-        "C1":
-            `Developing advanced language proficiency requires consistent exposure to sophisticated vocabulary and authentic communication.`
-
-    };
-
-    return {
-
-        id:id,
-
-        level:level,
-
-        word:word[0],
-
-        translation:word[1],
-
-        sentence:
-            sentences[level]
-
-    };
-
-}
-
-
-/* =====================================================
-   STAGES UI
-===================================================== */
-
-function renderStages(){
-
-    const container =
-        document.getElementById("stages");
-
-    container.innerHTML = "";
-
-    for(let i=1;i<=1000;i++){
-
-        const div =
-            document.createElement("div");
-
-        div.className =
-            "stage";
-
-        if(i > FREE_STAGE_LIMIT){
-
-            div.classList.add("locked");
-
-        }
-
-        const level =
-            getLevel(i);
-
-        const isFree =
-            i <= FREE_STAGE_LIMIT;
-
-        div.innerHTML = `
-
-            <div class="stage-number">
-                ${i}
-            </div>
-
-            <div class="stage-level">
-                ${level}
-            </div>
-
-            <div class="${isFree ? "free" : "paid"}">
-                ${isFree ? "رایگان" : "🔒 پولی"}
-            </div>
-
-        `;
-
-        div.onclick =
-            () => openStage(i);
-
-        container.appendChild(div);
-
-    }
-
-}
-
-
-/* =====================================================
-   AUTH
-===================================================== */
-
-async function sendOTP(){
-
-    const email =
-        document
-        .getElementById("loginEmail")
-        .value
-        .trim()
-        .toLowerCase();
-
-    const message =
-        document.getElementById("loginMessage");
-
-
-    if(!email.endsWith("@gmail.com")){
-
-        message.textContent =
-            "فقط آدرس Gmail مجاز است.";
-
-        message.className =
-            "notice error";
-
-        return;
-
-    }
-
-
-    message.textContent =
-        "در حال ارسال کد...";
-
-    message.className =
-        "notice";
-
-
-    const {
-        error
-    } =
-        await supabaseClient.auth.signInWithOtp({
-
-            email:email,
-
-            options:{
-                shouldCreateUser:true
-            }
-
-        });
-
-
-    if(error){
-
-        console.error(error);
-
-        message.textContent =
-            error.message;
-
-        message.className =
-            "notice error";
-
-        return;
-
-    }
-
-
-    document
-        .getElementById("emailStep")
-        .classList.add("hidden");
-
-    document
-        .getElementById("otpStep")
-        .classList.remove("hidden");
-
-
-    message.textContent =
-        "کد ۸ رقمی به Gmail شما ارسال شد.";
-
-    message.className =
-        "notice success";
-
-}
-
-
-/* =====================================================
-   VERIFY OTP
-===================================================== */
-
-async function verifyOTP(){
-
-    const email =
-        document
-        .getElementById("loginEmail")
-        .value
-        .trim()
-        .toLowerCase();
-
-    const code =
-        document
-        .getElementById("otpCode")
-        .value
-        .trim();
-
-    const message =
-        document.getElementById("loginMessage");
-
-
-    if(!/^\d{8}$/.test(code)){
-
-        message.textContent =
-            "کد باید دقیقاً ۸ رقم باشد.";
-
-        message.className =
-            "notice error";
-
-        return;
-
-    }
-
-
-    message.textContent =
-        "در حال بررسی کد...";
-
-    message.className =
-        "notice";
-
-
-    const {
-        data,
-        error
-    } =
-        await supabaseClient.auth.verifyOtp({
-
-            email:email,
-
-            token:code,
-
-            type:"email"
-
-        });
-
-
-    if(error){
-
-        console.error(error);
-
-        message.textContent =
-            "کد اشتباه یا منقضی شده است.";
-
-        message.className =
-            "notice error";
-
-        return;
-
-    }
-
-
-    currentUser =
-        data.user;
-
-
-    closeModal("loginModal");
-
-    await updateUserUI();
-
-}
-
-
-/* =====================================================
-   SESSION
-===================================================== */
-
-async function loadUser(){
-
-    const {
-        data
-    } =
-        await supabaseClient.auth.getUser();
-
-    currentUser =
-        data?.user || null;
-
-    await updateUserUI();
-
-}
-
-
-async function updateUserUI(){
-
-    const emailElement =
-        document.getElementById("userEmail");
-
-    const loginButton =
-        document.getElementById("loginButton");
-
-    const logoutButton =
-        document.getElementById("logoutButton");
-
-
-    if(!currentUser){
-
-        emailElement.textContent =
-            "";
-
-        loginButton.classList.remove(
-            "hidden"
-        );
-
-        logoutButton.classList.add(
-            "hidden"
-        );
-
-        document
-            .getElementById(
-                "subscriptionStatus"
-            )
-            .innerHTML = "";
-
-        return;
-
-    }
-
-
-    emailElement.textContent =
-        currentUser.email;
-
-    loginButton.classList.add(
-        "hidden"
-    );
-
-    logoutButton.classList.remove(
-        "hidden"
-    );
-
-
-    await showSubscriptionStatus();
-
-}
-
-
-/* =====================================================
-   LOGOUT
-===================================================== */
-
-async function logout(){
-
-    await supabaseClient.auth.signOut();
-
-    currentUser = null;
-
-    await updateUserUI();
-
-}
-
-
-/* =====================================================
-   SUBSCRIPTION
-===================================================== */
-
-async function hasActiveSubscription(){
-
-    if(!currentUser)
-        return false;
-
-
-    const {
-        data,
-        error
-    } =
-        await supabaseClient
-        .rpc(
-            "has_active_subscription",
-            {
-                p_user_id:
-                    currentUser.id
-            }
-        );
-
-
-    if(error){
-
-        console.error(error);
-
-        return false;
-
-    }
-
-
-    return data === true;
-
-}
-
-
-/* =====================================================
-   SUBSCRIPTION STATUS
-===================================================== */
-
-async function showSubscriptionStatus(){
-
-    const box =
-        document.getElementById(
-            "subscriptionStatus"
-        );
-
-
-    if(!currentUser){
-
-        box.innerHTML = "";
-
-        return;
-
-    }
-
-
-    const {
-        data,
-        error
-    } =
-        await supabaseClient
-        .rpc(
-            "get_my_subscription"
-        );
-
-
-    if(error){
-
-        console.error(error);
-
-        return;
-
-    }
-
-
-    if(!data || data.active === false){
-
-        box.innerHTML = `
-
-            <div class="notice">
-
-                شما اشتراک فعال ندارید.
-
-                <button
-                    class="btn"
-                    onclick="openSubscription()"
-                    style="margin-right:10px">
-
-                    خرید اشتراک
-
-                </button>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    const expire =
-        new Date(
-            data.expires_at
-        ).toLocaleDateString(
-            "fa-IR"
-        );
-
-
-    box.innerHTML = `
-
-        <div class="notice success">
-
-            اشتراک فعال:
-            ${data.plan}
-
-            <br>
-
-            تاریخ پایان:
-            ${expire}
-
-        </div>
-
-    `;
-
-}
-
-
-/* =====================================================
-   OPEN STAGE
-===================================================== */
-
-async function openStage(id){
-
-    currentStage = id;
-
-
-    if(id <= FREE_STAGE_LIMIT){
-
-        showLesson(id);
-
-        return;
-
-    }
-
-
-    if(!currentUser){
-
-        openLogin();
-
-        return;
-
-    }
-
-
-    const active =
-        await hasActiveSubscription();
-
-
-    if(!active){
-
-        openSubscription();
-
-        return;
-
-    }
-
-
-    showLesson(id);
-
-}
-
-
-/* =====================================================
-   LESSON
-===================================================== */
-
-function showLesson(id){
-
-    const lesson =
-        createLesson(id);
-
-
-    document
-        .getElementById("lessonTitle")
-        .textContent =
-            `مرحله ${id} — ${lesson.level}`;
-
-
-    document
-        .getElementById("lessonContent")
-        .innerHTML = `
-
-        <div class="lesson">
-
-            <p>
-                کلمه امروز:
-            </p>
-
-            <div class="english">
-                ${lesson.word}
-
-                <button
-                    class="btn"
-                    onclick="speakEnglish('${escapeJS(lesson.word)}')">
-                    🔊 تلفظ
-                </button>
-
-            </div>
-
-            <div class="translation">
-                ${lesson.translation}
-            </div>
-
-
-            <p>
-                جمله:
-            </p>
-
-            <div class="english">
-                ${lesson.sentence}
-
-                <button
-                    class="btn"
-                    onclick="speakEnglish('${escapeJS(lesson.sentence)}')">
-                    🔊 تلفظ
-                </button>
-
-            </div>
-
-
-            <div class="translation">
-
-                ترجمه:
-                ${lesson.translation}
-
-            </div>
-
-
-            <button
-                class="btn"
-                onclick="completeStage(${id})">
-
-                تکمیل مرحله
-
-            </button>
-
-        </div>
-
-    `;
-
-
-    openModal("lessonModal");
-
-}
-
-
-/* =====================================================
-   COMPLETE STAGE
-===================================================== */
-
-function completeStage(id){
-
-    let completed =
-        JSON.parse(
-            localStorage.getItem(
-                "english_completed"
-            ) || "[]"
-        );
-
-
-    if(!completed.includes(id)){
-
-        completed.push(id);
-
-    }
-
-
-    localStorage.setItem(
-        "english_completed",
-        JSON.stringify(completed)
-    );
-
-
-    document
-        .getElementById(
-            "completedCount"
-        )
-        .textContent =
-            completed.length;
-
-
-    alert(
-        "مرحله با موفقیت تکمیل شد."
-    );
-
-}
-
-
-/* =====================================================
-   PAYMENT
-===================================================== */
-
-function selectPlan(plan){
-
-    selectedPlan = plan;
-
-    const info =
-        PLANS[plan];
-
-
-    document
-        .getElementById(
-            "selectedPlanText"
-        )
-        .innerHTML = `
-
-        <div class="notice">
-
-            اشتراک انتخاب‌شده:
-            <strong>
-                ${info.title}
-            </strong>
-
-            <br>
-
-            مبلغ:
-            <strong>
-                ${info.price.toLocaleString("fa-IR")}
-                تومان
-            </strong>
-
-        </div>
-
-    `;
-
-
-    closeModal(
-        "subscriptionModal"
-    );
-
-    openModal(
-        "paymentModal"
-    );
-
-}
-
-
-/* =====================================================
-   SUBMIT PAYMENT
-===================================================== */
-
-async function submitPayment(){
-
-    if(!currentUser){
-
-        closeModal("paymentModal");
-
-        openLogin();
-
-        return;
-
-    }
-
-
-    if(!selectedPlan){
-
-        return;
-
-    }
-
-
-    const reference =
-        document
-        .getElementById(
-            "paymentReference"
-        )
-        .value
-        .trim();
-
-
-    const info =
-        PLANS[selectedPlan];
-
-
-    const message =
-        document.getElementById(
-            "paymentMessage"
-        );
-
-
-    message.textContent =
-        "در حال ثبت درخواست...";
-
-
-    const {
-        error
-    } =
-        await supabaseClient
-        .from("payment_requests")
-        .insert({
-
-            user_id:
-                currentUser.id,
-
-            plan:
-                selectedPlan,
-
-            amount:
-                info.price,
-
-            payment_reference:
-                reference || null
-
-        });
-
-
-    if(error){
-
-        console.error(error);
-
-        message.textContent =
-            error.message;
-
-        message.className =
-            "notice error";
-
-        return;
-
-    }
-
-
-    message.textContent =
-        "درخواست پرداخت ثبت شد. پس از بررسی ادمین اشتراک فعال می‌شود.";
-
-    message.className =
-        "notice success";
-
-
-    document
-        .getElementById(
-            "paymentReference"
-        )
-        .value = "";
-
-}
-
-
-/* =====================================================
-   TTS
-===================================================== */
-
-let englishVoice = null;
-
-
-function loadVoices(){
-
-    const voices =
-        speechSynthesis.getVoices();
-
-    englishVoice =
-        voices.find(
-            v =>
-                v.lang &&
-                v.lang
-                .toLowerCase()
-                .startsWith("en") &&
-                v.name
-                .toLowerCase()
-                .includes("google")
-        );
-
-    if(!englishVoice){
-
-        englishVoice =
-            voices.find(
-                v =>
-                    v.lang &&
-                    v.lang
-                    .toLowerCase()
-                    .startsWith("en")
-            );
-
-    }
-
-}
-
-
-if("speechSynthesis" in window){
-
-    loadVoices();
-
-    speechSynthesis.onvoiceschanged =
-        loadVoices;
-
-}
-
-
-function speakEnglish(text){
-
-    if(!text)
-        return;
-
-
-    if(!("speechSynthesis" in window)){
-
-        alert(
-            "قابلیت تلفظ در این دستگاه فعال نیست."
-        );
-
-        return;
-
-    }
-
-
-    speechSynthesis.cancel();
-
-
-    const utterance =
-        new SpeechSynthesisUtterance(
-            text
-        );
-
-
-    utterance.lang =
-        "en-US";
-
-    utterance.rate =
-        .82;
-
-    utterance.pitch =
-        1;
-
-    utterance.volume =
-        1;
-
-
-    if(englishVoice){
-
-        utterance.voice =
-            englishVoice;
-
-    }
-
-
-    speechSynthesis.speak(
-        utterance
-    );
-
-}
-
-
-/* =====================================================
-   MODALS
-===================================================== */
-
-function openModal(id){
-
-    document
-        .getElementById(id)
-        .classList.add("show");
-
-}
-
-
-function closeModal(id){
-
-    document
-        .getElementById(id)
-        .classList.remove("show");
-
-}
-
-
-function openLogin(){
-
-    document
-        .getElementById("loginModal")
-        .classList.add("show");
-
-}
-
-
-function openSubscription(){
-
-    if(!currentUser){
-
-        openLogin();
-
-        return;
-
-    }
-
-    openModal(
-        "subscriptionModal"
-    );
-
-}
-
-
-function backToEmail(){
-
-    document
-        .getElementById("otpStep")
-        .classList.add("hidden");
-
-    document
-        .getElementById("emailStep")
-        .classList.remove("hidden");
-
-}
-
-
-/* =====================================================
-   ESCAPE
-===================================================== */
-
-function escapeJS(value){
-
-    return String(value)
-        .replace(/\\/g,"\\\\")
-        .replace(/'/g,"\\'")
-        .replace(/"/g,"&quot;");
-
-}
-
-
-/* =====================================================
-   AUTH STATE
-===================================================== */
-
-supabaseClient
-.auth
-.onAuthStateChange(
-    async (event,session) => {
-
-        currentUser =
-            session?.user || null;
-
-        await updateUserUI();
-
-    }
+let progress = JSON.parse(
+  localStorage.getItem(STORAGE_KEY) || "{}"
 );
 
 
-/* =====================================================
-   INIT
-===================================================== */
+/* =========================================================
+   خواندن فایل‌های TXT
+========================================================= */
 
-renderStages();
+async function loadEnglishData() {
 
-loadUser();
+  try {
+
+    const responses = await Promise.all([
+      fetch("./A.txt"),
+      fetch("./Aplus.txt")
+    ]);
+
+    if (!responses[0].ok) {
+      throw new Error("A.txt پیدا نشد");
+    }
+
+    if (!responses[1].ok) {
+      throw new Error("Aplus.txt پیدا نشد");
+    }
+
+    const a1Text = await responses[0].text();
+    const aPlusText = await responses[1].text();
+
+    const a1Lessons = parseLessons(a1Text);
+    const aPlusLessons = parseLessons(aPlusText);
+
+    lessons = {
+      ...a1Lessons,
+      ...aPlusLessons
+    };
+
+    console.log(
+      "English Master loaded:",
+      Object.keys(lessons).length,
+      "lessons"
+    );
+
+    showHome();
+
+  } catch (error) {
+
+    console.error(error);
+
+    document.getElementById("app").innerHTML = `
+      <div class="empty">
+
+        <div class="empty-icon">⚠️</div>
+
+        <h2>خطا در بارگذاری درس‌ها</h2>
+
+        <p style="margin-top:10px">
+          مطمئن شوید این سه فایل در کنار هم قرار دارند:
+        </p>
+
+        <div class="card" style="margin-top:15px;text-align:left;direction:ltr">
+          index.html<br>
+          A.txt<br>
+          Aplus.txt
+        </div>
+
+      </div>
+    `;
+
+  }
+
+}
+
+
+/* =========================================================
+   تبدیل متن TXT به درس
+========================================================= */
+
+function parseLessons(text) {
+
+  const result = {};
+
+  const regex = /===\s*درس\s+(\d+)\s*\(([^)]+)\)\s*===([\s\S]*?)(?=\n===\s*درس\s+\d+|\n={10,}|$)/g;
+
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+
+    const id = Number(match[1]);
+    const level = match[2].trim();
+    const body = match[3];
+
+    const vocab = [];
+    const conversation = [];
+
+    /* -----------------------------
+       معنی‌ها
+    ----------------------------- */
+
+    const meaningMatch = body.match(
+      /معنی‌ها:\s*([\s\S]*?)(?=\n\s*مکالمه:|$)/
+    );
+
+    if (meaningMatch) {
+
+      const lines = meaningMatch[1].split(/\r?\n/);
+
+      for (const line of lines) {
+
+        const m = line.match(
+          /^\s*\d+\.\s*(.*?)\s*=\s*(.*?)\s*$/
+        );
+
+        if (m) {
+
+          vocab.push({
+            en: m[1].trim(),
+            fa: m[2].trim()
+          });
+
+        }
+
+      }
+
+    }
+
+
+    /* -----------------------------
+       مکالمه
+    ----------------------------- */
+
+    const conversationMatch = body.match(
+      /مکالمه:\s*([\s\S]*?)/
+    );
+
+    if (conversationMatch) {
+
+      const lines = conversationMatch[1].split(/\r?\n/);
+
+      for (const line of lines) {
+
+        const m = line.match(
+          /^\s*([A-Z])\s*:\s*(.+?)\s*$/
+        );
+
+        if (m) {
+
+          conversation.push({
+            speaker: m[1],
+            en: m[2].trim()
+          });
+
+        }
+
+      }
+
+    }
+
+
+    result[id] = {
+      id,
+      level,
+      title: "درس " + id,
+      vocab,
+      conversation
+    };
+
+  }
+
+  return result;
+}
+
+
+/* =========================================================
+   ذخیره پیشرفت
+========================================================= */
+
+function saveProgress() {
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(progress)
+  );
+
+}
+
+
+function getLessonProgress(id) {
+
+  return progress[id] || {
+    completed: false,
+    stars: 0
+  };
+
+}
+
+
+/* =========================================================
+   تعیین اینکه درس باز است یا نه
+========================================================= */
+
+function isLessonUnlocked(id) {
+
+  if (id === 1) {
+    return true;
+  }
+
+  const previous = getLessonProgress(id - 1);
+
+  return previous.completed === true;
+}
+
+
+/* =========================================================
+   صفحه خانه
+========================================================= */
+
+function showHome() {
+
+  setActiveNav(0);
+
+  const total = Object.keys(lessons).length;
+
+  const completed = Object.values(progress)
+    .filter(x => x.completed)
+    .length;
+
+  const percent = total
+    ? Math.round((completed / total) * 100)
+    : 0;
+
+  document.getElementById("app").innerHTML = `
+
+    <section class="hero">
+
+      <h1>انگلیسی را حرفه‌ای یاد بگیر 🚀</h1>
+
+      <p>
+        درس به درس جلو برو، مکالمه‌ها را بخوان،
+        لغات را یاد بگیر و بعد از هر ۱۰ درس در آزمون شرکت کن.
+      </p>
+
+      <div class="progress-box">
+
+        <div class="progress-info">
+          <span>پیشرفت شما</span>
+          <span>${percent}%</span>
+        </div>
+
+        <div class="progress">
+          <div style="width:${percent}%"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="section-title">
+
+      <h2>سطح‌ها</h2>
+
+      <span>
+        A1 رایگان
+      </span>
+
+    </div>
+
+
+    <div class="levels">
+
+      ${levelCard(
+        "A1",
+        "مقدماتی",
+        "درس‌های ۱ تا ۱۰۰",
+        "🟢",
+        true
+      )}
+
+      ${levelCard(
+        "A1+",
+        "مقدماتی پیشرفته",
+        "درس‌های ۱۰۱ تا ۲۵۰",
+        "🔵",
+        false
+      )}
+
+      ${levelCard(
+        "A2",
+        "پایه",
+        "در حال آماده‌سازی",
+        "🟣",
+        false
+      )}
+
+      ${levelCard(
+        "B1",
+        "متوسط",
+        "در حال آماده‌سازی",
+        "🟠",
+        false
+      )}
+
+    </div>
+
+
+    <div class="section-title">
+
+      <h2>ادامه یادگیری</h2>
+
+    </div>
+
+    ${getContinueLesson()}
+
+  `;
+
+}
+
+
+function levelCard(
+  name,
+  title,
+  description,
+  icon,
+  unlocked
+) {
+
+  return `
+
+    <div
+      class="level ${unlocked ? "" : "locked"}"
+      onclick="${
+        unlocked
+        ? `showLevel('${name}')`
+        : `showLockedLevel('${name}')`
+      }"
+    >
+
+      ${!unlocked ? `<div class="lock">🔒</div>` : ""}
+
+      <div class="level-icon">
+        ${icon}
+      </div>
+
+      <h3>${name}</h3>
+
+      <p>
+        ${title}<br>
+        ${description}
+      </p>
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   ادامه درس
+========================================================= */
+
+function getContinueLesson() {
+
+  const ids = Object.keys(lessons)
+    .map(Number)
+    .sort((a,b) => a-b);
+
+  for (const id of ids) {
+
+    if (!getLessonProgress(id).completed) {
+
+      const lesson = lessons[id];
+
+      return `
+
+        <div
+          class="card"
+          style="cursor:pointer"
+          onclick="openLesson(${id})"
+        >
+
+          <div style="display:flex;align-items:center;gap:13px">
+
+            <div class="level-icon">
+              📖
+            </div>
+
+            <div style="flex:1">
+
+              <div style="font-size:11px;color:var(--muted)">
+                ادامه یادگیری
+              </div>
+
+              <div style="font-weight:bold;margin-top:4px">
+                ${lesson.title}
+              </div>
+
+              <div style="font-size:11px;color:var(--muted);margin-top:4px">
+                ${lesson.level}
+              </div>
+
+            </div>
+
+            <div>
+              ←
+            </div>
+
+          </div>
+
+        </div>
+      `;
+    }
+  }
+
+  return `
+
+    <div class="card">
+
+      <div class="empty">
+
+        <div class="empty-icon">🎉</div>
+
+        <h3>همه درس‌ها را تمام کردی!</h3>
+
+      </div>
+
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   صفحه سطح
+========================================================= */
+
+function showLevel(level) {
+
+  setActiveNav(1);
+
+  let min = 1;
+  let max = 100;
+
+  if (level === "A1+") {
+    min = 101;
+    max = 250;
+  }
+
+  const ids = Object.keys(lessons)
+    .map(Number)
+    .filter(id => id >= min && id <= max)
+    .sort((a,b) => a-b);
+
+  document.getElementById("app").innerHTML = `
+
+    <button
+      class="back-btn"
+      onclick="showHome()"
+    >
+      ← بازگشت
+    </button>
+
+    <div class="lesson-head">
+
+      <h1>${level}</h1>
+
+      <p>
+        ${level === "A1"
+          ? "سطح مقدماتی"
+          : "سطح A1+"}
+      </p>
+
+    </div>
+
+    <div class="lessons">
+
+      ${
+        ids.length
+        ? ids.map(id => lessonCard(id)).join("")
+        : `
+          <div class="card" style="grid-column:1/-1">
+            <div class="empty">
+              <div class="empty-icon">🚧</div>
+              این سطح هنوز آماده نشده است.
+            </div>
+          </div>
+        `
+      }
+
+    </div>
+
+  `;
+}
+
+
+/* =========================================================
+   کارت درس
+========================================================= */
+
+function lessonCard(id) {
+
+  const lesson = lessons[id];
+
+  if (!lesson) return "";
+
+  const p = getLessonProgress(id);
+
+  const unlocked = isLessonUnlocked(id);
+
+  const stars =
+    "★".repeat(p.stars || 0) +
+    "☆".repeat(3 - (p.stars || 0));
+
+  return `
+
+    <div
+      class="lesson ${unlocked ? "" : "locked"}"
+      onclick="${unlocked ? `openLesson(${id})` : `showLockedLesson('${id}')`}"
+    >
+
+      <div class="lesson-number">
+        ${lesson.level}
+      </div>
+
+      <div class="lesson-title">
+        درس ${id}
+      </div>
+
+      <div class="lesson-status">
+
+        ${
+          p.completed
+          ? "✓ تکمیل شده"
+          : unlocked
+            ? "شروع درس"
+            : "🔒 قفل"
+        }
+
+      </div>
+
+      ${
+        p.completed
+        ? `<div class="stars">${stars}</div>`
+        : ""
+      }
+
+    </div>
+
+  `;
+}
+
+
+/* =========================================================
+   باز کردن درس
+========================================================= */
+
+function openLesson(id) {
+
+  if (!isLessonUnlocked(id)) {
+
+    showLockedLevel(id);
+
+    return;
+  }
+
+  const lesson = lessons[id];
+
+  if (!lesson) return;
+
+  currentLesson = lesson;
+
+  setActiveNav(1);
+
+  const p = getLessonProgress(id);
+
+  document.getElementById("app").innerHTML = `
+
+    <button
+      class="back-btn"
+      onclick="showLevel('${lesson.level}')"
+    >
+      ← بازگشت
+    </button>
+
+
+    <div class="lesson-head">
+
+      <h1>${lesson.title}</h1>
+
+      <p>
+        سطح ${lesson.level}
+      </p>
+
+      ${
+        p.completed
+        ? `
+          <div class="stars">
+            ${"★".repeat(p.stars)}
+            ${"☆".repeat(3-p.stars)}
+          </div>
+        `
+        : ""
+      }
+
+    </div>
+
+
+    <!-- لغات -->
+
+    <div class="card">
+
+      <div class="card-title">
+        📚 لغات درس
+      </div>
+
+      <div>
+
+        ${
+          lesson.vocab.length
+          ? lesson.vocab.map(word => `
+
+              <div class="word">
+
+                <div style="flex:1">
+
+                  <div class="word-en">
+                    ${escapeHtml(word.en)}
+                  </div>
+
+                  <div class="word-fa">
+                    ${escapeHtml(word.fa)}
+                  </div>
+
+                </div>
+
+                <button
+                  class="speak-btn"
+                  onclick="speak('${escapeAttr(word.en)}')"
+                >
+                  🔊
+                </button>
+
+              </div>
+
+          `).join("")
+          : `
+            <div class="empty">
+              لغتی برای این درس پیدا نشد.
+            </div>
+          `
+        }
+
+      </div>
+
+    </div>
+
+
+    <!-- مکالمه -->
+
+    <div class="card">
+
+      <div class="card-title">
+        💬 مکالمه
+      </div>
+
+      <div class="chat">
+
+        ${
+          lesson.conversation.length
+          ? lesson.conversation.map(msg => `
+
+              <div class="message ${msg.speaker === "A" ? "a" : "b"}">
+
+                <div class="speaker">
+                  ${msg.speaker}
+                </div>
+
+                <div>
+                  ${escapeHtml(msg.en)}
+                </div>
+
+                <div class="translation">
+                  ${translateSimple(msg.en)}
+                </div>
+
+              </div>
+
+          `).join("")
+          : `
+            <div class="empty">
+              مکالمه‌ای برای این درس پیدا نشد.
+            </div>
+          `
+        }
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="primary-btn"
+      onclick="completeLesson(${id})"
+    >
+      ${p.completed ? "مرور و ثبت دوباره درس ✓" : "درس را یاد گرفتم ✓"}
+    </button>
+
+
+    ${
+      id % 10 === 0
+      ? `
+        <button
+          class="secondary-btn"
+          onclick="startExam(${id})"
+        >
+          📝 شرکت در آزمون درس‌های ${id-9} تا ${id}
+        </button>
+      `
+      : ""
+    }
+
+  `;
+
+}
+
+
+/* =========================================================
+   ترجمه ساده مکالمه
+   توجه:
+   ترجمه اصلی مکالمه در TXT برای بخش‌های آزمون وجود دارد،
+   اما برای مکالمه درس‌ها در فایل فقط متن انگلیسی ذخیره شده.
+========================================================= */
+
+function translateSimple(text) {
+
+  const dictionary = {
+
+    "Hello": "سلام",
+    "Hi": "سلام",
+    "Good morning": "صبح بخیر",
+    "Good evening": "عصر بخیر",
+    "Thank you": "ممنون",
+    "Thanks": "ممنون",
+    "Yes": "بله",
+    "No": "نه",
+    "Please": "لطفاً",
+    "Goodbye": "خداحافظ",
+    "How are you?": "حالت چطور است؟",
+    "What's your name?": "اسمت چیست؟",
+    "My name is Ali.": "اسم من علی است.",
+    "Where do you live?": "کجا زندگی می‌کنی؟",
+    "I live in a big city.": "من در یک شهر بزرگ زندگی می‌کنم.",
+    "What do you do?": "چه کار می‌کنی؟",
+    "I'm a teacher.": "من معلم هستم.",
+    "Do you study every day?": "آیا هر روز مطالعه می‌کنی؟",
+    "Yes, I study English.": "بله، انگلیسی مطالعه می‌کنم.",
+    "What country are you from?": "اهل کدام کشور هستی؟",
+    "I'm from Iran.": "من اهل ایران هستم.",
+    "What language do you speak?": "چه زبانی صحبت می‌کنی؟",
+    "Persian.": "فارسی.",
+    "What's the weather like today?": "امروز هوا چطور است؟",
+    "It's cloudy and windy.": "هوا ابری و بادی است."
+
+  };
+
+  if (dictionary[text]) {
+    return dictionary[text];
+  }
+
+  return "";
+}
+
+
+/* =========================================================
+   تکمیل درس
+========================================================= */
+
+function completeLesson(id) {
+
+  if (!progress[id]) {
+
+    progress[id] = {
+      completed: true,
+      stars: 1
+    };
+
+  } else {
+
+    progress[id].completed = true;
+
+    if (!progress[id].stars) {
+      progress[id].stars = 1;
+    }
+
+  }
+
+  saveProgress();
+
+  showMessage(
+    "درس کامل شد 🎉",
+    "آفرین! این درس با موفقیت ثبت شد. حالا می‌توانی سراغ درس بعدی بروی."
+  );
+
+  setTimeout(() => {
+    openLesson(id);
+  }, 900);
+
+}
+
+
+/* =========================================================
+   آزمون
+========================================================= */
+
+function startExam(endLesson) {
+
+  const startLessonNumber = endLesson - 9;
+
+  const available = [];
+
+  for (
+    let i = startLessonNumber;
+    i <= endLesson;
+    i++
+  ) {
+
+    if (lessons[i]) {
+      available.push(lessons[i]);
+    }
+
+  }
+
+  if (!available.length) {
+
+    showMessage(
+      "آزمون موجود نیست",
+      "درس‌های این بخش در فایل TXT پیدا نشدند."
+    );
+
+    return;
+  }
+
+  const questions = createExamQuestions(available);
+
+  window.currentExam = {
+    endLesson,
+    questions,
+    answers: {}
+  };
+
+  renderExam();
+
+}
+
+
+/* =========================================================
+   ساخت سؤال آزمون از لغات خود TXT
+========================================================= */
+
+function createExamQuestions(lessonList) {
+
+  const questions = [];
+
+  for (const lesson of lessonList) {
+
+    for (const word of lesson.vocab) {
+
+      if (questions.length >= 10) {
+        break;
+      }
+
+      const wrong = [];
+
+      for (const other of lessonList) {
+
+        for (const w of other.vocab) {
+
+          if (
+            w.en !== word.en &&
+            wrong.length < 3
+          ) {
+
+            wrong.push(w.fa);
+
+          }
+
+        }
+
+      }
+
+      const options = [
+        word.fa,
+        ...wrong
+      ].slice(0, 4);
+
+      while (options.length < 4) {
+        options.push("گزینه دیگر");
+      }
+
+      shuffle(options);
+
+      questions.push({
+        type: "meaning",
+        text: word.en,
+        answer: word.fa,
+        options
+      });
+
+    }
+
+    if (questions.length >= 10) {
+      break;
+    }
+
+  }
+
+  return questions.slice(0, 10);
+}
+
+
+/* =========================================================
+   نمایش آزمون
+========================================================= */
+
+function renderExam() {
+
+  const exam = window.currentExam;
+
+  if (!exam) return;
+
+  document.getElementById("app").innerHTML = `
+
+    <button
+      class="back-btn"
+      onclick="openLesson(${exam.endLesson})"
+    >
+      ← خروج از آزمون
+    </button>
+
+
+    <div class="lesson-head">
+
+      <h1>📝 آزمون</h1>
+
+      <p>
+        برای قبولی حداقل ۷۰٪ لازم است.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      ${
+        exam.questions.map((q, index) => `
+
+          <div class="exam-question">
+
+            <div class="question-number">
+              سؤال ${index + 1}
+            </div>
+
+            <div class="question-text">
+              معنی این کلمه چیست؟
+              <br><br>
+              <strong>${escapeHtml(q.text)}</strong>
+            </div>
+
+            <div class="options">
+
+              ${
+                q.options.map((option, oi) => `
+
+                  <button
+                    class="option ${
+                      exam.answers[index] === option
+                      ? "selected"
+                      : ""
+                    }"
+                    onclick="selectAnswer(${index}, '${escapeAttr(option)}')"
+                  >
+                    ${escapeHtml(option)}
+                  </button>
+
+                `).join("")
+              }
+
+            </div>
+
+          </div>
+
+        `).join("")
+      }
+
+
+      <button
+        class="primary-btn"
+        onclick="submitExam()"
+      >
+        پایان آزمون
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   انتخاب جواب
+========================================================= */
+
+function selectAnswer(index, answer) {
+
+  window.currentExam.answers[index] = answer;
+
+  renderExam();
+
+}
+
+
+/* =========================================================
+   نتیجه آزمون
+========================================================= */
+
+function submitExam() {
+
+  const exam = window.currentExam;
+
+  let correct = 0;
+
+  exam.questions.forEach((q, i) => {
+
+    if (exam.answers[i] === q.answer) {
+      correct++;
+    }
+
+  });
+
+  const score = Math.round(
+    correct / exam.questions.length * 100
+  );
+
+  const passed = score >= 70;
+
+  let stars = 0;
+
+  if (passed) {
+
+    if (score >= 90) {
+      stars = 3;
+    } else if (score >= 80) {
+      stars = 2;
+    } else {
+      stars = 1;
+    }
+
+    const end = exam.endLesson;
+
+    if (!progress[end]) {
+      progress[end] = {};
+    }
+
+    progress[end].examPassed = true;
+    progress[end].examScore = score;
+    progress[end].stars = Math.max(
+      progress[end].stars || 0,
+      stars
+    );
+
+    saveProgress();
+
+  }
+
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="card">
+
+      <div class="result">
+
+        <div style="font-size:50px">
+          ${passed ? "🎉" : "📚"}
+        </div>
+
+        <h2>
+          ${passed ? "آزمون را قبول شدی!" : "این بار قبول نشدی"}
+        </h2>
+
+        <div class="score">
+          ${score}%
+        </div>
+
+        <div class="result-message">
+
+          پاسخ صحیح:
+          ${correct}
+          از
+          ${exam.questions.length}
+
+          <br><br>
+
+          ${
+            passed
+            ? `
+              حداقل نمره قبولی ۷۰٪ است.
+              <br>
+              ⭐ ${stars} ستاره گرفتی.
+            `
+            : `
+              برای قبولی باید حداقل ۷۰٪ بگیری.
+              <br>
+              دوباره تلاش کن 💪
+            `
+          }
+
+        </div>
+
+        ${
+          passed
+          ? `
+            <button
+              class="primary-btn"
+              onclick="showLevel('${lessons[exam.endLesson]?.level || "A1"}')"
+            >
+              ادامه درس‌ها
+            </button>
+          `
+          : `
+            <button
+              class="primary-btn"
+              onclick="startExam(${exam.endLesson})"
+            >
+              🔄 تلاش دوباره
+            </button>
+          `
+        }
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   تنظیمات
+========================================================= */
+
+function showSettings() {
+
+  setActiveNav(2);
+
+  const dark =
+    document.body.classList.contains("dark");
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="section-title">
+
+      <h2>⚙️ تنظیمات</h2>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="setting">
+
+        <div>
+
+          <div class="setting-title">
+            حالت تاریک
+          </div>
+
+          <div class="setting-sub">
+            تغییر ظاهر برنامه
+          </div>
+
+        </div>
+
+        <button
+          class="switch ${dark ? "active" : ""}"
+          onclick="toggleDarkMode()"
+        >
+          <span></span>
+        </button>
+
+      </div>
+
+
+      <div class="setting">
+
+        <div>
+
+          <div class="setting-title">
+            حذف پیشرفت
+          </div>
+
+          <div class="setting-sub">
+            تمام درس‌ها دوباره قفل می‌شوند.
+          </div>
+
+        </div>
+
+        <button
+          class="secondary-btn"
+          style="width:auto;margin:0;padding:9px 13px"
+          onclick="resetProgress()"
+        >
+          حذف
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-title">
+        درباره English Master
+      </div>
+
+      <p style="color:var(--muted);line-height:2;font-size:13px">
+
+        English Master یک سیستم آموزشی مرحله‌ای
+        برای یادگیری زبان انگلیسی است.
+
+        <br><br>
+
+        هر درس شامل لغات و مکالمه است.
+
+        <br>
+
+        بعد از هر ۱۰ درس می‌توانی در آزمون شرکت کنی.
+
+        <br>
+
+        حداقل نمره قبولی آزمون ۷۰٪ است.
+
+      </p>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   صفحه درس‌ها
+========================================================= */
+
+function showLevels() {
+
+  setActiveNav(1);
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="section-title">
+
+      <h2>📚 درس‌ها</h2>
+
+    </div>
+
+
+    <div class="levels">
+
+      ${levelCard(
+        "A1",
+        "مقدماتی",
+        "درس‌های ۱ تا ۱۰۰",
+        "🟢",
+        true
+      )}
+
+      ${levelCard(
+        "A1+",
+        "مقدماتی پیشرفته",
+        "درس‌های ۱۰۱ تا ۲۵۰",
+        "🔵",
+        false
+      )}
+
+      ${levelCard(
+        "A2",
+        "پایه",
+        "به‌زودی",
+        "🟣",
+        false
+      )}
+
+      ${levelCard(
+        "B1",
+        "متوسط",
+        "به‌زودی",
+        "🟠",
+        false
+      )}
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   سطح قفل
+========================================================= */
+
+function showLockedLevel(level) {
+
+  showMessage(
+    "🔒 این بخش قفل است",
+    level.length <= 4
+      ? "برای دسترسی به این سطح ابتدا باید مراحل قبلی را تکمیل کنید."
+      : "ابتدا درس قبلی را کامل کنید."
+  );
+
+}
+
+
+/* =========================================================
+   پیام
+========================================================= */
+
+function showMessage(title, text) {
+
+  document.getElementById("modalTitle").textContent =
+    title;
+
+  document.getElementById("modalText").textContent =
+    text;
+
+  document.getElementById("modal").classList.add("show");
+
+}
+
+
+function closeModal() {
+
+  document.getElementById("modal")
+    .classList.remove("show");
+
+}
+
+
+/* =========================================================
+   حالت تاریک
+========================================================= */
+
+function toggleDarkMode() {
+
+  document.body.classList.toggle("dark");
+
+  const dark =
+    document.body.classList.contains("dark");
+
+  localStorage.setItem(
+    "english_master_dark",
+    dark ? "1" : "0"
+  );
+
+  const btn = document.getElementById("themeBtn");
+
+  if (btn) {
+    btn.textContent = dark ? "☀️" : "🌙";
+  }
+
+}
+
+
+/* =========================================================
+   بازیابی حالت تاریک
+========================================================= */
+
+function loadTheme() {
+
+  const dark =
+    localStorage.getItem("english_master_dark");
+
+  if (dark === "1") {
+
+    document.body.classList.add("dark");
+
+  }
+
+}
+
+
+/* =========================================================
+   ناوبری
+========================================================= */
+
+function setActiveNav(index) {
+
+  document
+    .querySelectorAll(".nav-btn")
+    .forEach((btn, i) => {
+
+      btn.classList.toggle(
+        "active",
+        i === index
+      );
+
+    });
+
+}
+
+
+/* =========================================================
+   تلفظ انگلیسی
+========================================================= */
+
+function speak(text) {
+
+  if (!("speechSynthesis" in window)) {
+
+    showMessage(
+      "تلفظ در دسترس نیست",
+      "مرورگر شما از قابلیت تبدیل متن به صدا پشتیبانی نمی‌کند."
+    );
+
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const utterance =
+    new SpeechSynthesisUtterance(text);
+
+  utterance.lang = "en-US";
+  utterance.rate = .85;
+  utterance.pitch = 1;
+
+  speechSynthesis.speak(utterance);
+
+}
+
+
+/* =========================================================
+   حذف پیشرفت
+========================================================= */
+
+function resetProgress() {
+
+  const ok = confirm(
+    "آیا مطمئن هستید تمام پیشرفت حذف شود؟"
+  );
+
+  if (!ok) return;
+
+  progress = {};
+
+  localStorage.removeItem(STORAGE_KEY);
+
+  showMessage(
+    "انجام شد",
+    "تمام پیشرفت‌ها حذف شدند."
+  );
+
+  setTimeout(showHome, 800);
+
+}
+
+
+/* =========================================================
+   ابزارها
+========================================================= */
+
+function shuffle(array) {
+
+  for (
+    let i = array.length - 1;
+    i > 0;
+    i--
+  ) {
+
+    const j =
+      Math.floor(Math.random() * (i + 1));
+
+    [
+      array[i],
+      array[j]
+    ] = [
+      array[j],
+      array[i]
+    ];
+
+  }
+
+  return array;
+
+}
+
+
+function escapeHtml(value) {
+
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+function escapeAttr(value) {
+
+  return String(value)
+    .replace(/\\/g, "\\\\")
+    .replace(/'/g, "\\'")
+    .replace(/"/g, "&quot;");
+
+}
+
+
+/* =========================================================
+   شروع برنامه
+========================================================= */
+
+loadTheme();
+
+loadEnglishData();
 
 </script>
 
